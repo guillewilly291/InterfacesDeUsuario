@@ -1,0 +1,579 @@
+
+body {
+  /*Establecemos un fondo al body de la web*/
+  background-image: url(../images/principal.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/*con este div conseguimos que al hacer click en un popup, se oscurezca el fondo*/
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+/*css para los popups*/
+
+.pop {
+    width: 700px;
+    padding: 30px;
+    display:block;
+    padding-bottom: 0px;
+    padding-top: 0px;
+
+    background: #FFF;
+        border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+        box-shadow: 0px 0px 4px rgba(0,0,0,0.7); -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7); -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);
+
+}
+
+.tituloPop{
+  font-size: 4vw;
+  margin: auto;
+  vertical-align: middle;
+  font-family: Impact;
+}
+
+/*Estos estilos corresponden con los botones de entrar, registrarse y borrar, tienen una animación basada en transiciones css */
+/*Estilo botón verde*/
+.botonReg{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+
+}
+/*Estilo botón rojo*/
+.botonCerrar{
+  background:#ba1212;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:30px;
+  font-size:1.6em;
+  padding:0 .5em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  margin:auto;
+  margin-right:0;
+
+}
+
+.botonRegistro{
+  margin-top:2%;
+
+}
+
+.botonEntrar{
+  margin-top:5%;
+}
+
+.botonPop{
+  margin:auto;
+  margin-bottom: 3%;
+  margin-top: 2%;
+}
+
+/*Los siguientes :hover permiten que se realicen las transiciones*/
+
+.botonReg:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+.botonReg:before,.botonReg:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.botonReg:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.botonReg:hover:before,.botonReg:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+.botonCerrar:hover{
+  background:#fff;
+  color:#ba1212;
+}
+.botonCerrar:before,.botonCerrar:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #ba1212;
+  transition:400ms ease all;
+}
+.botonCerrar:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.botonCerrar:hover:before,.botonCerrar:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+
+/*Este es el header de la página, es blanco con opacidad de 0.8, contiene el logo, el título y diversas opciones*/
+header{
+	background-color: rgba(255, 255, 255, 0.8);
+	display: flex;
+}
+
+#logo{
+	width: 5vw;
+	height: 5vw;
+
+	margin: auto 3%;
+}
+
+h1{
+	vertical-align: middle;
+	margin: auto 5%;
+
+	font-size: 2.3vw;
+	font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+	text-shadow: 1px 1px 1px #000;
+}
+ /*lista con las opciones del header*/
+#listaHeader{
+	display: flex;
+	margin: 0;
+	padding: 0;
+	width: 40%;
+
+	list-style-type: none;
+}
+
+.seleccionHeader{
+	margin: 0 3%;
+
+	border-right: 1px solid rgba(255, 255, 255, 0);
+	border-left: 1px solid rgba(255, 255, 255, 0);
+}
+
+.seleccionTexto{
+	font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+	font-size: 2vw;
+	padding: 0 20px
+}
+
+.seleccionHeader:hover{
+	background-color: rgba(255, 255, 255, 0.7);
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+
+	cursor: pointer;
+}
+
+
+
+/*este div es el central de la página, alberga un aside y un section*/
+
+#divCentral{
+	padding: 40px;
+}
+
+#divIniciarSesion{
+	margin: auto 0;
+	background-color: white;
+	border-radius: 6px;
+	padding: 30px;
+	width: 25vw;
+}
+
+#divBusqueda{
+	margin: auto 0;
+	background-color: white;
+	border-radius: 6px;
+	padding: 30px;
+	width: 55vw;
+	margin-left: 10%;
+  padding-bottom: 0
+}
+
+/*textos para el div de inicio de sesión*/
+.tituloInicioSesion{
+	margin: 0;
+	font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
+	font-size: 1.7vw;
+
+}
+
+.textoInicioSesion{
+	margin: 20px 0 10px 0;
+	font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
+	font-size: 30px;
+}
+
+/*textos y estilos para el popup de inicio de sesión*/
+.tituloInicioSesionPop{
+  margin: 20px 0 10px 0;
+  margin-top: 3%;
+  font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
+	font-size: 1.7vw;
+}
+
+.botonEntrarPop{
+  margin-bottom: 3%;
+}
+
+
+.inputDataSesion{
+	font-size: 25px;
+	padding: 5px;
+}
+.divFlex{
+  display: flex;
+}
+
+.divFlexRegistro{
+  display: flex;
+  border-radius: 12px;
+  transition: background .5s linear;
+    -webkit-transition: background .5s linear;
+    -moz-transition: background .5s linear;
+}
+
+.formularioSesion{
+
+  border-bottom: 2px solid black;
+  margin:20px 0;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+.formularioSesion2{
+  margin:20px 0;
+  margin-bottom: 0;
+  padding-right: 30px;
+}
+/*barra de busqueda*/
+.inputBuscar{
+	font-size: 35px;
+	width: 70%;
+	margin: 1.5% 0;
+
+	border-radius: 12px;
+	border: 4px solid #1AAB8A;
+}
+
+/*div que alberga la galería de imágenes*/
+#galeria{
+  width: 55vw;
+  height: 23vw;
+  margin: 2% 0;
+	background-color: white;
+	border-radius: 6px;
+	padding: 30px;
+	margin-left: 10%;
+  padding-bottom: 0;
+
+}
+
+/*styles para el formulario de registro*/
+.textoRegistro{
+  margin: 10px 0 10px 0;
+	font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
+	font-size: 25px;
+}
+
+.textoInput{
+  margin: 10px 0 10px 30px;
+	font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
+	font-size: 20px;
+}
+
+.inputDataRegistro{
+  margin: 0px 0 0px 30px;
+  width: 20vw;
+	font-size: 15px;
+	padding: 5px;
+  border-radius: 12px;
+	border: 2px solid #1AAB8A;
+  transition: background .5s linear;
+    -webkit-transition: background .5s linear;
+    -moz-transition: background .5s linear;
+}
+
+/*referencias para emplear la url de una imagen en el registro*/
+
+#imgInp{
+  margin: auto 0;
+  margin-left: 30px;
+  width: 20vw;
+	font-size: 15px;
+	padding: 5px;
+  border-radius: 12px;
+	border: 2px solid #1AAB8A;
+}
+
+#blah{
+  margin: auto;
+  width: 3vw;
+  margin-left: 2%;
+}
+
+/*palomilla de check en el registro*/
+
+#check{
+  margin: auto 2%;
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+}
+
+/*botones*/
+
+.accept{
+  margin:auto 2%;
+}
+
+/*footer de la página, es de color gris con opacidad 0.95*/
+footer{
+	background-color: rgba(36, 36, 36, 0.95);
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+}
+
+.copyright {
+	margin: auto;
+	margin-bottom: 0;
+	margin-right: 10px;
+	display: flex;
+}
+
+.copyrightTexto{
+	font-size: 20px;
+	color: white;
+	vertical-align: bottom;
+	margin: auto;
+	margin-bottom: 0;
+}
+
+.linkSocial{
+	height: 70%;
+	margin: auto 1%;
+}
+
+.imagenSocial{
+	height: 100%;
+}
+
+
+
+/*botón de la barra de búsqueda, como el anterior, utiliza transiciones css*/
+
+.buttonGo {
+  background: #3D4C53;
+  margin : auto 10px;
+  width : 200px;
+  height : 50px;
+  overflow: hidden;
+  text-align : center;
+  transition : .2s;
+  cursor : pointer;
+  border-radius: 6px;
+}
+.btnTwo {
+  position : relative;
+  width : 200px;
+  height : 100px;
+  margin-top: -100px;
+  padding-top: 2px;
+  background : #26A69A;
+  left : -250px;
+  transition : .3s;
+}
+.btnText {
+  color : white;
+  transition : .3s;
+  font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
+}
+.btnText2 {
+  margin-top : 63px;
+  margin-right : -130px;
+  color : #FFF;
+  transition: .3s;
+  font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
+}
+.buttonGo:hover .btnTwo{ /*When hovering over .button change .btnTwo*/
+  left: -130px;
+}
+.buttonGo:hover .btnText{ /*When hovering over .button change .btnText*/
+  margin-left : 65px;
+}
+.buttonGo:active .btnTwo{ /*Clicked and held*/
+	left: 0px;
+}
+.buttonGo:active .btnText2{ /*Clicked and held*/
+	margin-top: 50px;
+	margin-right: 0;
+	font-size: 30px;
+}
+
+/*ESTE STYLE CORRESPONDE CON EL CARRUSEL DE IMÁGENES, ES PLUGGIN*/
+
+.slide-wrap {
+  width: 55vw;
+  height: 20vw;
+  margin: 2% 2%;
+  margin-bottom: 0;
+  position: relative;
+  margin-left: 0;
+  padding: 0;
+}
+
+.slide-wrap li {
+  display: none;
+  width: 300px;
+  position: absolute;
+  z-index: 0;
+  overflow: hidden;
+  box-shadow: 0px 10px 20px #888;
+}
+
+.slide-wrap .inner {
+  position: relative;
+  border: 3px solid #ecfdfd;
+  border-radius: 5px;
+}
+
+.slide-wrap .inner a {
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+.slide-wrap .pic-tit {
+  font-size: 14px;
+  font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
+  width: 100%;
+  height: 65px;
+  line-height: 65px;
+  background: #1ca297;
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  z-index: 99999;
+  text-align: center;
+  color: #FFF;
+  overflow: hidden;
+}
+
+.slide-wrap img {
+  width: 100%;
+  height: 18vw;
+  border: none;
+  outline: none;
+}
+
+.slide-wrap .pos1 {
+  display: block;
+  width: 12vw;
+  height: 11vw;
+  top: 60px;
+  left: 10%;
+  z-index: 1;
+}
+
+.slide-wrap .pos2 {
+  display: block;
+  width: 14vw;
+  height: 14vw;
+  top: 35px;
+  left: 20%;
+  z-index: 2;
+}
+
+.slide-wrap .pos3 {
+  display: block;
+  width: 24vw;
+  height: 18vw;
+  top: 0;
+  left: 29%;
+  z-index: 3;
+}
+
+.slide-wrap .pos4 {
+  display: block;
+  width: 14vw;
+  height: 14vw;
+  top: 35px;
+  right: 20%;
+  z-index: 2;
+}
+
+.slide-wrap .pos5 {
+  display: block;
+  width: 12vw;
+  height: 11vw;
+  top: 60px;
+  right: 10%;
+  z-index: 1;
+}
+
+.slide-wrap .inner {
+  overflow: hidden;
+  position: relative;
+}
+
+.arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #384047;
+  color: #fff;
+  position: absolute;
+  bottom: 150px;
+  z-index: 10;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 48px;
+  text-align: center;
+  font-style: normal;
+}
+
+.prev {
+  top:31vw;
+  left:39vw;
+  background-position: 0px 0px;
+}
+
+.next {
+  top:31vw;
+  right: 8vw;
+  background-position: -52px 0px;
+}

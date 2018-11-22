@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html itemscope itemtype="http://schema.org/SearchResultsPage" lang="es"> <!--escogemos el lenguaje de la pagina web, el español-->
+
+<head>
+
+	<!--titulo de la pagina web con su logo-->
+	<title>El rincón de la opinión</title>
+	<link rel="icon" href="images/logo.png" type="image/png">
+	<!--Se selecciona el tipo de caracter que se va a utilizar-->
+	<meta charset="UTF-8">
+	<!--se realiza el link con la hoja de estilos correspondiente-->
+	<link rel="stylesheet" type="text/css" href="style/styles.css" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<script>
+/*	$(document).ready(function(){
+			$(".botonEliminar").click(function(){
+					$(this).parent().fadeOut(200);
+			});
+	});*/
+	</script>
+
+
+</head>
+
+<body onLoad="changePage()">
+
+
+
+	<header class="header">
+
+		<!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
+		<img id="logo" src="images/logoSinFondo.png" alt="logo"/>
+
+		<h1 id="tituloCabecera">El rincón de la opinión</h1>
+
+		<ul id="listaHeader">
+			<!--bocadillo de las opciones en el header-->
+
+			<li class="seleccionHeader"> <p class="seleccionTexto"> Favoritos </p></li>
+			<li class="seleccionHeader"> <a class="go" rel="leanModal" name="editar" href="#editar" style="text-decoration: none ;color: black"><p class="seleccionTexto"> Editar Datos </p></a> </li>
+			<li class="seleccionHeader"> <p class="seleccionTexto" onclick="closeSesion()"> Logout </p> </li>
+		</ul>
+
+	</header>
+
+	<div id="cuerpo">
+
+		<aside class="aside">
+			<!--este es el aside de la pagina, en el se encuentran la informacion personal del usuario, las ultimas opiniones escritas y sus preferencias-->
+			<div class="divUsuario">
+				<!--informacion personal-->
+				<img id="usuario" src="images/sinFoto.png" alt="user"/>
+				<h3 id="nombreUser">Sergio Martin Montoro</h3>
+			</div>
+
+			<h2 class="linkOpcion" onclick="displayInf()">Información personal</h2>
+			<p class="parrafo">Nombre: Sergio Martín Montoro</p>
+			<p class="parrafo">Pais de origen: España</p>
+			<p class="parrafo">Miembro desde 2018</p>
+
+			<h2 class="linkOpcion" onclick="displayOpi()">Últimas opiniones</h2>
+			<ul class="listaOpiniones"><!--ultimas opiniones escritas-->
+					<!--Se emplea una lista para las opiniones colgadas en la pagina web, estas opiniones estan formadas por un titulo del lugar (link) y un parrafo de la opinion del mismo-->
+					<li>
+						<a class="link" href="http://torrelodones.paxhoteles.com/" target="_blank">Hotel Pax</a>
+						<p class="parrafo">Hotel muy acogedor y con buenas vistas. El servicio de habitaciones es rapido. Está bien ubicado, cerca del centro de Torrelodones.</p>
+
+						<img class="displayNone" src="images/hotelPax.jpg" alt="hotel_pax" style="height: 40px; width: 40px;" />
+					</li>
+					<li>
+						<a class="link" href="http://www.restaurantesala.com/" target="_blank">Restaurante Sala</a>
+						<p class="parrafo">La marisqueria Sala otorga una alta calidad en sus platos,
+							que combinados con un servicio excelente, han hecho que la visita sea muy agradable.</p>
+
+					</li>
+					<li>
+						<a class="link" href="https://www.exehotels.com/exe-victoria-palace.html" target="_blank">Hotel Exe Victoria Palace</a>
+						<p class="parrafo">Un gran hotel y una gran opcion para dormir si visitas San Lorenzo del Escorial. El precio es elevado pero la experiencia lo vale si la estancia es breve</p>
+						<p class="displayNone">Dirección: 4, Calle Juan de Toledo, 28200 San Lorenzo de El Escorial, Madrid</p>
+						<p class="displayNone">Página web: https://www.exehotels.com/exe-victoria-palace.html</p>
+						<p class="displayNone">Número de teléfono: 918 96 70 66</p>
+						<p class="displayNone">Sin redes sociales</p>
+						<p class="displayNone">Descripción: Este hotel está situado en la zona de la Sierra de Guadarrama, a 1 minuto de El Escorial y del monasterio del siglo XV.</p>
+						<p class="displayNone">Tipo de comida: Restaurante tipo buffet con menú del día</p>
+						<p class="displayNone">Clase económica: Media-Alta</p>
+					</li>
+			</ul>
+
+			<div class="divFlex">
+				<h2 class="titulo">Mis preferencias</h2>
+					<!--Botón para añadir nuevas preferencias-->
+				<input class="botonSuma" type="button" value="+" onclick="addPreference()">
+			</div>
+
+				<ul id="listaPreferencias">
+					<!--Lista con las preferencias añadidas en el prefil y un botón para eliminar cada una-->
+					<li class="filaPreferencia">
+						<h4 class="preferencia" onclick="editPreference(event)">Marisco</h4>
+						<input class="botonEliminar" type="button" value="X" onclick="deletePreference(event)">
+				</li>
+					<li class="filaPreferencia">
+						<h4 class="preferencia" onclick="editPreference(event)">Calidad</h4>
+						<input class="botonEliminar" type="button" value="X" onclick="deletePreference(event)">
+				</li>
+					<li class="filaPreferencia">
+						<h4 class="preferencia" onclick="editPreference(event)">Hotel Pax</h4>
+						<input class="botonEliminar" type="button" value="X" onclick="deletePreference(event)">
+				</li>
+					<!--li class="filaPreferencia">
+						<h4 class="preferencia">Weekend</h4>
+						<input class="botonEliminar" type="button" value="X">
+				</li-->
+
+
+				</ul>
+
+		</aside>
+
+
+		<section class="section">
+
+			<div id="section-inf">
+				<!--este es el section de la pagina web, al ser la opcion A del ejercicio2 en el se incorpora la informacion personal del divUsuario
+				de forma mas detallada, incluyendo progreso en la pagina web-->
+				<h2 class="tituloSection">Información personal</h2>
+
+				<div class="divFormulario">
+
+					<h5 class="datoFormulario2">Sergio Martín Montoro</h5>
+
+				</div>
+
+				<div class="divFormulario">
+
+					<h5 class="datoFormulario2">100363655@alumnos.uc3m.es</h5>
+
+				</div>
+
+				<div class="divFormulario">
+
+					<h5 class="datoFormulario1">Calle Miño nº 25</h5>
+					<h5 class="datoFormulario1">608943175</h5>
+
+				</div>
+
+				<div class="divFormulario">
+
+					<h5 class="datoFormulario2">26/08/1998</h5>
+
+				</div>
+
+				<h2 class="tituloSection">Progreso</h2>
+				<!--este es el progreso que el usuario lleva en la pagin a web, se representa en circulos-->
+				<div style="display: flex">
+
+					<div class="divActividad">
+
+						<h5 class="datoActividad">270</h5>
+						<h5 class="datoActividad">puntos</h5>
+
+					</div>
+
+					<div class="divActividad">
+
+						<h5 class="datoActividad">2</h5>
+						<h5 class="datoActividad">nivel</h5>
+
+					</div>
+
+					<div class="divActividad">
+
+						<h5 class="datoActividad">3</h5>
+						<h5 class="datoActividad">opiniones</h5>
+
+					</div>
+
+					<div class="divActividad">
+
+						<h5 class="datoActividad">8</h5>
+						<h5 class="datoActividad">fotos</h5>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+
+			<div id="section-opi">
+
+				<h2 class="tituloSection">Últimas opiniones</h2>
+				<!--este es el section de la pagina web, al ser la opcion B, se mostrara las ultimas opiniones del usuario de manera detallada,
+				cada opinion contiene una foto del lugar y diversos datos-->
+				<div class="divSeccionOpinion">
+					<div class="divFlex">
+						<img class="fotoSeccionOpinion" src="images/hotelPax.jpg" alt="hotel_pax"/>
+						<div class="divTextos">
+							<a class="go" rel="leanModal" name="hotelPax" href="#hotelPax"><h2 class="titulo">Hotel Pax </h2></a>
+							<h2 class="titulo">Torrelodones, Madrid</h2>
+							<h2 class="titulo">19, septiempre, 2018</h2>
+						</div>
+					</div>
+					<p class="parrafo">
+						Hotel muy acogedor y con buenas vistas. El servicio de habitaciones es rapido. Está bien ubicado, cerca del centro de Torrelodones.
+					</p>
+				</div>
+
+				<div class="divSeccionOpinion">
+					<div class="divFlex">
+						<img class="fotoSeccionOpinion" src="images/sala.jpg" alt="sala"/>
+						<div class="divTextos">
+							<a class="go" rel="leanModal" name="restauranteSala" href="#restauranteSala"><h2 class="titulo">Restaurante Sala </h2></a>
+							<h2 class="titulo">Guadarrama, Madrid</h2>
+							<h2 class="titulo">22, septiempre, 2018</h2>
+						</div>
+					</div>
+					<p class="parrafo">
+						La marisqueria Sala otorga una alta calidad en sus platos,
+						que combinados con un servicio excelente, han hecho que la visita sea muy agradable.
+					</p>
+				</div>
+
+				<div class="divLoad">
+					<!--div para la imagen de load more que no tiene ninguna funcionalidad-->
+					<img class="load" src="images/loadMore.png" alt="more"/>
+				</div>
+
+			</div>
+
+		</section>
+
+	</div>
+
+	<footer class="footer"><!--Footer de la pagina web-->
+		<!--Links a las redes sociales de los creadores de la pagina web-->
+		<a class="linkSocial" href="https://www.instagram.com/david.silveira/?hl=es" target="_blank">
+			<img class="redSocial"  src="images/instagram.png" alt="instagram"/>
+		</a>
+
+		<a class="linkSocial" href="https://www.youtube.com/channel/UC0L-DRAlW-ebjHrlk8oSVRg?view_as=subscriber" target="_blank">
+			<img class="redSocial"  src="images/youtube.png" alt="youtube"/>
+		</a>
+		<!--Copyright y derechos reservados-->
+		<small class="copyright">© 2018. ElRinconDeLaOpinion. Todos los derechos reservados.</small>
+
+	</footer>
+	<!--Estos son los popup que se emplean para describir detalladamente los restaurantes y hoteles
+	Al dar click a un elemento que sea de clase go, un elemento de jquery activará estos popup en función del id
+	al que se refieren-->
+	<div id="hotelPax" class="pop" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 200px">
+		<div class="divFlex">
+			<img class="fotoSeccionOpinionPop" src="images/hotelPax.jpg" alt="hotel_pax"/>
+			<h6 class="tituloPop"> Hotel Pax </h6>
+			<button class="botonCerrar">X</button>
+		</div>
+		<p>Dirección: Calle Sama de Langreo, s/n, 28250 Torrelodones, Madrid</p>
+		<p>Página web: http://torrelodones.paxhoteles.com/</p>
+		<p>Número de teléfono: 918 40 66 06</p>
+		<p>Sin redes sociales</p>
+		<p>Descripción: El Hotel PAX TORRELODONESes un establecimiento ubicado en la tranquila localidad de Torrelodones, a 29 kilómetros del centro de Madrid. UN ESPACIO DONDE EL CLIENTE SE SIENTA EN GRAN MEDIDA COMO EN SU HOGAR.</p>
+		<p>Tipo de comida: Desayunos/Buffet  Comida/Menú diario/Cena</p>
+		<p>Clase económica: Media</p>
+		<p>Opinión: Hotel muy acogedor y con buenas vistas. El servicio de habitaciones es rapido. Está bien ubicado, cerca del centro de Torrelodones.</p>
+	</div>
+
+	<div id="restauranteSala" class="pop" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 200px">
+				<div class="divFlex">
+					<img class="fotoSeccionOpinionPop" src="images/sala.jpg" alt="sala"/>
+					<h6 class="tituloPop"> Restaurante Sala </h6>
+					<button class="botonCerrar">X</button>
+				</div>
+				<p>Dirección: Carretera de los Molinos, 2, 28440 Guadarrama, Madrid</p>
+				<p>Página web: www.restaurantesala.com/</p>
+				<p>Número de teléfono: 918 54 21 21</p>
+				<p>Twitter: @RestauranteSala</p>
+				<p>Descripción: Gambas de Huelva y otros platos españoles en esta espaciosa finca con jardín y refinada decoración rústica.</p>
+				<p>Tipo de comida: Marisquería y otros derivados españoles</p>
+				<p>Clase económica: Alta</p>
+				<p>Opinión: La marisqueria Sala otorga una alta calidad en sus platos, que combinados con un servicio excelente, han hecho que la visita sea muy agradable.</p>
+
+	</div>
+	<!--Este es el popup del formulario de edición de datos de la página, aparecen una serie de huecos a rellenar
+	 y si no cumplen con los estipulado o son vacíos al guardar, se pondrán en rojo-->
+	<div id="editar" class="pop" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 200px">
+		<div class="divFlex">
+				<h3 class="tituloInicioSesionPop"> Edite sus datos.</h3>
+				<button class="botonCerrar">X</button>
+		</div>
+		<h4 class="textoRegistro">Información personal </h4>
+		<h4 class="textoInput">Nombre y apellidos </h4>
+		<input class="inputDataRegistro obligatorio2" placeholder="Nombre y apellidos" type="name">
+		<h4 class="textoInput">Fecha de nacimiento </h4>
+		<input class="inputDataRegistro obligatorio2" placeholder="" type="date">
+		<h4 class="textoInput">Dirección </h4>
+		<input class="inputDataRegistro obligatorio2" placeholder="Dirección de domicilio" type="name">
+		<h4 class="textoInput">Imagen de perfil (Opcional) </h4>
+		<div class="divFlex"style="height:80px">
+			  <input type='file' id="imgInp"/>
+			  <img id="blah" src="images/sinFoto.png" style="border-radius:50%"/>
+		</div>
+		<!--Este Jquery llama a la función readURL al hacer un cambio en el formulario en la parte de imagen-->
+		<script type="text/javascript">
+		$("#imgInp").change(function() {
+	    readURL(this);
+	  });
+		</script>
+	<div class="divFlex" style="margin-top:2%">
+		<button class="botonReg botonPop" id="borrar">Borrar</button>
+		<button class="botonReg botonPop" id="guardar">Guardar</button>
+
+	</div>
+	<!--Este jquery permite que al hacer click en un input que está rojo, cambie a blanco
+	el otro script si damos a borrar, resetea los styles de los formularios y cierra el popup-->
+	<script type="text/javascript">
+	$(".inputDataRegistro").click(function(){
+		$(this).css({"background-color": "white"}).fadeIn(2000);
+	});
+	$("#borrar").click(function(){
+		$(".inputDataRegistro").css({"background-color": "white"}).fadeIn(2000);
+		$(".divFlexRegistro").css({"background-color": "white"}).fadeIn(2000);
+		resetRegistro();
+	});
+	</script>
+
+
+	</div>
+	<!--Div que permite oscurecer la pantalla cuando aparece un popup-->
+	<div id="lean_overlay" style="display: none; opacity: 0.7;"></div>
+
+</body>
+
+</html>
