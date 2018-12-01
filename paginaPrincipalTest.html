@@ -17,6 +17,22 @@
     <script src="script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- jQuery UI mouse draggable widget -->
+    <script src="http://ma5slider.ma5.pl/js/jquery-ui.min.js"></script>
+     
+    <!-- Touch Event Support for jQuery UI -->
+    <script src="http://ma5slider.ma5.pl/js/jquery.ui.touch-punch.min.js"></script>
+     
+    <!-- MA5 Slider -->
+    <link href="http://ma5slider.ma5.pl/css/ma5slider.min.css" rel="stylesheet" type="text/css">
+    <script src="http://ma5slider.ma5.pl/js/ma5slider.min.js"></script>
+
+    <script>
+        $(window).on('load', function () {
+            $('.ma5slider').ma5slider();
+        });
+    </script>
+
     <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
     <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
     <script>
@@ -84,6 +100,28 @@
 
         <section>
             
+            <div id="divBusqueda">
+                <h4 class="tituloInicioSesion"> Introduce tu destino, te recomendaremos lo mejor para tí </h4>
+                <div class="divFlex">
+                    <div class="buscar">
+                        <img id="imgBuscar" src="images/logoSinFondo.png" alt="logo" />
+                        <input class="inputBuscar" placeholder="Buscar una ciudad, hotel..." type="search"></div>
+                    <div class="buttonGo">
+                        <p class="btnText">BUSCAR</p>
+                        <div class="btnTwo">
+                            <p class="btnText2">&#x2714;</p>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="tituloInicioSesion"> ¿Cuánto tiempo quieres que dure tu estancia? </h4>
+                <div class="divFlex" style="margin-top:1vw">
+                        <h4 class="tituloInicioSesion" style="margin-left:5vw"> Fecha de salida: </h4>
+                        <input class="fechaBusqueda datepicker" placeholder="dd/mm/aaaa" type="text" >
+                        <h4 class="tituloInicioSesion" style="margin-left:5vw"> Fecha de retorno: </h4>
+                        <input class="fechaBusqueda datepicker" placeholder="dd/mm/aaaa" type="text" >
+                </div>
+            </div>
+
             <div id="divBusqueda">
                 <h4 class="tituloInicioSesion"> Introduce tu destino, te recomendaremos lo mejor para tí </h4>
                 <div class="divFlex">

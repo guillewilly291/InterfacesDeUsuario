@@ -404,5 +404,21 @@ function closeSesion(){//Cierra sesión de la cuenta y nos lleva a la página de
 
 
 //JQuery code
+var next = function(){
+  $('.ma5slider').ma5slider('goToNext');
+}
 
+var timer= window.setInterval(next,3000);
+
+$('#carrusel').on('ma5.activeSlide', function (event, slide) {
+      window.clearInterval(timer);
+      
+      timer=window.setInterval(next,3000);
+ });
+
+ $('#carrusel').on('ma5.activeSlide', function (event, slide) {
+     
+   $("#textFromCarrusel").text(textos[slide-1]);
+
+ });
 //Carousel
