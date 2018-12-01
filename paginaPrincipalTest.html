@@ -134,7 +134,7 @@
 
             <div id="divBusqueda" style= "margin-top:2%">
                 <h4 class="tituloInicioSesion"> Nuestros mejores destinos </h4>
-                <div id="carrusel" class="divFlex" style= "margin-top:2%">
+                <div id="carrusel" class="divFlex" style= "z-index:-10;margin-top:2%">
                        
                                 <div class="ma5slider inside-navs inside-dots hover-dots  anim-horizontal loop-mode  data-tempo = 3500 ">
                                    <div class="slides">
@@ -144,6 +144,18 @@
                                        <a id="slide3" href="#slide-3"><img src="images/img12.jpg" alt=""></a>
                                        <a id="slide4" href="#slide-4"><img src="images/img13.jpg" alt=""></a>
                                        <a id="slide5" href="#slide-4"><img src="images/img14.jpg" alt=""></a>
+                                   </div>
+                                </div>
+                                <div class="informacion">
+                                        <h4 class="tituloInicioSesion"> Dubai, una experiencia única </h4>
+                                        <h4 class="tituloInicioSesion"> Alojamiento en el Burj Khalifa, 
+                                                el rascacielos más exclusivo de Dubai. <br> Mejor precio desde:</h4>
+                                        <div class="divFlex">
+                                                <h4 class="precioNoche">300€</h4>
+                                                <h4 class="noche">/noche</h4>
+                                        </div>
+                                        
+                                </div>
                     
                 </div>
                 
@@ -228,52 +240,90 @@
     </footer>-->
 
     <!--Este es el popup del formulario de edición de datos de la página, aparecen una serie de huecos a rellenar
-	 y si no cumplen con los estipulado o son vacíos al guardar, se pondrán en rojo-->
-    <div id="registro" class="pop" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 200px">
-        <div class="divFlex">
-            <h3 class="tituloInicioSesionPop"> Introduzca su información de registro</h3>
-            <button class="botonCerrar">X</button>
-        </div>
-        <h4 class="textoRegistro">1. Información de la cuenta </h4>
-        <h4 class="textoInput">Nombre de usuario </h4>
-        <input class="inputDataRegistro obligatorio" placeholder="Introduzca el nombre de usuario" type="text">
-        <h4 class="textoInput">Contraseña. Máximo 8 caracteres (letras [a-z] y digitos[0-9]) </h4>
-        <input class="inputDataRegistro obligatorio" placeholder="Contraseña" type="password">
-        <h4 class="textoRegistro">2. Información personal </h4>
-        <h4 class="textoInput">Nombre y apellidos </h4>
-        <input class="inputDataRegistro obligatorio" placeholder="Nombre y apellidos" type="text">
-        <h4 class="textoInput">Correo electrónico </h4>
-        <input class="inputDataRegistro obligatorio" placeholder="ej@ejemplo.extensión" type="email">
-        <h4 class="textoInput">Fecha de nacimiento </h4>
-        <input class="inputDataRegistro obligatorio" type="date">
-        <h4 class="textoInput">Imagen de perfil (Opcional) </h4>
-        <div class="divFlex" style="height:80px">
-            <input type='file' id="imgInp" />
-            <img id="blah" src="images/sinFoto.png" alt="img" style="border-radius:50%" />
-            <!--Este Jquery llama a la función readURL al hacer un cambio en el formulario en la parte de imagen-->
-            <script>
-                $("#imgInp").change(function () {
-                    readURL(this);
-                });
-            </script>
-        </div>
-        <h4 class="textoInput">Dirección </h4>
-        <input class="inputDataRegistro obligatorio" placeholder="Dirección de domicilio" type="text">
-        <div class="divFlexRegistro" style="margin-top:2%">
-            <input type="checkbox" id="check" class="obligatorio">
-            <h4 class="textoRegistro accept ">He leído y acepto las condiciones de uso</h4>
-            <!--Este jquery permite que al hacer click en un input que está rojo, cambie a blanco
-			el otro script si damos a borrar, resetea los styles de los formularios y cierra el popup-->
-            <script>
-                $("#check").click(function () {
-                    $(this).parent().css({ "background-color": "white" }).fadeIn(2000);
-                });
-            </script>
-        </div>
-        <div class="divFlex" style="margin-top:2%">
-            <button class="botonReg botonPop" id="borrar">Borrar</button>
-            <button class="botonReg botonPop" id="guardar">Guardar</button>
-        </div>
+     y si no cumplen con los estipulado o son vacíos al guardar, se pondrán en rojo-->
+     
+     
+    <div id="registro" class="pmodal" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 200px">
+        <form class="modal-contentModified animate" action="/action_page.php" >
+        
+            <div class="imgcontainer">
+                 <button class="btnBorrado" onclick="vaciarForm()" type="button">Borrar</button>
+              <span onclick="cerrar()" class="close" title="Close PopUp">&times;</span>
+              <!--<img src="1.png" alt="Avatar" class="avatar">-->
+              <h2 id="regSesion">  Registro Sesión </h2>
+            </div>
+        
+            <div class="container" style="padding-left: 3%">
+        
+                  <ul  class="progressbar">
+                        <li class="active" id="firstNumber"> Step 1 </li>
+                        <li id="secondNumber"> Step 2 </li> 
+                        <li id="thirdNumber"> Step 3 </li> 
+        
+                   </ul>
+        
+                   <div class="firstStep">
+                    <label style="padding-top: 55px" class="labelRegister " for="userName" >Nombre de usuario</label>
+                       <input class="inputRegister loginInput" id="userName" type="text">
+                 </div>
+        
+                     <div class="firstStep">
+                        <label style="padding-top: 13px" class="labelRegister " for="password" >Contraseña</label>
+                           <input class="inputRegister loginInput" id="password" type="password">
+                     </div>
+        
+                 <div class="secondStep" >
+                    <label style="padding-top: 55px" class="labelRegister " for="nameSurname" >Nombre y Apellidos</label>
+                       <input class="inputRegister loginInput" id="nameSurname" type="text">
+                 </div>
+        
+                     <div class="secondStep" >
+                        <label style="padding-top: 13px" class="labelRegister " for="email" >Email</label>
+                           <input class="inputRegister loginInput" id="email" type="text">
+                     </div>
+        
+                 <div class="thirdStep" >
+                    <label style="padding-top: 55px" class="labelRegister " for="year" >Fecha de Nacimiento</label>
+                       <input class="inputRegister loginInput" id="year" type="date">
+                 </div>
+        
+                     <div class="thirdStep" >
+                        <label style="padding-top: 13px" class="labelRegister " for="address" >Dirección</label>
+                           <input class="inputRegister loginInput" id="address" type="text">
+                     </div>
+        
+                 <div class="thirdStep" >
+                        <label style="padding-top: 13px" class="labelRegister " for="address" >Imagen  de Perfil</label>
+                        <div><input type="file" id="file-uploader">
+                            <div id="file-preview-zone">
+                                    <img id="file-preview" alt="Error" src="images/logo2.png">
+                              </div>
+                           
+                        
+        
+                     </div>
+        
+                </div>
+        
+                </div>
+        
+                    <div class="login " id="step1">	
+                        <button  class="textLogin"  onclick=" checkNamePassword()" type="button"> Siguiente </button>
+                    </div>	
+        
+                    <div class="login" id="step2" style="display: none;">
+                            <button class="textLogin" id="changeto3" onclick="checkName()" style="display: inline-block; float:right; " type="button"> Siguiente </button>
+        
+                            <button class="textLogin" id="changeto1" onclick="changeStepTo1()" style="display: inline-block; float:left" type="button"> Anterior </button >
+                    </div>	
+                    
+                    <div class="login" id="step3" style="display: none;">
+                            <input id="checkbox" type="checkbox" style="margin:10px 10px;margin-bottom: 25px">Haciendo click acepta las condiciones de Uso que puede encontrar <span id="condicionesAqui">Aquí</span>.
+                            <button  class="textLogin" id="changeto1.1" onclick="changeStepTo2()"  style="display: inline-block; float:left" type="button"> Anterior </button >
+        
+                            <button  class="textLogin" id="changeto3.1"  style="display: inline-block; float:right;" type="button" onclick= "checkDate()"> Guardar </button >
+                    </div>
+                </form>
 
         <!--Este jquery permite que al hacer click en un input que está rojo, cambie a blanco
 	el otro script si damos a borrar, resetea los styles de los formularios y cierra el popup-->
@@ -292,18 +342,25 @@
     </div>
 
     <!--Div en el que aparece un popup de inicio de sesión-->
-    <div id="sesion" class="pop" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 500px">
-        <div class="divFlex">
-            <h3 class="tituloInicioSesionPop"> Inicia sesión aquí </h3>
-            <button class="botonCerrar">X</button>
-        </div>
-        <h4 class="textoInicioSesion"> Correo electrónico </h4>
-        <input class="inputDataSesion" placeholder="Email" type="email">
-
-        <h4 class="textoInicioSesion"> Contraseña </h4>
-        <input class="inputDataSesion" placeholder="Password" type="password"><br>
-        <button class="botonReg botonEntrar botonEntrarPop">Entrar</button>
-    </div>
+    <div id="sesion" class="pmodal" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 500px">
+        <form class="modal-content animate" action="/action_page.php">
+        
+            <div class="imgcontainer">
+              <span onclick="cerrar()" class="close" title="Close PopUp">&times;</span>
+              <!--<img src="1.png" alt="Avatar" class="avatar">-->
+              <h2 style="text-align:center">Iniciar Sesión</h2>
+            </div>
+        
+            <div class="container">
+              <input id="loginUser" class="loginInput" type="text" placeholder="Enter Username" name="uname">
+              <input id="loginPassword" class="loginInput" type="password" placeholder="Enter Password" name="psw">        
+              <button onclick="checkCookie()" class="botonInitPage" type="button">Login</button>
+              
+              <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
+            </div>
+                    
+            </form>
+         </div>
     <script>
         $(".botonEntrar").click(function () {
             checkUser();
@@ -313,8 +370,36 @@
     <!--Div que permite oscurecer la pantalla cuando aparece un popup-->
     <div id="lean_overlay" style="display: none; opacity: 0.7;"></div>
 
-
+    <script>function readFile(input) {
+            if (input.files && input.files[0]) {
+              
+              if(document.getElementById("file-preview")!=null){
+                $("#file-preview").remove();
+              }
+                var reader = new FileReader();
+          
+                reader.onload = function (e) {
+                    var filePreview = document.createElement('img');
+                    filePreview.id = 'file-preview';
+                    //e.target.result contents the base64 data from the image uploaded
+                    filePreview.src = e.target.result;
+                    console.log(e.target.result);
+          
+                    var previewZone = document.getElementById('file-preview-zone');
+                    previewZone.appendChild(filePreview);
+                }
+          
+                reader.readAsDataURL(input.files[0]);
+            }
+          }
+          
+          var fileUpload = document.getElementById('file-uploader');
+          fileUpload.onchange= function (e) {
+            readFile(e.srcElement);
+          }</script>
 
 </body>
 
-</html>
+
+</html> 
+

@@ -1,5 +1,7 @@
 
-
+*{
+  font-family:Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
+}
 body {
   /*Establecemos un fondo al body de la web*/
   background-image: url(../images/proto.jpg);
@@ -155,7 +157,8 @@ body {
     header {
        background-color:  rgba(201, 241, 253, 0.92);
 	 display: flex;
-
+      position: fixed;
+      width: 100%
     }
 
 @media only screen and (min-width: 600px)  {
@@ -166,7 +169,8 @@ body {
 	    background-color: white;
 	    border-radius: 6px;
     	padding: 30px;
-    	width: 55vw;
+      width: 55vw;
+      margin-top:10%;
     }
     .mobile{
 
@@ -210,6 +214,8 @@ body {
     header{
       border-bottom: solid #080808 2.5px !important;
       background: #c0e9f9 !important;  
+      position: fixed;
+      width:100%;
     }
     
     #divCentral{
@@ -449,10 +455,31 @@ h1{
   margin: 2% 0;
 	background-color: white;
 	border-radius: 6px;
-	padding: 30px;
+  padding: 30px;
+  padding-bottom:0;
 	margin-left: 10%;
   padding-bottom: 0;
 
+}
+
+.informacion{
+  margin:0 2%;
+}
+
+.precioNoche{
+  margin: 0;
+  margin-left: 7vw;
+  margin-top: 1vw;
+  color: #74bc4b;
+  font-size: 2.2vw;
+ font-family: Helvetica, Arial, sans-serif;
+}
+
+.noche{
+  margin:1.6vw;
+  color: #000000;
+  font-size: 1.6vw;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 /*styles para el formulario de registro*/
@@ -730,4 +757,319 @@ footer{
   top:31vw;
   right: 8vw;
   background-position: -52px 0px;
+}
+.modal-content {
+  background-color: #fefefe;
+  /* margin: 4% auto 15% auto; */
+  border: 1px solid #888;
+  width: 600px;
+  vertical-align: middle;
+  padding-bottom: 30px;
+  position: absolute;
+  top: calc(50% - 300px);
+  left: calc(50% - 300px);
+  height: 600px;
+}
+/* Add Zoom Animation */
+.animate {
+  animation: zoom 0.6s
+}
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: black;
+  font-size: 35px;
+  font-weight: bold;
+}
+.close:hover,.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.modal {
+  display:none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+.loginInput {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 26px;
+  display: inline-block;
+  border-bottom: solid #C8C8C8 .1rem !important;
+  border: none;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.botonInitPage {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 26px;
+  border: none;
+  cursor: pointer;
+  width: 90%;
+font-size:20px;
+}
+.btnBorrado {
+  float: left;
+  background-color: #ed2f26;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  margin-left: 53px;
+  margin-top: 11px;
+}
+.textLogin:hover {
+  opacity: 0.8;
+}
+#regSesion{
+  text-align:center;
+  margin-right: 137px;
+}
+
+.progressbar{
+
+  counter-reset: step;
+  padding-left: 0px  !important;
+}
+.progressbar li{
+
+    list-style-type: none;
+    float: left;
+    width: 33.33%;
+    position: relative;
+    text-align: center;
+   
+   
+   
+}
+   .progressbar li:before {
+   content: counter(step);
+   counter-increment:  step;
+   width: 30px;
+   height: 30px;
+   line-height: 30px;
+   border: 3px solid grey;
+   display: block;
+   text-align: center;
+   margin: 0 auto 10px auto;
+   border-radius: 50%;
+   
+   }
+   
+   
+.secondStep{
+
+  display: none;
+
+}
+
+.active{
+
+  display: block;
+}
+
+
+.firstStep{
+
+
+}
+
+
+
+.secondStep{
+
+  display: none;
+
+}
+
+.active{
+
+  display: block;
+}
+
+
+
+.thirdStep{
+
+  display: none;
+
+}
+
+.progressbar li.active{
+
+  color: #ff0000;
+
+
+}
+
+.progressbar li.active:before{
+  border-color: #ff0000;
+}
+
+
+#step2{
+
+ width: 85%;
+
+
+}
+
+#step3{
+
+ width: 85%;
+
+
+}
+
+
+.errorBorder{
+
+  background-color:#d41d1d54 !important; 
+
+}
+
+.btnBorrado{
+  
+float: left;
+  
+background-color: #ed2f26;
+  
+color: white;
+  
+padding: 10px 20px;
+  
+border: none;
+  
+cursor: pointer;
+  
+font-size: 16px;
+  
+text-align: center;
+  
+margin-left: 53px;
+  
+margin-top: 11px;
+}
+#regSesion{
+  text-align:center;
+  margin-right: 137px;
+}
+
+#condicionesAqui{
+    color:blue;
+
+}
+
+#condicionesAqui:hover{
+    cursor:pointer;
+    text-decoration: underline;
+}
+#file-preview{
+  width: 60px;
+  border-radius: 50px 50px 50px 50px;
+  /* border: 1px solid black; */
+  height: 60px;
+}
+
+#file-uploader{
+  float:left;
+  margin-top: 21px;
+  margin-left: 31px;
+}
+
+#file-preview-zone{
+  float:  left;
+  
+  width: 100px;
+}
+
+#year{
+    font-size: 14px;
+    width: 90%;
+    padding-left: 11px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.labelRegister {
+  padding-left: 12px;
+  color: black !important;
+}
+label {
+  display: table-cell;
+}
+.inputRegister {
+  border: 0 none !important;
+  border-radius: 30px;
+  box-sizing: none;
+  background-color: #93e6ffb0 !important;
+}
+input {
+  outline: rgba(0,0,0,0);
+}
+.textLogin {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+.modal-contentModified {
+  background-color: white;
+  width: 600px;
+  vertical-align: middle;
+  padding-bottom: 30px;
+  position: absolute;
+  top: calc(50% - 300px);
+  left: calc(50% - 300px);
+  height: 600px;
+}
+form {
+  display: table;
+}
+
+#regSesion {
+  text-align: center;
+  margin-right: 137px;
+}
+.container {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+.login {
+  margin: 8px 26px;
+  margin-top: 2% !important;
+  vertical-align: top!important;
+  margin-left: 8%;
+  margin-right: 8%;
+  float: right;
+}
+h2 {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20px;
+}
+.errorBorder {
+  background-color: #d41d1d54 !important;
 }
