@@ -31,7 +31,7 @@
 
 
 
-    <header class="phone header ">
+    <header class="header ">
 
         <!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
         <img id="logo" src="images/logoSinFondo.png" alt="logo" />
@@ -40,9 +40,7 @@
 
         <ul id="listaHeader">
             <!--bocadillo de las opciones en el header-->
-            <li class="seleccionHeader">
-                <p class="seleccionTexto"> Inicio </p>
-            </li>
+            
             <li class="seleccionHeader"> <a class="go" href="#sesion" style="text-decoration: none ;color: black">
                     <p class="seleccionTexto"> Iniciar sesión </p>
                 </a> </li>
@@ -53,7 +51,7 @@
 
     </header>
 
-    <div class="phone divFlex " id="divCentral">
+    <div class="col-m-12 divFlex " id="divCentral">
 
     
         <!--<aside>
@@ -84,8 +82,8 @@
 
         <section>
             
-            <div id="divBusqueda">
-                <h4 class="tituloInicioSesion"> Introduce tu destino, te recomendaremos lo mejor para tí </h4>
+            <div  class="col-m-12" id="divBusqueda">
+                <h4 class="tituloInicioSesion text-Mobile"> Introduce tu destino, te recomendaremos lo mejor para tí </h4>
                 <div class="divFlex">
                     <div class="buscar">
                         <img id="imgBuscar" src="images/logoSinFondo.png" alt="logo" />
@@ -97,12 +95,24 @@
                         </div>
                     </div>
                 </div>
-                <h4 class="tituloInicioSesion"> ¿Cuánto tiempo quieres que dure tu estancia? </h4>
-                <div class="divFlex" style="margin-top:1vw">
+                <h4 class="tituloInicioSesion text-Mobile"> ¿Cuánto tiempo quieres que dure tu estancia? </h4>
+                <div class="divFlex divCustom pc" style="margin-top:1vw">
                         <h4 class="tituloInicioSesion" style="margin-left:5vw"> Fecha de salida: </h4>
                         <input class="fechaBusqueda datepicker" placeholder="dd/mm/aaaa" type="text" >
                         <h4 class="tituloInicioSesion" style="margin-left:5vw"> Fecha de retorno: </h4>
-                        <input class="fechaBusqueda datepicker" placeholder="dd/mm/aaaa" type="text" >
+                        <input class="fechaBusqueda datepicker" placeholder="dd/mm/aaaa" type="text">
+                </div>
+               
+                   
+
+                <div class="divFlex divCustom mobile" style="margin-top:1vw">
+                    <h4 class="tituloInicioSesion" style="margin-left:5vw"> Fecha de salida: </h4>
+                    <input class="fechaBusqueda datepicker" placeholder="dd/mm/aaaa" type="text">
+                
+                </div>
+                <div class="divFlex divCustom mobile" style="margin-top:1vw">
+                    <h4 class="tituloInicioSesion" style="margin-left:5vw"> Fecha de retorno: </h4>
+                    <input class="fechaBusqueda datepicker" placeholder="dd/mm/aaaa" type="text">
                 </div>
             </div>
             
