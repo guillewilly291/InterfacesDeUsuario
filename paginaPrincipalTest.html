@@ -24,7 +24,7 @@
     <script src="http://ma5slider.ma5.pl/js/jquery.ui.touch-punch.min.js"></script>
      
     <!-- MA5 Slider -->
-    <link href="http://ma5slider.ma5.pl/css/ma5slider.min.css" rel="stylesheet" type="text/css">
+    <link href="style/ma5slider.min.css" rel="stylesheet" type="text/css">
     <script src="http://ma5slider.ma5.pl/js/ma5slider.min.js"></script>
 
     <script>
@@ -132,26 +132,21 @@
                 </div>
             </div>
 
-            <div id="divBusqueda">
-                <h4 class="tituloInicioSesion"> Introduce tu destino, te recomendaremos lo mejor para tí </h4>
-                <div class="divFlex">
-                    <div class="buscar">
-                        <img id="imgBuscar" src="images/logoSinFondo.png" alt="logo" />
-                        <input class="inputBuscar" placeholder="Buscar una ciudad, hotel..." type="search"></div>
-                    <div class="buttonGo">
-                        <p class="btnText">BUSCAR</p>
-                        <div class="btnTwo">
-                            <p class="btnText2">&#x2714;</p>
-                        </div>
-                    </div>
+            <div id="divBusqueda" style= "margin-top:2%">
+                <h4 class="tituloInicioSesion"> Nuestros mejores destinos </h4>
+                <div id="carrusel" class="divFlex" style= "margin-top:2%">
+                       
+                                <div class="ma5slider inside-navs inside-dots hover-dots  anim-horizontal loop-mode  data-tempo = 3500 ">
+                                   <div class="slides">
+                       <!-- children = slides -->
+                                       <a id="slide1" href="#slide-1"><img src="images/img20.jpg" alt=""></a>
+                                       <a id="slide2" href="#slide-2"><img src="images/img11.jpg" alt=""></a>
+                                       <a id="slide3" href="#slide-3"><img src="images/img12.jpg" alt=""></a>
+                                       <a id="slide4" href="#slide-4"><img src="images/img13.jpg" alt=""></a>
+                                       <a id="slide5" href="#slide-4"><img src="images/img14.jpg" alt=""></a>
+                    
                 </div>
-                <h4 class="tituloInicioSesion"> ¿Cuánto tiempo quieres que dure tu estancia? </h4>
-                <div class="divFlex" style="margin-top:1vw">
-                        <h4 class="tituloInicioSesion" style="margin-left:5vw"> Fecha de salida: </h4>
-                        <input class="fechaBusqueda datepicker" placeholder="dd/mm/aaaa" type="text" >
-                        <h4 class="tituloInicioSesion" style="margin-left:5vw"> Fecha de retorno: </h4>
-                        <input class="fechaBusqueda datepicker" placeholder="dd/mm/aaaa" type="text" >
-                </div>
+                
             </div>
             
             <!--<div id="galeria">
@@ -210,14 +205,14 @@
 
 
 
-        </section>-->
+        </section>
 
 
     </div>
 
 
-    <footer>
-        <!--Footer de la pagina web-->
+    <!--<footer>
+        <!--Footer de la pagina web
         <a class="linkSocial" href="https://www.instagram.com/david.silveira/?hl=es" target="_blank">
             <img class="imagenSocial" src="images/instagram.png" alt="instagram" />
         </a>
@@ -226,11 +221,11 @@
             <img class="imagenSocial" src="images/youtube.png" alt="youtube" />
         </a>
 
-        <!--Copyright y derechos reservados-->
+        <!--Copyright y derechos reservados
         <div class="copyright">
             <p class="copyrightTexto">© 2018. ElRinconDeLaOpinion. Todos los derechos reservados.</p>
         </div>
-    </footer>
+    </footer>-->
 
     <!--Este es el popup del formulario de edición de datos de la página, aparecen una serie de huecos a rellenar
 	 y si no cumplen con los estipulado o son vacíos al guardar, se pondrán en rojo-->
