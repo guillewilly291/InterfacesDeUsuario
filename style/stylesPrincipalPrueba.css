@@ -158,16 +158,125 @@ body {
 
     }
 
+@media only screen and (min-width: 600px)  {
+
+
+    #divBusqueda{
+	    margin-left:35%;
+	    background-color: white;
+	    border-radius: 6px;
+    	padding: 30px;
+    	width: 55vw;
+    }
+    .mobile{
+
+      display: none !important;
+    }
+} 
 
 
 @media only screen and (max-width: 600px)  {
 
-    .phone{
+    .desktop{
 
         display: none !important;
         
     }
+   
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50% !important;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+
+    .col-m-12 {
+      width: 100vw !important;
+      height: 100vh;
+  
+    }
+    .mobile{
+      display: flex  !important;
+    }
+    .pc{
+
+      display: none  !important;
+    }
+    header{
+      border-bottom: solid #080808 2.5px !important;
+      background: #c0e9f9 !important;  
+    }
     
+    #divCentral{
+
+      padding: 0% !important;
+
+    }
+    .seleccionHeader{
+
+      margin: 0% !important;
+
+    }
+    .tituloInicioSesion{
+      font-size: 2.3vw !important; 
+    }
+
+    #divBusqueda{
+	    background: linear-gradient(to bottom, #c0e9f9 0%, #0099ff59 46%);
+      padding-top: 10px !important;
+      padding-bottom: 14px !important;
+    }    
+    .tituloInicioSesion{
+
+      margin: 2% !important;
+      
+    }
+    .divCustom{
+
+      text-align: center;
+      margin-left: 30% !important;
+      margin-top: 14px !important;
+    }
+    .fechaBusqueda{
+
+      margin: 0px 0 0px 3px !important;
+
+    }
+    .inputBuscar{
+      padding-left: 14px !important;
+      font-size:70% !important;
+    }
+    #imgBuscar {
+     width: 10% !important;
+    }
+    .fechaBusqueda{
+
+          width: 20% !important;
+    }
+    #imgBuscar{
+      display: none;
+    }
+    .buscar{
+      margin-left: 10px !important;
+         border: 2px solid #ff9907 !important;
+    }
+    .buttonGo{
+      height: 38px !important;
+      
+    }
+    .btnText {
+    margin-top: 7% !important;
+    }
+    #tituloCabecera{
+
+      font-size: 3.3vw !important;
+     
+    }
 }
 
 
@@ -207,7 +316,8 @@ h1{
 .seleccionTexto{
 	font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 	font-size: 2vw;
-	padding: 0 20px
+  padding: 0 20px;
+  font-weight: bold;
 }
 
 .seleccionHeader:hover{
@@ -234,13 +344,6 @@ h1{
 	width: 25vw;
 }
 
-#divBusqueda{
-	margin-left:35%;
-	background-color: white;
-	border-radius: 6px;
-	padding: 30px;
-	width: 55vw;
-}
 
 /*textos para el div de inicio de sesión*/
 .tituloInicioSesion{
