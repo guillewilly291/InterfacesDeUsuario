@@ -399,8 +399,8 @@ h1{
 
 #check{
   margin: auto 2%;
-  -webkit-transform: scale(2);
-  -moz-transform: scale(2);
+  /*-webkit-transform: scale(2);
+  -moz-transform: scale(2);*/
 }
 
 /*botones*/
