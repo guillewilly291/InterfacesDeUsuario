@@ -251,7 +251,7 @@ body {
       margin: 0px 0 0px 3px !important;
 
     }
-    .inputBuscar{
+    #inputBuscar {
       padding-left: 14px !important;
       font-size:70% !important;
     }
@@ -416,7 +416,7 @@ h1{
 	border: 2px solid #46b8da;
 }
 
-.inputBuscar{
+#inputBuscar{
   width:100%;
   height: 100%;
   /*font-size: 35px;*/

@@ -37,7 +37,14 @@
     <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
     <script>
     $( function() {
-      $( ".datepicker" ).datepicker();
+      $( ".datepicker" ).datepicker({
+          onSelect: function(date){
+              debugger
+               $(".datepicker2").datepicker(
+                  'option', 'minDate', date
+              );
+          }
+      });
     } );
     </script>
 
@@ -103,7 +110,7 @@
                 <div class="divFlex">
                     <div class="buscar">
                         <img id="imgBuscar" src="images/logoSinFondo.png" alt="logo" />
-                        <input class="inputBuscar" placeholder="Buscar una ciudad, hotel..." type="search"></div>
+                        <input id="inputBuscar" placeholder="Buscar una ciudad, hotel..." type="search"></div>
                     <div class="buttonGo">
                         <p class="btnText">BUSCAR</p>
                         <div class="btnTwo">
@@ -116,7 +123,7 @@
                         <p class="tituloInicioSesion" id="fecha" style="margin-left:5vw"> Fecha de salida: </p>
                         <input class="fechaBusqueda datepicker" id="fecha1" placeholder="dd/mm/aaaa" type="text" >
                         <p class="tituloInicioSesion" id="fecha" style="margin-left:5vw"> Fecha de retorno: </p>
-                        <input class="fechaBusqueda datepicker" id="fecha2" placeholder="dd/mm/aaaa" type="text">
+                        <input class="fechaBusqueda datepicker datepicker2" id="fecha2" placeholder="dd/mm/aaaa" type="text">
                 </div>
                
                    
@@ -381,7 +388,32 @@
     <!--Div que permite oscurecer la pantalla cuando aparece un popup-->
     <div id="lean_overlay" style="display: none; opacity: 0.7;"></div>
 
-    <script>function readFile(input) {
+    <script>
+    $(function () {
+            $('#ui-datepicker-div').datepicker({
+                beforeShow: function (input, inst) {
+                    inst.dpDiv.css({ marginTop: -input.offsetHeight + 'px', marginLeft: input.offsetWidth + 'px' });
+                },
+                dateFormat: "dd/mm/yyyy",
+                //startView: 1,
+                //daysOfWeekDisabled: "3,4",
+                //autoclose: true,
+                //todayHighlight: true,
+                //onClose: function (dateText, inst) { alert("here"); }
+                onSelect: function (dateText, inst) {
+                    alert("Working");
+                },
+                onClose: function (date) {
+                    var dt = new Date(date);
+                    alert(dt.getMonth());
+                }
+            });
+        });
+   
+    
+    
+    
+    function readFile(input) {
             if (input.files && input.files[0]) {
               
               if(document.getElementById("file-preview")!=null){

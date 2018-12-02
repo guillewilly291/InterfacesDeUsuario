@@ -1,7 +1,9 @@
 $(function($){
+ 
   // scripts de JQUERY que llaman a las funciones de los plugins, uno para pop-up y otro para carrusel
   $(".go").leanModal({ top : 500, overlay : 0.7, closeButton: ".modal_close" });
   $(".go2").leanModal({ top : 500, overlay : 0.7});
+ 
   $('#demo').RollingSlider({
     showArea:"#example",
     prev:"#jprev",
@@ -730,4 +732,8 @@ function createCookie(){
   }
 }
 
+function buscar(){
+  document.getElementById("fecha1").value;
+  $("#fecha2").datepicker("option", "minDate", new Date(2007, 1 - 1, 1));
 
+}
