@@ -203,11 +203,13 @@ header {
     height: 3vw;
     margin: auto 3%;
     margin-left: 8%;
+    cursor: pointer;
 }
 #imagenCabecera{
 	width: 3vw;
-    height: 3vw;
-
+	height: 3vw;
+	border-radius: 50%;
+	z-index: 100;
 }
 
 h1 {
@@ -222,10 +224,20 @@ h1 {
 	/*display: flex;*/
 	margin: 0;
 	padding: 0;
-  width: 40%;
+	width: 40%;
+
 	list-style-type: none;
 }
 
+#listaHeader1{
+	/*display: flex;*/
+	margin: 0;
+	float: right;
+	padding: 0;
+	z-index: -1000;
+	width: 22%;
+	list-style-type: none;
+}
 
 .seleccionHeader{
 	margin: 0 3%;
@@ -238,6 +250,7 @@ h1 {
 	font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 	/* font-size: 2vw; */
 	padding: 0 20px;
+	float: right;
 	font-weight: bold;
 	margin-bottom: 21px;
 }

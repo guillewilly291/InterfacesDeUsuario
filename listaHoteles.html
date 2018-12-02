@@ -44,22 +44,53 @@
 
 <body onLoad="realizarBusqueda()">
 
-	<header class="dHeader">
-
+	
+	<header class="header" id="guestHeader">
+	
 		<!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
-		<img id="dLogo" src="images/logoSinFondo.png" alt="logo"/>
-
+		<img id="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackGuest2()" />
+	
 		<h1 id="tituloCabecera">El rincón de la opinión</h1>
-
+	
 		<ul id="listaHeader">
 			<!--bocadillo de las opciones en el header-->
-
-			<li class="seleccionHeader"> <p class="seleccionTexto"> Favoritos </p></li>
-			<li class="seleccionHeader"> <a class="go" rel="leanModal" name="editar" href="#editar" style="text-decoration: none ;color: black"><p class="seleccionTexto"> Editar Datos </p></a> </li>
-			<li class="seleccionHeader"> <p class="seleccionTexto" onclick="closeSesion()"> Logout </p> </li>
+	
+			<li class="seleccionHeader"> <a class="go" href="#sesion" style="text-decoration: none ;color: black">
+					<p class="seleccionTexto"> Iniciar sesión </p>
+				</a> </li>
+			<li class="seleccionHeader"> <a class="go2" href="#registro" style="text-decoration: none ;color: black">
+					<p class="seleccionTexto"> Registrarse </p>
+				</a> </li>
 		</ul>
-
+	
 	</header>
+	
+	<header class="header" id="userHeader" style="display: none">
+	
+		<!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
+		<img id="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackLogged2()" />
+	
+		<h1 id="tituloCabecera" style="margin-left: 0">El rincón de la opinión</h1>
+	
+		<h1 id="nombreEnCabecera" style="font-family: Arial,Tahoma,'Bitstream Vera Sans',sans-serif; display: inline-block ; margin: 0%; width: 8%;padding-top: 13px;font-size: 1.5em;margin-left: 365px;">
+		</h1>
+	
+		<img id="imagenCabecera" src="images/logoSinFondo.png" alt="logo" />
+	
+		<ul id="listaHeader1">
+			<!--bocadillo de las opciones en el header-->
+			<li class="seleccionHeader" onclick="closeSesionTotal2()"> <a href="#registro" style="text-decoration: none ;color: black">
+					<p class="seleccionTexto"> Cerrar sesión </p>
+				</a> </li>
+			<li class="seleccionHeader" onclick="goPerfil2()"> <a href="#registro" style="text-decoration: none ;color: black">
+					<p class="seleccionTexto"> Mi perfil </p>
+				</a> </li>
+	
+		</ul>
+	
+	</header>
+	
+
 
 	<div id="cuerpo">
 

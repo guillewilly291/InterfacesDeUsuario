@@ -87,9 +87,62 @@ function insertDates(){
 	return true;
  }
 
+ function userLogged2(){
+	var bool = localStorage.getItem("ZZZZ");
+	debugger
+	if(bool=="true"){
+	  cambiarHeader2();
+	}else{
+	  return;
+	}
+  }
+
+  function cambiarHeader2() {
+	var primero= "AAAA";
+	  debugger
+	  conjunto = localStorage.getItem(localStorage.getItem(primero)).split(";");
+	 
+	  $("#nombreEnCabecera").text("Hola " + localStorage.getItem(localStorage.getItem(primero)).split(";")[5]);
+	
+	  if (conjunto[7] != "" && conjunto[7] != null) {
+	   
+		$("#imagenCabecera")[0].src = conjunto[6] + ";" + conjunto[7];
+	  } else {
+	   
+		$("#imagenCabecera")[0].src = conjunto[6];
+	  }
+	  $("#guestHeader").hide();
+	  $("#userHeader").show();
+	  
+  }
+
+  function closeSesionTotal2() {//Cierra sesión de la cuenta y nos lleva a la página de inicio
+	$("#userHeader").hide();
+	$("#guestHeader").show();
+	 localStorage.removeItem("ZZZZ");
+	localStorage.setItem("ZZZZ", false);
+	document.location.href="paginaPrincipalTest.html";
+  }
+  
+  function goPerfil2(){
+	document.location.href="ejercicio1.html";
+  }
+  
+  function goBackGuest2(){
+	document.location.href="paginaPrincipalTest.html";
+  }
+  
+  function goBackLogged2(){
+	localStorage.removeItem("ZZZZ");
+	localStorage.setItem("ZZZZ",true);
+  
+	document.location.href="paginaPrincipalTest.html";
+  
+  }
+
 
  function realizarBusqueda(){
-
+	userLogged2();
  	debugger;
 
  	if(document.getElementById('inputBuscar').value == ''){
@@ -210,5 +263,19 @@ function insertDates(){
 
  	document.getElementById("fecha1").value = localStorage.getItem('fechaIni');
  	document.getElementById("fecha2").value = localStorage.getItem('fechaFin');
+
+ }
+
+
+ function checkRadioButton(e){
+ 	debugger;
+
+ 	var arButtons = document.getElementsByClassName('radioButton');
+
+ 	for(var i = 0; i < arButtons.length; i++){
+ 		arButtons[i].checked = false;
+ 	}
+
+ 	e.target.checked = true;
 
  }

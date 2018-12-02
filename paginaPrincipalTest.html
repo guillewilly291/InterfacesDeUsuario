@@ -52,14 +52,14 @@
 
 </head>
 
-<body>
+<body onLoad=userLogged()>
 
 
 
-    <header class="header ">
+    <header class="header" id="guestHeader">
 
         <!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
-        <img id="logo" src="images/logoSinFondo.png" alt="logo" />
+        <img id="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackGuest()" />
 
         <h1 id="tituloCabecera">El rincón de la opinión</h1>
 
@@ -74,6 +74,31 @@
                 </a> </li>
         </ul>
 
+    </header>
+
+    <header class="header" id="userHeader" style="display: none">
+    
+        <!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
+        <img id="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackLogged()" />
+    
+        <h1 id="tituloCabecera" style="margin-left: 0">El rincón de la opinión</h1>
+    
+        <h1 id="nombreEnCabecera" style="font-family: Arial,Tahoma,'Bitstream Vera Sans',sans-serif; display: inline-block ; margin: 0%; width: 8%;padding-top: 13px;font-size: 1.5em;margin-left: 365px;">
+        </h1>
+    
+        <img id="imagenCabecera" src="images/logoSinFondo.png" alt="logo" />
+    
+        <ul id="listaHeader1">
+            <!--bocadillo de las opciones en el header-->
+            <li class="seleccionHeader" onclick="closeSesion()"> <a href="#registro" style="text-decoration: none ;color: black">
+                    <p class="seleccionTexto"> Cerrar sesión </p>
+                </a> </li>
+            <li class="seleccionHeader" onclick="goPerfil()"> <a href="#registro" style="text-decoration: none ;color: black">
+                 <p class="seleccionTexto"> Mi perfil </p>
+             </a> </li>
+            
+        </ul>
+    
     </header>
 
     <div class="col-m-12 divFlex " id="divCentral">

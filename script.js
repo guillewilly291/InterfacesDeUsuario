@@ -28,13 +28,13 @@ $(function($){
   		userName.addEventListener("keyup", function(event){
   			event.preventDefault();
   			if(event.keyCode === 13){
-  				 checkNamePassword();
+  				checkNamePassword();
   			}
   		});
   		password.addEventListener("keyup", function(event){
   			event.preventDefault();
   			if(event.keyCode === 13){
-  				 checkNamePassword();
+  				checkNamePassword();
   			}
   		});
   		var nameSurname= document.getElementById("nameSurname");
@@ -442,7 +442,44 @@ function editarCuenta(data){//Modifica datos de la cuenta de usuario
 }
 
 function closeSesion(){//Cierra sesión de la cuenta y nos lleva a la página de inicio
-  document.location.href="paginaPrincipal.html";
+  localStorage.removeItem("ZZZZ");
+  localStorage.setItem("ZZZZ", false);
+    $("#userHeader").hide();
+    $("#guestHeader").show(); 
+}
+
+function closeSesionTotal() {//Cierra sesión de la cuenta y nos lleva a la página de inicio
+  $("#userHeader").hide();
+  $("#guestHeader").show();
+   localStorage.removeItem("ZZZZ");
+  localStorage.setItem("ZZZZ", false);
+  document.location.href="paginaPrincipalTest.html";
+}
+
+function goPerfil(){
+  document.location.href="ejercicio1.html";
+}
+
+function goBackGuest(){
+  document.location.href="paginaPrincipalTest.html";
+}
+
+function goBackLogged(){
+  localStorage.removeItem("ZZZZ");
+  localStorage.setItem("ZZZZ",true);
+
+  document.location.href="paginaPrincipalTest.html";
+
+}
+
+function userLogged(){
+  var bool = localStorage.getItem("ZZZZ");
+  debugger
+  if(bool=="true"){
+    cambiarHeader();
+  }else{
+    return;
+  }
 }
 
 
@@ -644,9 +681,10 @@ function checkCookie(){
         
         localStorage.removeItem(primero);//Sirve para pasar el argumento del nombre al pasar de pagina web, almacenamos siempre en la posicion 0 de los localStorage( el que se pone siempre el primero de la fila del localStorage de la otra pagina web) para tener el identificador único que nos servira para saber que usuario de todos los guardados en la lista de localStorage se esta logeando.
         localStorage.setItem(primero,user);
-        
-        document.location.href = "ejercicio1.html";
-        
+
+        localStorage.removeItem("ZZZZ");
+        localStorage.setItem("ZZZZ", true);
+      cambiarHeader();
 
 
       }else{
@@ -659,11 +697,24 @@ function checkCookie(){
   return 1;
 }
 
-
-
-
-
-
+function cambiarHeader() {
+  var primero= "AAAA";
+    debugger
+    conjunto = localStorage.getItem(localStorage.getItem(primero)).split(";");
+   
+    $("#nombreEnCabecera").text("Hola " + localStorage.getItem(localStorage.getItem(primero)).split(";")[5]);
+  
+    if (conjunto[7] != "" && conjunto[7] != null) {
+     
+      $("#imagenCabecera")[0].src = conjunto[6] + ";" + conjunto[7];
+    } else {
+     
+      $("#imagenCabecera")[0].src = conjunto[6];
+    }
+    $("#guestHeader").hide();
+    $("#userHeader").show();
+    cerrar();
+}
 
 function checkPassword(password){
   if(password.length==0){
@@ -731,3 +782,4 @@ function buscar(){
   $("#fecha2").datepicker("option", "minDate", new Date(2007, 1 - 1, 1));
 
 }
+
