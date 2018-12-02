@@ -52,8 +52,8 @@ body {
   font-family: Impact;
 }
 
-/*Estos estilos corresponden con los botones de entrar, registrarse y borrar, tienen una animación basada en transiciones css */
-/*Estilo botón verde*/
+/*Estos estilos corresponden con los botones de entrar, registrarse y borrar, tienen una animaciÃƒÂ³n basada en transiciones css */
+/*Estilo botÃƒÂ³n verde*/
 .botonReg{
   background:#46b8da;
   color:#fff;
@@ -67,7 +67,7 @@ body {
   outline:none;
 
 }
-/*Estilo botón rojo*/
+/*Estilo botÃƒÂ³n rojo*/
 .botonCerrar{
   background:#ba1212;
   color:#fff;
@@ -152,7 +152,7 @@ body {
 }
 
 
-/*Este es el header de la página, es blanco con opacidad de 0.8, contiene el logo, el título y diversas opciones*/
+/*Este es el header de la pÃƒÂ¡gina, es blanco con opacidad de 0.8, contiene el logo, el tÃƒÂ­tulo y diversas opciones*/
 
     header {
        background-color:  rgba(201, 241, 253, 0.92);
@@ -168,10 +168,10 @@ body {
 	    margin-left:35%;
 	    background-color: white;
 	    border-radius: 6px;
-    	padding: 30px;
-      width: 55vw;
-      margin-top:10%;
-    }
+	    padding: 30px;
+	    width: 55vw;
+	    margin-top: 10%;
+	   }
     .mobile{
 
       display: none !important;
@@ -228,9 +228,7 @@ body {
       margin: 0% !important;
 
     }
-    .tituloInicioSesion{
-      font-size: 2.3vw !important; 
-    }
+   
 
     #divBusqueda{
 	    background: linear-gradient(to bottom, #c0e9f9 0%, #0099ff59 46%);
@@ -238,7 +236,7 @@ body {
       padding-bottom: 14px !important;
     }    
     .tituloInicioSesion{
-
+       /*font-size: 2.3vw !important; */
       margin: 2% !important;
       
     }
@@ -271,7 +269,7 @@ body {
       margin-left: 10px !important;
          border: 2px solid #ff9907 !important;
     }
-    .buttonGo{
+    .Go{
       height: 38px !important;
       
     }
@@ -288,17 +286,16 @@ body {
 
 
 #logo{
-	width: 5vw;
-	height: 5vw;
-
+	width: 3vw;
+	height: 3vw;
 	margin: auto 3%;
+	margin-left: 8%;
 }
 
 h1{
 	vertical-align: middle;
 	margin: auto 5%;
-
-	font-size: 2.3vw;
+	/* font-size: 2.3vw; */
 	font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 	text-shadow: 1px 1px 1px #000;
 }
@@ -336,7 +333,7 @@ h1{
 
 
 
-/*este div es el central de la página, alberga un aside y un section*/
+/*este div es el central de la pÃƒÂ¡gina, alberga un aside y un section*/
 
 #divCentral{
 	padding: 40px;
@@ -351,11 +348,11 @@ h1{
 }
 
 
-/*textos para el div de inicio de sesión*/
+/*textos para el div de inicio de sesiÃƒÂ³n*/
 .tituloInicioSesion{
 	margin: 0;
 	font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
-	font-size: 1.3vw;
+	/*font-size: 1.3vw;*/
 
 }
 
@@ -365,7 +362,7 @@ h1{
 	font-size: 30px;
 }
 
-/*textos y estilos para el popup de inicio de sesión*/
+/*textos y estilos para el popup de inicio de sesiÃƒÂ³n*/
 .tituloInicioSesionPop{
   margin: 20px 0 10px 0;
   margin-top: 3%;
@@ -376,7 +373,10 @@ h1{
 .botonEntrarPop{
   margin-bottom: 3%;
 }
-
+#fecha{
+  font-size: 14px;
+  margin-top: 0.2vw;
+}
 
 .inputDataSesion{
 	font-size: 25px;
@@ -448,7 +448,7 @@ h1{
     -moz-transition: background .5s linear;
 }
 
-/*div que alberga la galería de imágenes*/
+/*div que alberga la galerÃƒÂ­a de imÃƒÂ¡genes*/
 #galeria{
   width: 55vw;
   height: 23vw;
@@ -539,14 +539,14 @@ h1{
   margin:auto 2%;
 }
 
-/*footer de la página, es de color gris con opacidad 0.95*/
+/*footer de la pÃƒÂ¡gina, es de color gris con opacidad 0.95*/
 footer{
 	background-color: rgba(36, 36, 36, 0.95);
 	position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 80px;
-    display: flex;
+	bottom: 0;
+	width: 100%;
+	height: 27px;
+	display: flex;
 }
 
 .copyright {
@@ -557,7 +557,7 @@ footer{
 }
 
 .copyrightTexto{
-	font-size: 20px;
+	font-size: 15px;
 	color: white;
 	vertical-align: bottom;
 	margin: auto;
@@ -575,13 +575,13 @@ footer{
 
 
 
-/*botón de la barra de búsqueda, como el anterior, utiliza transiciones css*/
+/*botÃƒÂ³n de la barra de bÃƒÂºsqueda, como el anterior, utiliza transiciones css*/
 
 .buttonGo {
   background: #4088da;
-  margin : auto 10px;
+  margin: auto 10px;
   width : 200px;
-  height : 50px;
+  height: 2vw;
   overflow: hidden;
   text-align : center;
   transition : .2s;
@@ -602,30 +602,25 @@ footer{
   color : white;
   transition : .3s;
   font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
+  margin-top: 12px;
 }
 .btnText2 {
-  margin-top : 63px;
+  margin-top: 60px;
   margin-right : -130px;
   color : #FFF;
   transition: .3s;
   font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
+  /* margin-top: 12px; */
 }
-.buttonGo:hover .btnTwo{ /*When hovering over .button change .btnTwo*/
+.buttonGo:hover .btnTwo{ /*When hovering over . change .btnTwo*/
   left: -130px;
 }
-.buttonGo:hover .btnText{ /*When hovering over .button change .btnText*/
+.buttonGo:hover .btnText{ /*When hovering over . change .btnText*/
   margin-left : 65px;
 }
-.buttonGo:active .btnTwo{ /*Clicked and held*/
-	left: 0px;
-}
-.buttonGo:active .btnText2{ /*Clicked and held*/
-	margin-top: 50px;
-	margin-right: 0;
-	font-size: 30px;
-}
 
-/*ESTE STYLE CORRESPONDE CON EL CARRUSEL DE IMÁGENES, ES PLUGGIN*/
+
+/*ESTE STYLE CORRESPONDE CON EL CARRUSEL DE IMÃƒÂGENES, ES PLUGGIN*/
 
 .slide-wrap {
   width: 55vw;
@@ -1056,6 +1051,7 @@ form {
   margin-left: 8%;
   margin-right: 8%;
   float: right;
+  font-size: 0.7vw;
 }
 h2 {
   display: inline-block;
@@ -1064,4 +1060,14 @@ h2 {
 }
 .errorBorder {
   background-color: #d41d1d54 !important;
+}
+#precio{
+  margin-left: 3%;
+    margin-top: 5%;
+    color: blue;
+    font-size: 14px;
+}
+.alojamiento{
+  margin-left: 4%;
+   margin-top: 2%;
 }

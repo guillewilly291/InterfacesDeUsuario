@@ -99,7 +99,7 @@
         <section>
             
             <div  class="col-m-12" id="divBusqueda">
-                <h4 class="tituloInicioSesion text-Mobile"> Introduce tu destino, te recomendaremos lo mejor para tí </h4>
+                <h3 class="tituloInicioSesion text-Mobile"> Introduce tu destino, te recomendaremos lo mejor para tí </h3>
                 <div class="divFlex">
                     <div class="buscar">
                         <img id="imgBuscar" src="images/logoSinFondo.png" alt="logo" />
@@ -113,10 +113,10 @@
                 </div>
                 <h4 class="tituloInicioSesion text-Mobile"> ¿Cuánto tiempo quieres que dure tu estancia? </h4>
                 <div class="divFlex divCustom pc" style="margin-top:1vw">
-                        <h4 class="tituloInicioSesion" style="margin-left:5vw"> Fecha de salida: </h4>
-                        <input class="fechaBusqueda datepicker" placeholder="dd/mm/aaaa" type="text" >
-                        <h4 class="tituloInicioSesion" style="margin-left:5vw"> Fecha de retorno: </h4>
-                        <input class="fechaBusqueda datepicker" placeholder="dd/mm/aaaa" type="text">
+                        <p class="tituloInicioSesion" id="fecha" style="margin-left:5vw"> Fecha de salida: </p>
+                        <input class="fechaBusqueda datepicker" id="fecha1" placeholder="dd/mm/aaaa" type="text" >
+                        <p class="tituloInicioSesion" id="fecha" style="margin-left:5vw"> Fecha de retorno: </p>
+                        <input class="fechaBusqueda datepicker" id="fecha2" placeholder="dd/mm/aaaa" type="text">
                 </div>
                
                    
@@ -147,9 +147,9 @@
                                    </div>
                                 </div>
                                 <div class="informacion">
-                                        <h4 class="tituloInicioSesion"> Dubai, una experiencia única </h4>
-                                        <h4 class="tituloInicioSesion"> Alojamiento en el Burj Khalifa, 
-                                                el rascacielos más exclusivo de Dubai. <br> Mejor precio desde:</h4>
+                                        <h3 class="tituloInicioSesion"> Dubai, una experiencia única </h3>
+                                        <p class="tituloInicioSesion alojamiento"> Alojamiento en el Burj Khalifa, 
+                                                el rascacielos más exclusivo de Dubai. <br> <span id="precio">Mejor precio desde:</span></p>
                                         <div class="divFlex">
                                                 <h4 class="precioNoche">300€</h4>
                                                 <h4 class="noche">/noche</h4>
@@ -223,8 +223,8 @@
     </div>
 
 
-    <!--<footer>
-        <!--Footer de la pagina web
+   <footer>
+        <!--Footer de la pagina web-->
         <a class="linkSocial" href="https://www.instagram.com/david.silveira/?hl=es" target="_blank">
             <img class="imagenSocial" src="images/instagram.png" alt="instagram" />
         </a>
@@ -232,12 +232,23 @@
         <a class="linkSocial" href="https://www.youtube.com/channel/UC0L-DRAlW-ebjHrlk8oSVRg?view_as=subscriber" target="_blank">
             <img class="imagenSocial" src="images/youtube.png" alt="youtube" />
         </a>
+        <div class="copyright">
+            <p class="copyrightTexto">elrincondelaopinion@gmail.com</p>
+        </div>
+        <div class="copyright">
+            <p class="copyrightTexto">902453453</p>
+        </div>
 
-        <!--Copyright y derechos reservados
+        <div class="copyright">
+            <p class="copyrightTexto">Política de privacidad y Términos de uso
+            </p>
+        </div>
+      
+        <!--Copyright y derechos reservados-->
         <div class="copyright">
             <p class="copyrightTexto">© 2018. ElRinconDeLaOpinion. Todos los derechos reservados.</p>
         </div>
-    </footer>-->
+    </footer>
 
     <!--Este es el popup del formulario de edición de datos de la página, aparecen una serie de huecos a rellenar
      y si no cumplen con los estipulado o son vacíos al guardar, se pondrán en rojo-->

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html itemscope itemtype="http://schema.org/SearchResultsPage" lang="es"> <!--escogemos el lenguaje de la pagina web, el español-->
+
+<head>
+
+	<!--titulo de la pagina web con su logo-->
+	<title>El rincón de la opinión</title>
+	<link rel="icon" href="images/logo.png" type="image/png">
+	<!--Se selecciona el tipo de caracter que se va a utilizar-->
+	<meta charset="UTF-8">
+	<!--se realiza el link con la hoja de estilos correspondiente-->
+	<link rel="stylesheet" type="text/css" href="style/styles.css" />
+	<link rel="stylesheet" type="text/css" href="dStyles.css" />
+
+	<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="script.js"></script-->
+	<script type="text/javascript" src="dScript.js"></script>
+
+
+</head>
+
+
+<body onLoad="resetEstrellas()">
+
+	<header class="dHeader">
+
+		<!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
+		<img id="dLogo" src="images/logoSinFondo.png" alt="logo"/>
+
+		<h1 id="tituloCabecera">El rincón de la opinión</h1>
+
+		<ul id="listaHeader">
+			<!--bocadillo de las opciones en el header-->
+
+			<li class="seleccionHeader"> <p class="seleccionTexto"> Favoritos </p></li>
+			<li class="seleccionHeader"> <a class="go" rel="leanModal" name="editar" href="#editar" style="text-decoration: none ;color: black"><p class="seleccionTexto"> Editar Datos </p></a> </li>
+			<li class="seleccionHeader"> <p class="seleccionTexto" onclick="closeSesion()"> Logout </p> </li>
+		</ul>
+
+	</header>
+
+	<div id="cuerpo">
+
+		<aside class="asideHotel">
+			<!--este es el aside de la pagina, en el se encuentran la informacion personal del usuario, las ultimas opiniones escritas y sus preferencias-->
+			<h4 class="tituloLista"> Filtros de búsqueda </h4>
+			<h5 class="textoFiltro"> Fecha de llegada </h5>
+			<h5 class="textoFiltro"> Fecha de salida </h5>
+			<h5 class="textoFiltro"> Estrellas </h5>
+
+			<div class="rate">
+			    <input type="radio" id="star5" name="rate" value="5" />
+			    <label for="star5" title="text">5 stars</label>
+			    <input type="radio" id="star4" name="rate" value="4" />
+			    <label for="star4" title="text">4 stars</label>
+			    <input type="radio" id="star3" name="rate" value="3" />
+			    <label for="star3" title="text">3 stars</label>
+			    <input type="radio" id="star2" name="rate" value="2" />
+			    <label for="star2" title="text">2 stars</label>
+			    <input type="radio" id="star1" name="rate" value="1" />
+			    <label for="star1" title="text">1 star</label>
+  			</div>
+
+  			<button class="buttonFiltros" onclick="aplicarFiltros()">Aplicar</button>
+
+		</aside>
+
+
+		<section class="sectionHotel">
+			<h4 class="tituloLista"> Introduce tu destino, te recomendaremos lo mejor para tí </h4>
+			<div class="divBusqueda">
+                    <div class="barraBusqueda">
+                        <img id="imgBuscar" src="images/logoSinFondo.png" alt="logo" />
+                        <input id="inputBuscar" placeholder="Buscar una ciudad, hotel..." type="search">
+                    </div>
+                    <div class="buttonGo" onclick="realizarBusqueda()">
+                        <p class="btnText">BUSCAR</p>
+                        <div class="btnTwo">
+                            <p class="btnText2">&#x2714;</p>
+                        </div>
+                    </div>
+            </div>
+
+
+	        <h4 class="tituloLista"> Hemos encontrado los siguiente alojamientos para ti </h4>
+
+	        <div id="listaHoteles">
+
+				<!--div style="display: flex;">
+
+					<img class="fotoListaHotel" src="images/hotelPax.jpg" alt="hotel_pax"/>
+
+					<div class="divInfoListaHotel">
+
+						<h4 class="dNombreListaHotel"> Hotel Pax </h4>
+						<img class="fotoListaEstrellas" src="estrellas/2-5.png" alt="estrellas"/>
+						<p id="descripcionHotel" class="parrafoInfo"> Calle Sama de Langreo, s/n, 28250 Torrelodones, Madrid </p>
+
+					</div>
+
+					<div class="divReservaListaHotel">
+
+						<h5 class="precioListaReserva"> 700€ </h5>
+
+						<a class="btnLista" href="#"> Reserva </a>
+
+					</div>
+
+				</div-->
+
+			</div>
+
+			<!--div id="divReservaHotel" style="display: flex;">
+
+				<h5 id="textoPrecioReserva"> Precio total de la estancia: </h5>
+				<h5 id="precioReserva">  </h5>
+
+				<a class="btn" href="#"> Reserva </a>
+
+			</div-->
+
+		</section>
+
+	</div>
+
+
+	<div style="display: none">
+
+		<ul id="infoHoteles">
+			<li id="hotelPax" class="madrid">
+				<p class="infNombreHotel">Hotel Pax</p>
+				<p class="infDirHotel">Calle Sama de Langreo, s/n, 28250 Torrelodones, Madrid</p>
+				<p class="infTelHotel">918 40 66 06</p>
+				<p class="infTextoHotel">El Hotel PAX TORRELODONESes un establecimiento ubicado en la tranquila localidad de Torrelodones, a 29 kilómetros del centro de Madrid. UN ESPACIO DONDE EL CLIENTE SE SIENTA EN GRAN MEDIDA COMO EN SU HOGAR.</p>
+				<p class="infPrecioHotel">75</p>
+				<p class="infEstrellasHotel">2</p>
+				<p class="infFotoHotel">images/hotelPax.jpg</p>
+			</li>
+
+			<li id="restauranteSala" class="madrid">
+				<p class="infNombreHotel"> Restaurante Sala </p>
+				<p class="infDirHotel"> Carretera de los Molinos, 2, 28440 Guadarrama, Madrid </p>
+				<p class="infTelHotel"> 918 54 21 21 </p>
+				<p class="infTextoHotel"> Gambas de Huelva y otros platos españoles en esta espaciosa finca con jardín y refinada decoración rústica.</p>
+				<p class="infPrecioHotel">100</p>
+				<p class="infEstrellasHotel">2</p>
+				<p class="infFotoHotel">images/sala.jpg</p>
+			</li>
+
+			<li id="burjKhalifa" class="madrid">
+				<p class="infNombreHotel"> Burj Khalifa </p>
+				<p class="infDirHotel"> Sheikh Mohammed bin Rashid Blvd - Dubai - Emiratos Árabes Unidos </p>
+				<p class="infTelHotel"> No disponible </p>
+				<p class="infTextoHotel"> El Burj Khalifa es un rascacielos ubicado en Dubái. Con 828 metros de altura, es la estructura más alta de la que se tiene registro en la historia.</p>
+				<p class="infPrecioHotel">1250</p>
+				<p class="infEstrellasHotel">5</p>
+				<p class="infFotoHotel">images/burjKhalifa.jpg</p>
+			</li>
+
+			<li id="bestWestern" class="madrid">
+				<p class="infNombreHotel"> Best Western Hotel Paris Louvre Opera </p>
+				<p class="infDirHotel"> Rue des Moulins, 75001 Paris, Francia </p>
+				<p class="infTelHotel"> +33 1 40 20 01 10 </p>
+				<p class="infTextoHotel"> Este hotel exclusivo, ubicado en una casa adosada del s. XVII, se encuentra a 8 minutos a pie de la Ópera Garnier y a 11 minutos del Museo del Louvre.</p>
+				<p class="infPrecioHotel">208</p>
+				<p class="infEstrellasHotel">4</p>
+				<p class="infFotoHotel">images/bestWestern.jpg</p>
+			</li>
+
+		</ul>
+
+
+	</div>
+
+
+</body>
