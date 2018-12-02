@@ -1,8 +1,8 @@
-function seleccionarHotel(idHotel) {
+function seleccionarHotel(idHotel){
 
 	var id = idHotel.getAttribute('id');
 
-	localStorage.setItem("seleccionHotel", id);
+	localStorage.setItem( "seleccionHotel", id);
 
 	//var fechaIni = '12/12/2018';
 	//var fechaFin = '15/12/2018';
@@ -13,7 +13,7 @@ function seleccionarHotel(idHotel) {
 	document.location.href = "seleccionHotel.html";
 }
 
-function cargaDatos() {
+function cargaDatos(){
 
 	var idHotel = localStorage.getItem("seleccionHotel");
 
@@ -32,7 +32,7 @@ function cargaDatos() {
 	/*descripcion del hotel*/
 
 	document.getElementById('descripcionHotel').innerHTML = dataHotel[3].innerHTML + '<br>Dirección: ' + dataHotel[1].innerHTML
-		+ '<br>Contacto: ' + dataHotel[2].innerHTML;
+	 + '<br>Contacto: ' + dataHotel[2].innerHTML;
 
 	/*foto del hotel*/
 	var imgHotel = document.getElementById('fotosHotel2');
@@ -47,11 +47,11 @@ function cargaDatos() {
 
 	/*Fechas*/
 	document.getElementById('fechasHotel').innerHTML = "Fecha llegada: " + localStorage.getItem('fechaIni') + '<br>' +
-		"Fecha fin: " + localStorage.getItem('fechaFin');
+														"Fecha fin: " + localStorage.getItem('fechaFin');
 
 }
 
-function precioReserva(precioDia) {
+function precioReserva(precioDia){
 
 	var fechaIni = localStorage.getItem("fechaIni");
 	var fechaFin = localStorage.getItem("fechaFin");
@@ -59,22 +59,25 @@ function precioReserva(precioDia) {
 	var arFechaIni = fechaIni.split('/');
 	var arFechaFin = fechaFin.split('/');
 
-	fechaIni = new Date(arFechaIni[1] + '/' + arFechaIni[0] + '/' + arFechaIni[2]);
-	fechaFin = new Date(arFechaFin[1] + '/' + arFechaFin[0] + '/' + arFechaFin[2]);
+	fechaIni = new Date(arFechaIni[1]+'/'+arFechaIni[0]+'/'+arFechaIni[2]);
+	fechaFin = new Date(arFechaFin[1]+'/'+arFechaFin[0]+'/'+arFechaFin[2]);
 
-	var estancia = fechaFin.getDate() - fechaIni.getDate();
+	var fecha1 = moment(fechaIni);
+	var fecha2 = moment(fechaFin);
+
+	var estancia = fecha2.diff(fecha1, 'days');
 	var total = precioDia * estancia;
 
 	return total;
 }
 
-function insertDates() {
+function insertDates(){
 	debugger;
 
 	var fechaIni = document.getElementById("fecha1").value;
 	var fechaFin = document.getElementById("fecha2").value;
 
-	if (fechaFin == '' || fechaIni == '') {
+	if(fechaFin == '' || fechaIni == ''){
 		alert('Introduzca las fechas de reserva');
 		return false;
 	}
@@ -82,110 +85,130 @@ function insertDates() {
 	localStorage.setItem('fechaIni', fechaIni); /*fecha en formato dd/mm/yyyy*/
 	localStorage.setItem('fechaFin', fechaFin); /*fecha en formato dd/mm/yyyy*/
 	return true;
-}
+ }
 
 
-function realizarBusqueda() {
+ function realizarBusqueda(){
 
-	debugger;
+ 	debugger;
 
-	if (document.getElementById('inputBuscar').value == '') {
+ 	if(document.getElementById('inputBuscar').value == ''){
 
-		document.getElementById('inputBuscar').value = localStorage.getItem('ciudad');
+ 		document.getElementById('inputBuscar').value = localStorage.getItem('ciudad');
 
-	}
+ 	}
 
-	var busqueda = document.getElementById('inputBuscar').value.toLowerCase();
+ 	cargaFechasFiltro();
 
-	var arHoteles = document.getElementsByClassName(busqueda);
+ 	var busqueda = document.getElementById('inputBuscar').value.toLowerCase();
 
-	if (arHoteles.length == 0) {
-		document.getElementsByClassName('tituloLista')[1].innerHTML = "Lo sentimos, no hay resultados...";
-	} else {
-		document.getElementsByClassName('tituloLista')[1].innerHTML = "Hemos encontrado los siguiente alojamientos para ti";
-	}
+ 	var arHoteles = document.getElementsByClassName(busqueda);
 
-	var divLista = document.getElementById('listaHoteles');
-	divLista.innerHTML = null;
+ 	var vacio = true;
 
-	var rating = localStorage.getItem('estrellas');
+ 	var divLista = document.getElementById('listaHoteles');
+ 	divLista.innerHTML = null;
 
-	for (i = 0; i < arHoteles.length; i++) {
+ 	var rating = localStorage.getItem('estrellas');
 
-		var idHotel = arHoteles[i].getAttribute('id');
-		var dataHotel = document.getElementById(idHotel).getElementsByTagName('p');
+ 	for(i = 0; i<arHoteles.length; i++){
 
-		if (dataHotel[5].innerHTML != rating && rating != 0) {/*Validar estrellas*/
-			continue;
-		}
+ 		var idHotel = arHoteles[i].getAttribute('id');
+ 		var dataHotel = document.getElementById(idHotel).getElementsByTagName('p');
+
+ 		if(dataHotel[5].innerHTML != rating && rating != 0){/*Validar estrellas*/
+ 			continue;
+ 		}
 
 		var srcImg = dataHotel[6].innerHTML;
 		var srcEstrellas = 'estrellas/' + dataHotel[5].innerHTML + '-5.png';
 		var nombre = dataHotel[0].innerHTML;
 		var direccion = dataHotel[1].innerHTML;
 		var precio = precioReserva(dataHotel[4].innerHTML) + '€';
+		var vacio =false;
 
-		divLista.innerHTML +=
-			'<div class="hotelBlock">' +
-			'<img class="fotoListaHotel" src="' + srcImg + '" alt="hotel_pax"/>' +
-			'<div class="divInfoListaHotel">' +
-			'<h4 class="dNombreListaHotel"> ' + nombre + ' </h4>' +
-			'<img class="fotoListaEstrellas" src="' + srcEstrellas + '" alt="estrellas"/>' +
-			'<p id="descripcionHotel" class="parrafoInfo"> ' + direccion + ' </p>' +
-			'</div>' +
-			'<div class="divReservaListaHotel">' +
-			'<h5 class="precioListaReserva"> ' + precio + ' </h5>' +
-			'<a class="btnLista" onclick="seleccionarHotel(' + idHotel + ')"> Ver más </a>' +
-			'</div>' +
-			'</div>';
-	}
-}
+ 		divLista.innerHTML += 
+ 		'<div class="hotelBlock">' +
+ 			'<img class="fotoListaHotel" src="'+srcImg+'" alt="hotel_pax"/>'+
+ 			'<div class="divInfoListaHotel">'+
+ 				'<h4 class="dNombreListaHotel"> '+nombre+' </h4>'+
+ 				'<img class="fotoListaEstrellas" src="'+srcEstrellas+'" alt="estrellas"/>'+
+ 				'<p id="descripcionHotel" class="parrafoInfo"> '+direccion+' </p>'+
+ 			'</div>'+
+ 			'<div class="divReservaListaHotel">'+
+ 				'<h5 class="precioListaReserva"> '+precio+' </h5>'+
+ 				'<a class="btnLista" onclick="seleccionarHotel('+idHotel+')"> Ver más </a>'+
+ 			'</div>'+
+ 		'</div>';
+ 	}
 
-
-function filtroEstrellas() {
-
-	var arEstrellas = document.getElementsByName('rate');
-	var estrellas = 0;
-
-	for (var i = 0; i < arEstrellas.length; i++) {
-		if (arEstrellas[i].checked == true) {
-			estrellas = 5 - i;
-			break;
-		}
-	}
-
-	localStorage.setItem('estrellas', estrellas);
-
-}
-
-function aplicarFiltros() {
-
-	debugger;
-
-	filtroEstrellas();
-
-	realizarBusqueda();
-}
+ 	if(vacio){
+ 			document.getElementsByClassName('tituloLista')[1].innerHTML = "Lo sentimos, no hay resultados...";
+ 		}else{
+ 			document.getElementsByClassName('tituloLista')[1].innerHTML = "Hemos encontrado los siguiente alojamientos para ti";
+ 		}
+ }
 
 
-function resetEstrellas() {
-	localStorage.setItem("estrellas", 0);
-}
+ function filtroEstrellas(){
+
+ 	var arEstrellas = document.getElementsByName('rate');
+ 	var estrellas = 0;
+
+ 	for(var i = 0; i < arEstrellas.length; i++){
+ 		if(arEstrellas[i].checked == true){
+ 			estrellas = 5-i;
+ 			break;
+ 		}
+ 	}
+
+ 	localStorage.setItem('estrellas', estrellas);
+
+ }
+
+ function aplicarFiltros(){
+
+ 	debugger;
+
+ 	filtroEstrellas();
+ 	insertDates();
+
+ 	realizarBusqueda();
+ }
 
 
-function busquedaHotel() {
-	debugger;
+ function resetEstrellas(){
+ 	debugger;
+ 	localStorage.setItem('estrellas', 0);
 
-	resetEstrellas();
+ 	var arEstrellas = document.getElementsByName('rate');
 
-	var busqueda = document.getElementById('inputBuscar').value.toLowerCase();
-	if (busqueda == '') {
-		alert('Introduzca un destino');
-		return;
-	}
-	localStorage.setItem('ciudad', busqueda);
+ 	for(var i = 0; i < arEstrellas.length; i++){
+ 		arEstrellas[i].checked = false;
+ 	}
+ }
 
-	if (!insertDates()) return;
 
-	document.location.href = "listaHoteles.html";
-}
+ function busquedaHotel(){
+ 	debugger;
+
+ 	resetEstrellas();
+
+ 	var busqueda = document.getElementById('inputBuscar').value.toLowerCase();
+ 	if(busqueda == ''){
+ 		alert('Introduzca un destino');
+ 		return;
+ 	}
+ 	localStorage.setItem('ciudad', busqueda);
+
+ 	if(!insertDates()) return;
+
+ 	document.location.href = "listaHoteles.html";
+ }
+
+ function cargaFechasFiltro(){
+
+ 	document.getElementById("fecha1").value = localStorage.getItem('fechaIni');
+ 	document.getElementById("fecha2").value = localStorage.getItem('fechaFin');
+
+ }

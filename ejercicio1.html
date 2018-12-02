@@ -32,16 +32,17 @@
 		<!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
 		<img id="logo" src="images/logoSinFondo.png" alt="logo" />
 	
-		<h1 id="tituloCabecera">El rincón de la opinión</h1>
-	
+		<h1 id="tituloCabecera" style="margin-left: 0">El rincón de la opinión</h1>
+		
+		<h1 id="nombreEnCabecera" style="font-family: Arial,Tahoma,'Bitstream Vera Sans',sans-serif; display: inline-block ; margin: 0%; width: 11%;padding-top: 13px;"> </h1>
+
+		<img id="imagenCabecera" src="images/logoSinFondo.png" alt="logo" />
+		
 		<ul id="listaHeader">
 			<!--bocadillo de las opciones en el header-->
-	
-			<li class="seleccionHeader"> <a class="go" href="#sesion" style="text-decoration: none ;color: black">
-					<p class="seleccionTexto"> Iniciar sesión </p>
-				</a> </li>
+			
 			<li class="seleccionHeader"> <a class="go2" href="#registro" style="text-decoration: none ;color: black">
-					<p class="seleccionTexto"> Registrarse </p>
+					<p class="seleccionTexto"> Cerrar sesión </p>
 				</a> </li>
 		</ul>
 	
@@ -55,12 +56,12 @@
 			<!--este es el aside de la pagina, en el se encuentran la informacion personal del usuario, las ultimas opiniones escritas y sus preferencias-->
 			<div class="divUsuario">
 				<!--informacion personal-->
-				<img id="usuario" src="images/sinFoto.png" alt="user"/>
-				<h3 id="nombreUser">Sergio Martin Montoro</h3>
+				<img id="usuario" src="images/logo2.png" alt="user"/>
+				<h3 id="nombreUser"></h3>
 			</div>
 
 			<h2 class="linkOpcion" onclick="displayInf()">Información personal</h2>
-			<p class="parrafo">Nombre: Sergio Martín Montoro</p>
+			<p class="parrafo">Nombre: </p>
 			<p class="parrafo">Pais de origen: España</p>
 			<p class="parrafo">Miembro desde 2018</p>
 
@@ -73,12 +74,7 @@
 
 						<img class="displayNone" src="images/hotelPax.jpg" alt="hotel_pax" style="height: 40px; width: 40px;" />
 					</li>
-					<li>
-						<a class="link" href="http://www.restaurantesala.com/" target="_blank">Restaurante Sala</a>
-						<p class="parrafo">La marisqueria Sala otorga una alta calidad en sus platos,
-							que combinados con un servicio excelente, han hecho que la visita sea muy agradable.</p>
 
-					</li>
 					<li>
 						<a class="link" href="https://www.exehotels.com/exe-victoria-palace.html" target="_blank">Hotel Exe Victoria Palace</a>
 						<p class="parrafo">Un gran hotel y una gran opcion para dormir si visitas San Lorenzo del Escorial. El precio es elevado pero la experiencia lo vale si la estancia es breve</p>
@@ -132,26 +128,26 @@
 
 				<div class="divFormulario">
 
-					<h5 class="datoFormulario2">Sergio Martín Montoro</h5>
+					<h5 class="datoFormulario2"></h5>
 
 				</div>
 
 				<div class="divFormulario">
 
-					<h5 class="datoFormulario2">100363655@alumnos.uc3m.es</h5>
+					<h5 class="datoFormulario2"></h5>
 
 				</div>
 
 				<div class="divFormulario">
 
-					<h5 class="datoFormulario1">Calle Miño nº 25</h5>
-					<h5 class="datoFormulario1">608943175</h5>
+					<h5 class="datoFormulario1"></h5>
+					<h5 class="datoFormulario1"> 684-178-358</h5>
 
 				</div>
 
 				<div class="divFormulario">
 
-					<h5 class="datoFormulario2">26/08/1998</h5>
+					<h5 class="datoFormulario2"> </h5>
 
 				</div>
 
@@ -172,22 +168,27 @@
 						<h5 class="datoActividad">nivel</h5>
 
 					</div>
+				</div>
 
+				<div style="display: flex">
 					<div class="divActividad">
 
-						<h5 class="datoActividad">3</h5>
-						<h5 class="datoActividad">opiniones</h5>
-
-					</div>
-
-					<div class="divActividad">
-
-						<h5 class="datoActividad">8</h5>
-						<h5 class="datoActividad">fotos</h5>
-
-					</div>
+					<h5 class="datoActividad">3</h5>
+					<h5 class="datoActividad">opiniones</h5>
 
 				</div>
+
+				<div class="divActividad">
+
+					<h5 class="datoActividad">8</h5>
+					<h5 class="datoActividad">fotos</h5>
+
+				</div>
+
+				</div>
+					
+
+				
 
 			</div>
 
@@ -239,18 +240,32 @@
 
 	</div>
 
-	<footer class="footer"><!--Footer de la pagina web-->
-		<!--Links a las redes sociales de los creadores de la pagina web-->
+	<footer>
+		<!--Footer de la pagina web-->
 		<a class="linkSocial" href="https://www.instagram.com/david.silveira/?hl=es" target="_blank">
-			<img class="redSocial"  src="images/instagram.png" alt="instagram"/>
+			<img class="imagenSocial" src="images/instagram.png" alt="instagram" />
 		</a>
-
+	
 		<a class="linkSocial" href="https://www.youtube.com/channel/UC0L-DRAlW-ebjHrlk8oSVRg?view_as=subscriber" target="_blank">
-			<img class="redSocial"  src="images/youtube.png" alt="youtube"/>
+			<img class="imagenSocial" src="images/youtube.png" alt="youtube" />
 		</a>
+		<div class="copyright">
+			<p class="copyrightTexto">elrincondelaopinion@gmail.com</p>
+		</div>
+		<div class="copyright">
+			<p class="copyrightTexto">902453453</p>
+		</div>
+	
+		<div class="copyright">
+			<a class="copyrightTexto" href="https://www.pccomponentes.com/condiciones-de-compra">Política de privacidad y
+				Términos de uso</a>
+			</p>
+		</div>
+	
 		<!--Copyright y derechos reservados-->
-		<small class="copyright">© 2018. ElRinconDeLaOpinion. Todos los derechos reservados.</small>
-
+		<div class="copyright">
+			<p class="copyrightTexto">© 2018. ElRinconDeLaOpinion. Todos los derechos reservados.</p>
+		</div>
 	</footer>
 	<!--Estos son los popup que se emplean para describir detalladamente los restaurantes y hoteles
 	Al dar click a un elemento que sea de clase go, un elemento de jquery activará estos popup en función del id

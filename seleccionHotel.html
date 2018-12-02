@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
-<html itemscope itemtype="http://schema.org/SearchResultsPage" lang="es">
-<!--escogemos el lenguaje de la pagina web, el español-->
+<html itemscope itemtype="http://schema.org/SearchResultsPage" lang="es"> <!--escogemos el lenguaje de la pagina web, el español-->
 
 <head>
 
@@ -18,6 +17,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="script.js"></script-->
 	<script type="text/javascript" src="dScript.js"></script>
+	<script src="http://momentjs.com/downloads/moment.min.js"></script>
 
 
 </head>
@@ -28,22 +28,16 @@
 	<header class="dHeader">
 
 		<!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
-		<img id="dLogo" src="images/logoSinFondo.png" alt="logo" />
+		<img id="dLogo" src="images/logoSinFondo.png" alt="logo"/>
 
 		<h1 id="tituloCabecera">El rincón de la opinión</h1>
 
 		<ul id="listaHeader">
 			<!--bocadillo de las opciones en el header-->
 
-			<li class="seleccionHeader">
-				<p class="seleccionTexto"> Favoritos </p>
-			</li>
-			<li class="seleccionHeader"> <a class="go" rel="leanModal" name="editar" href="#editar" style="text-decoration: none ;color: black">
-					<p class="seleccionTexto"> Editar Datos </p>
-				</a> </li>
-			<li class="seleccionHeader">
-				<p class="seleccionTexto" onclick="closeSesion()"> Logout </p>
-			</li>
+			<li class="seleccionHeader"> <p class="seleccionTexto"> Favoritos </p></li>
+			<li class="seleccionHeader"> <a class="go" rel="leanModal" name="editar" href="#editar" style="text-decoration: none ;color: black"><p class="seleccionTexto"> Editar Datos </p></a> </li>
+			<li class="seleccionHeader"> <p class="seleccionTexto" onclick="closeSesion()"> Logout </p> </li>
 		</ul>
 
 	</header>
@@ -54,7 +48,7 @@
 			<!--este es el aside de la pagina, en el se encuentran la informacion personal del usuario, las ultimas opiniones escritas y sus preferencias-->
 			<div class="divUsuario">
 				<!--informacion personal-->
-				<img id="usuario" src="images/sinFoto.png" alt="user" />
+				<img id="usuario" src="images/sinFoto.png" alt="user"/>
 				<h3 id="nombreUser">Sergio Martin Montoro</h3>
 			</div>
 
@@ -63,7 +57,7 @@
 			<p class="parrafo">Pais de origen: España</p>
 			<p class="parrafo">Miembro desde 2018</p>
 
-
+			
 
 		</aside>
 
@@ -74,20 +68,20 @@
 
 				<div class="fotosHotel">
 
-					<img id="fotosHotel2" src="./" alt="hotel_pax" />
+					<img id="fotosHotel2" src="./" alt="hotel_pax"/>
 
 				</div>
 
 				<div class="divInfoHotel">
 
 					<div style="display: flex;">
-						<h4 id="dNombreHotel"> </h4>
-						<img id="fotoEstrellas" src="./" alt="estrellas" />
+						<h4 id="dNombreHotel">  </h4>
+						<img id="fotoEstrellas" src="./" alt="estrellas"/>
 					</div>
 
 					<p class="parrafoInfo"> Descrición del hotel: </p>
-					<p id="descripcionHotel" class="parrafoInfo"> </p>
-					<p id="fechasHotel" class="parrafoInfo"> </p>
+					<p id="descripcionHotel" class="parrafoInfo">  </p>
+					<p id="fechasHotel" class="parrafoInfo">  </p>
 
 				</div>
 
@@ -96,7 +90,7 @@
 			<div id="divReservaHotel" style="display: flex;">
 
 				<h5 id="textoPrecioReserva"> Precio total de la estancia: </h5>
-				<h5 id="precioReserva"> </h5>
+				<h5 id="precioReserva">  </h5>
 
 				<a class="btn" href="#"> Reserva </a>
 
@@ -114,9 +108,7 @@
 				<p class="infNombreHotel">Hotel Pax</p>
 				<p class="infDirHotel">Calle Sama de Langreo, s/n, 28250 Torrelodones, Madrid</p>
 				<p class="infTelHotel">918 40 66 06</p>
-				<p class="infTextoHotel">El Hotel PAX TORRELODONESes un establecimiento ubicado en la tranquila localidad de
-					Torrelodones, a 29 kilómetros del centro de Madrid. UN ESPACIO DONDE EL CLIENTE SE SIENTA EN GRAN MEDIDA COMO EN
-					SU HOGAR.</p>
+				<p class="infTextoHotel">El Hotel PAX TORRELODONESes un establecimiento ubicado en la tranquila localidad de Torrelodones, a 29 kilómetros del centro de Madrid. UN ESPACIO DONDE EL CLIENTE SE SIENTA EN GRAN MEDIDA COMO EN SU HOGAR.<br>Habitación individual.<br></p>
 				<p class="infPrecioHotel">75</p>
 				<p class="infEstrellasHotel">2</p>
 				<p class="infFotoHotel">images/hotelPax.jpg</p>
@@ -126,8 +118,7 @@
 				<p class="infNombreHotel"> Burj Khalifa </p>
 				<p class="infDirHotel"> Sheikh Mohammed bin Rashid Blvd - Dubai - Emiratos Árabes Unidos </p>
 				<p class="infTelHotel"> No disponible </p>
-				<p class="infTextoHotel"> El Burj Khalifa es un rascacielos ubicado en Dubái. Con 828 metros de altura, es la
-					estructura más alta de la que se tiene registro en la historia.</p>
+				<p class="infTextoHotel"> El Burj Khalifa es un rascacielos ubicado en Dubái. Con 828 metros de altura, es la estructura más alta de la que se tiene registro en la historia.<br>Habitación doble.<br></p>
 				<p class="infPrecioHotel">1250</p>
 				<p class="infEstrellasHotel">5</p>
 				<p class="infFotoHotel">images/burjKhalifa.jpg</p>
@@ -137,8 +128,7 @@
 				<p class="infNombreHotel"> Best Western Hotel Paris Louvre Opera </p>
 				<p class="infDirHotel"> Rue des Moulins, 75001 Paris, Francia </p>
 				<p class="infTelHotel"> +33 1 40 20 01 10 </p>
-				<p class="infTextoHotel"> Este hotel exclusivo, ubicado en una casa adosada del s. XVII, se encuentra a 8 minutos a
-					pie de la Ópera Garnier y a 11 minutos del Museo del Louvre.</p>
+				<p class="infTextoHotel"> Este hotel exclusivo, ubicado en una casa adosada del s. XVII, se encuentra a 8 minutos a pie de la Ópera Garnier y a 11 minutos del Museo del Louvre.<br>Habitación doble.<br></p>
 				<p class="infPrecioHotel">208</p>
 				<p class="infEstrellasHotel">4</p>
 				<p class="infFotoHotel">images/bestWestern.jpg</p>
@@ -148,8 +138,7 @@
 				<p class="infNombreHotel"> NYX Hotel Madrid </p>
 				<p class="infDirHotel"> Calle del Aviador Zorita, 34, 28020 Madrid </p>
 				<p class="infTelHotel"> +34 915 53 59 00 </p>
-				<p class="infTextoHotel">Este hotel, con una imponente zona de recepción de mármol y madera grabada, se encuentra a
-					6 minutos a pie de la estación de metro Alvarado. </p>
+				<p class="infTextoHotel">Este hotel, con una imponente zona de recepción de mármol y madera grabada, se encuentra a 6 minutos a pie de la estación de metro Alvarado.<br>Habitación individual.<br></p>
 				<p class="infPrecioHotel">74</p>
 				<p class="infEstrellasHotel">4</p>
 				<p class="infFotoHotel">images/nyx.jpg</p>
@@ -159,8 +148,7 @@
 				<p class="infNombreHotel"> The Westin Palace, Madrid </p>
 				<p class="infDirHotel"> Plaza de las Cortes, 7, 28014 Madrid </p>
 				<p class="infTelHotel"> +34 913 60 80 00 </p>
-				<p class="infTextoHotel"> Hotel elegante con habitaciones clásicas, bar con paredes revestidas de madera y
-					restaurante con cúpula de vidriera.</p>
+				<p class="infTextoHotel"> Hotel elegante con habitaciones clásicas, bar con paredes revestidas de madera y restaurante con cúpula de vidriera.<br>Habitación doble.<br></p>
 				<p class="infPrecioHotel">251</p>
 				<p class="infEstrellasHotel">5</p>
 				<p class="infFotoHotel">images/westin.jpg</p>
@@ -171,9 +159,8 @@
 				<p class="infNombreHotel"> InterContinental Paris - Le Grand </p>
 				<p class="infDirHotel"> 2 Rue Scribe, 75009 Paris, Francia </p>
 				<p class="infTelHotel"> +33 1 40 07 32 32 </p>
-				<p class="infTextoHotel"> Este hotel opulento de 1862 tiene vistas al teatro de la ópera Palais Garnier y está a 3
-					minutos a pie de las tiendas
-					del bulevar Haussmann y a 4 minutos a pie de la estación de metro Opéra.</p>
+				<p class="infTextoHotel"> Este hotel opulento de 1862 tiene vistas al teatro de la ópera Palais Garnier y está a 3 minutos a pie de las tiendas
+				del bulevar Haussmann y a 4 minutos a pie de la estación de metro Opéra.<br>Habitación doble.<br></p>
 				<p class="infPrecioHotel">295</p>
 				<p class="infEstrellasHotel">5</p>
 				<p class="infFotoHotel">images/inter.jpg</p>
@@ -183,9 +170,8 @@
 				<p class="infNombreHotel"> Hôtel ibis Paris Porte de Bagnolet </p>
 				<p class="infDirHotel"> 1 Rue Jean Jaurès, 93170 Bagnolet, Francia </p>
 				<p class="infTelHotel"> +33 1 43 60 02 76 </p>
-				<p class="infTextoHotel"> El hotel ibis Paris Porte de Bagnolet le proporcionará una inolvidable estancia con
-					habitaciones con cómodas camas, un
-					cordial equipo pendiente de todas y cada una de sus necesidades y bar y lounge en el que relajarse.</p>
+				<p class="infTextoHotel"> El hotel ibis Paris Porte de Bagnolet le proporcionará una inolvidable estancia con habitaciones con cómodas camas, un
+				cordial equipo pendiente de todas y cada una de sus necesidades y bar y lounge en el que relajarse.<br>Habitación doble.<br></p>
 				<p class="infPrecioHotel">57</p>
 				<p class="infEstrellasHotel">3</p>
 				<p class="infFotoHotel">images/ibis.jpg</p>
@@ -195,43 +181,39 @@
 				<p class="infNombreHotel"> hotelF1 Paris Porte de Montmartre </p>
 				<p class="infDirHotel"> 29 Rue du Dr Babinski, 75018 Paris, Francia </p>
 				<p class="infTelHotel"> +33 891 70 53 50 </p>
-				<p class="infTextoHotel"> Hotel sencillo con habitaciones básicas con baño compartido, televisión de pantalla plana
-					y Wi‑Fi gratis.</p>
+				<p class="infTextoHotel"> Hotel sencillo con habitaciones básicas con baño compartido, televisión de pantalla plana y Wi‑Fi gratis.<br>Habitación individual.<br></p>
 				<p class="infPrecioHotel">38</p>
 				<p class="infEstrellasHotel">2</p>
 				<p class="infFotoHotel">images/f1.jpg</p>
 			</li>
 
-			<li id="yotel" class="newYork">
+			<li id="yotel" class="newyork">
 				<p class="infNombreHotel"> YOTEL New York </p>
 				<p class="infDirHotel"> 570 10th Ave, New York, NY 10036, EE. UU. </p>
 				<p class="infTelHotel"> +1 646-449-7700 </p>
-				<p class="infTextoHotel"> Este moderno hotel cápsula, que cuenta con un destacado diseño minimalista, está a 600 m
-					de la autoridad portuaria y a
-					1,1 km de la plaza Times Square.</p>
+				<p class="infTextoHotel"> Este moderno hotel cápsula, que cuenta con un destacado diseño minimalista, está a 600 m de la autoridad portuaria y a
+				1,1 km de la plaza Times Square.<br>Habitación doble.<br></p>
 				<p class="infPrecioHotel">149</p>
 				<p class="infEstrellasHotel">4</p>
 				<p class="infFotoHotel">images/yotel.jpg</p>
 			</li>
 
-			<li id="pennsyl" class="newYork">
+			<li id="pennsyl" class="newyork">
 				<p class="infNombreHotel"> Hotel Pennsylvania </p>
 				<p class="infDirHotel"> 401 7th Ave, New York, NY 10001, EE. UU. </p>
 				<p class="infTelHotel"> +1 212-736-5000 </p>
-				<p class="infTextoHotel"> Este hotel clásico se ubica en Midtown, en un edificio de alrededor de 1919 que se
-					encuentra frente a la Penn Station y
-					al Madison Square Garden.</p>
+				<p class="infTextoHotel"> Este hotel clásico se ubica en Midtown, en un edificio de alrededor de 1919 que se encuentra frente a la Penn Station y
+				al Madison Square Garden.<br>Habitación individual.<br></p>
 				<p class="infPrecioHotel">61</p>
 				<p class="infEstrellasHotel">2</p>
 				<p class="infFotoHotel">images/pennsyl.jpg</p>
 			</li>
 
-			<li id="central" class="newYork">
+			<li id="central" class="newyork">
 				<p class="infNombreHotel"> Park Central Hotel New York </p>
 				<p class="infDirHotel"> 870 7th Ave, New York, NY 10019, EE. UU. </p>
 				<p class="infTelHotel"> +1 212-247-8000 </p>
-				<p class="infTextoHotel"> Habitaciones refinadas y modernas en un hotel de los años 20 con gimnasio, salón chic y
-					cafetería informal.</p>
+				<p class="infTextoHotel"> Habitaciones refinadas y modernas en un hotel de los años 20 con gimnasio, salón chic y cafetería informal.<br>Habitación doble.<br></p>
 				<p class="infPrecioHotel">190</p>
 				<p class="infEstrellasHotel">4</p>
 				<p class="infFotoHotel">images/central.jpg</p>

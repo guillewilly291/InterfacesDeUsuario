@@ -53,12 +53,10 @@
 	font-family: Helvetica, Arial, sans-serif;
 }
 
-#logo {
-    width: 3vw;
-    height: 3vw;
-    margin: auto 3%;
-    margin-left: 8%;
+#divReservaHotel{
+
 }
+
 #textoPrecioReserva{
 	margin: auto 0;
 	margin-bottom: 5px;
@@ -259,7 +257,7 @@
   cursor: pointer;
   display: block;
   width: 50%;
-  height: 30%;
+  height: 2.7vw;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1.8vw;
   color: #fff;
@@ -281,16 +279,17 @@
 .asideHotel{
 	padding: 35px;
 
-	background-color: white;/*rgba(201, 241, 253, 0.85);*/
+	background-color: rgba(255, 255, 255, 0.85);
   	border-radius: 2vw;
   	width: 20%;
   	/*margin-left: 10px;*/
 }
 
 .textoFiltro{
-	font-size: 1.25vw;
+	font-size: 1.35vw;
     font-family: Helvetica, Arial, sans-serif;
     margin: 0;
+    margin-top: 25px;
 }
 
 .tituloFiltros{
@@ -390,56 +389,34 @@
   background: rgba( 20, 224, 133, 1 );
 }
 
+.buttonReload{
+  font-size: 50px;
+  padding: 6px 12px;
+  background: rgba(226, 142, 52, 1);
+  border-bottom: 1px solid rgba(226, 150, 60, 1);
+}
+
+.buttonReload:active{
+  top: 0px;
+  box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.0 );
+  background: rgba(163, 17, 17, 1);
+}
 
 
-/*the container must be positioned relative:*/
-.custom-select {
-  position: relative;
-  font-family: Arial;
-}
-.custom-select select {
-  display: none; /*hide original SELECT element:*/
-}
-.select-selected {
-  background-color: DodgerBlue;
-}
-/*style the arrow inside the select element:*/
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
-/*point the arrow upwards when the select box is open (active):*/
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px;
-}
-/*style the items (options), including the selected item:*/
-.select-items div,.select-selected {
-  color: #ffffff;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-}
-/*style items (options):*/
-.select-items {
-  position: absolute;
-  background-color: DodgerBlue;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-/*hide the items when the select box is closed:*/
-.select-hide {
-  display: none;
-}
-.select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
+.dFechaBusqueda{
+  /*margin: 0px 0 0px 3px !important;
+  width: 20% !important;*/
+
+  margin: 25px 0 0px 30px;
+  width: 6vw;
+  font-size: 1.1vw;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 12px;
+  background-color: rgba(201, 241, 253, 0.92);;
+  border:0;
+  transition: background .5s linear;
+  -webkit-transition: background .5s linear;
+  -moz-transition: background .5s linear;
+
 }

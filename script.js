@@ -355,6 +355,7 @@ function checkUser(){//Comprueba si existe una cookie de un usuario al iniciar s
 }
 
 function changePage(){//Función para recuperar los datos del usuario que ha iniciado sesión
+    var primero= "AAAA";
     debugger
     conjunto = localStorage.getItem(localStorage.getItem(primero)).split(";");
     var formulario1 = document.getElementsByClassName('datoFormulario1');
@@ -364,14 +365,17 @@ function changePage(){//Función para recuperar los datos del usuario que ha ini
     formulario2[1].innerHTML = conjunto[2];
     formulario1[0].innerHTML = conjunto[4];
     formulario2[2].innerHTML = conjunto[3];
-    //$("#usuario").text(localStorage.getItem(localStorage.getItem(primero)).split(";")[1]);
+    
+    $("#nombreEnCabecera").text("Hola " + localStorage.getItem(localStorage.getItem(primero)).split(";")[5]);
 
     $("#nombreUser").text(conjunto[1]);
+  
     if (conjunto[7] != "" && conjunto[7] != null) {
       $("#usuario")[0].src = conjunto[6] + ";" + conjunto[7];
-
+      $("#imagenCabecera")[0].src = conjunto[6] + ";" + conjunto[7];
     } else {
       $("#usuario")[0].src = conjunto[6];
+      $("#imagenCabecera")[0].src = conjunto[6];
     }
     $("#nombreUser").text(conjunto[1]);
     formulario1 = document.getElementsByClassName('parrafo');
