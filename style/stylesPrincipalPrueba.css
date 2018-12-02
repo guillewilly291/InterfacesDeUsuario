@@ -52,8 +52,8 @@ body {
   font-family: Impact;
 }
 
-/*Estos estilos corresponden con los botones de entrar, registrarse y borrar, tienen una animaciÃƒÂ³n basada en transiciones css */
-/*Estilo botÃƒÂ³n verde*/
+/*Estos estilos corresponden con los botones de entrar, registrarse y borrar, tienen una animaciÃƒÆ’Ã‚Â³n basada en transiciones css */
+/*Estilo botÃƒÆ’Ã‚Â³n verde*/
 .botonReg{
   background:#46b8da;
   color:#fff;
@@ -67,7 +67,7 @@ body {
   outline:none;
 
 }
-/*Estilo botÃƒÂ³n rojo*/
+/*Estilo botÃƒÆ’Ã‚Â³n rojo*/
 .botonCerrar{
   background:#ba1212;
   color:#fff;
@@ -152,7 +152,7 @@ body {
 }
 
 
-/*Este es el header de la pÃƒÂ¡gina, es blanco con opacidad de 0.8, contiene el logo, el tÃƒÂ­tulo y diversas opciones*/
+/*Este es el header de la pÃƒÆ’Ã‚Â¡gina, es blanco con opacidad de 0.8, contiene el logo, el tÃƒÆ’Ã‚Â­tulo y diversas opciones*/
 
     header {
        background-color:  rgba(201, 241, 253, 0.92);
@@ -311,7 +311,7 @@ h1{
 
 .seleccionHeader{
 	margin: 0 3%;
-  float:right;
+	float:right;
 	border-right: 1px solid rgba(255, 255, 255, 0);
 	border-left: 1px solid rgba(255, 255, 255, 0);
 }
@@ -334,7 +334,7 @@ h1{
 
 
 
-/*este div es el central de la pÃƒÂ¡gina, alberga un aside y un section*/
+/*este div es el central de la pÃƒÆ’Ã‚Â¡gina, alberga un aside y un section*/
 
 #divCentral{
 	padding: 40px;
@@ -349,7 +349,7 @@ h1{
 }
 
 
-/*textos para el div de inicio de sesiÃƒÂ³n*/
+/*textos para el div de inicio de sesiÃƒÆ’Ã‚Â³n*/
 .tituloInicioSesion{
 	margin: 0;
 	font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
@@ -363,7 +363,7 @@ h1{
 	font-size: 30px;
 }
 
-/*textos y estilos para el popup de inicio de sesiÃƒÂ³n*/
+/*textos y estilos para el popup de inicio de sesiÃƒÆ’Ã‚Â³n*/
 .tituloInicioSesionPop{
   margin: 20px 0 10px 0;
   margin-top: 3%;
@@ -449,7 +449,7 @@ h1{
     -moz-transition: background .5s linear;
 }
 
-/*div que alberga la galerÃƒÂ­a de imÃƒÂ¡genes*/
+/*div que alberga la galerÃƒÆ’Ã‚Â­a de imÃƒÆ’Ã‚Â¡genes*/
 #galeria{
   width: 55vw;
   height: 23vw;
@@ -540,7 +540,7 @@ h1{
   margin:auto 2%;
 }
 
-/*footer de la pÃƒÂ¡gina, es de color gris con opacidad 0.95*/
+/*footer de la pÃƒÆ’Ã‚Â¡gina, es de color gris con opacidad 0.95*/
 footer{
 	background-color: rgba(36, 36, 36, 0.95);
 	position: fixed;
@@ -563,6 +563,7 @@ footer{
 	vertical-align: bottom;
 	margin: auto;
 	margin-bottom: 0;
+	margin-top: 8px;
 }
 
 .linkSocial{
@@ -576,7 +577,7 @@ footer{
 
 
 
-/*botÃƒÂ³n de la barra de bÃƒÂºsqueda, como el anterior, utiliza transiciones css*/
+/*botÃƒÆ’Ã‚Â³n de la barra de bÃƒÆ’Ã‚Âºsqueda, como el anterior, utiliza transiciones css*/
 
 .buttonGo {
   background: #4088da;
@@ -621,7 +622,7 @@ footer{
 }
 
 
-/*ESTE STYLE CORRESPONDE CON EL CARRUSEL DE IMÃƒÂGENES, ES PLUGGIN*/
+/*ESTE STYLE CORRESPONDE CON EL CARRUSEL DE IMÃƒÆ’Ã‚ÂGENES, ES PLUGGIN*/
 
 .slide-wrap {
   width: 55vw;

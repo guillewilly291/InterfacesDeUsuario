@@ -53,10 +53,12 @@
 	font-family: Helvetica, Arial, sans-serif;
 }
 
-#divReservaHotel{
-
+#logo {
+    width: 3vw;
+    height: 3vw;
+    margin: auto 3%;
+    margin-left: 8%;
 }
-
 #textoPrecioReserva{
 	margin: auto 0;
 	margin-bottom: 5px;

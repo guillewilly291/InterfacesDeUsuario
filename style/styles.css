@@ -192,10 +192,10 @@ body {
 /*Elementos correspondientes al header*/
 header {
   background-color:  rgba(201, 241, 253, 0.92);
-display: flex;
- position: fixed;
- width: 100%;
- top:0;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top:0;
 }
 
 #logo{
@@ -227,7 +227,6 @@ h1 {
 	margin: 0;
 	padding: 0;
 	width: 40%;
-
 	list-style-type: none;
 }
 
@@ -240,8 +239,8 @@ h1 {
 
 .seleccionTexto{
 	font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-	font-size: 2vw;
-	padding: 0 20px
+	/* font-size: 2vw; */
+	padding: 0 20px;
 }
 
 .seleccionHeader:hover{
@@ -253,9 +252,7 @@ h1 {
 }
 
 /*Fin de los elementos correspondientes al header*/
-#tituloCabecera{
-font-size: 3.3vw !important;
-}
+
 
 
 #cuerpo {
