@@ -26,7 +26,7 @@
     <!-- MA5 Slider -->
     <link href="style/ma5slider.min.css" rel="stylesheet" type="text/css">
     <script src="http://ma5slider.ma5.pl/js/ma5slider.min.js"></script>
-
+    <script src="dScript.js"></script>
     <script>
         $(window).on('load', function () {
             $('.ma5slider').ma5slider();
@@ -38,6 +38,7 @@
     <script>
     $( function() {
       $( ".datepicker" ).datepicker({
+          minDate: new Date(),
           onSelect: function(date){
               debugger
                $(".datepicker2").datepicker(
@@ -111,7 +112,7 @@
                     <div class="buscar">
                         <img id="imgBuscar" src="images/logoSinFondo.png" alt="logo" />
                         <input id="inputBuscar" placeholder="Buscar una ciudad, hotel..." type="search"></div>
-                    <div class="buttonGo">
+                    <div class="buttonGo" onclick="busquedaHotel()">
                         <p class="btnText">BUSCAR</p>
                         <div class="btnTwo">
                             <p class="btnText2">&#x2714;</p>
@@ -154,11 +155,10 @@
                                    </div>
                                 </div>
                                 <div class="informacion">
-                                        <h3 class="tituloInicioSesion"> Dubai, una experiencia única </h3>
-                                        <p class="tituloInicioSesion alojamiento"> Alojamiento en el Burj Khalifa, 
-                                                el rascacielos más exclusivo de Dubai. <br> <span id="precio">Mejor precio desde:</span></p>
-                                        <div class="divFlex">
-                                                <h4 class="precioNoche">300€</h4>
+                                        <h3 class="tituloInicioSesion" id="titulo"> Francia, una experiencia única </h3>
+                                        <p class="tituloInicioSesion alojamiento" id="info"> Restaurante de Lujo donde degustar una agradable comida mientras disfrutas con la familia </p>
+                                        <div class="divFlex"> <span id="precio" style="display: inline-block">Mejor precio desde:</span>
+                                                <h4 class="precioNoche" id="precioChange">149€</h4>
                                                 <h4 class="noche">/noche</h4>
                                         </div>
                                         
@@ -389,6 +389,18 @@
     <div id="lean_overlay" style="display: none; opacity: 0.7;"></div>
 
     <script>
+
+    var titulos = ["Francia,una experiencia única", "Roma, pizza y coliseo, la mejor combinación renacentista", "Ibiza, un verdadero lujo español", "Mallorca, por si no tienes presupuesto para Ibiza", "Berlin, un muro, una nación histórica."];
+    var alojamiento =["Restaurante de Lujo donde degustar una agradable comida mientras disfrutas con la familia","Cocina al mas puro estilo italiano, juntando la pizza y la pasta caracteristicas."," Alojamiento agradable con desayunos 5 estrellas, con vistas al mar y posibilidades de encontrar aventuras","Desayuno continental en Mallorca, con agradable gente, experiencias y tipicas ensaimadas","Buffet libre en el casino real de Berlin, donde apostar a la vez que degustas calidad."];
+    var precios= ["149€","279€","426€","120€","219€"];
+    $('#carrusel').on('ma5.activeSlide', function (event, slide) {
+
+        $("#titulo").text(titulos[slide - 1]);
+        $("#info").text(alojamiento[slide - 1]);
+        $("#precioChange").text(precios[slide - 1]);
+        
+    });
+
     $(function () {
             $('#ui-datepicker-div').datepicker({
                 beforeShow: function (input, inst) {

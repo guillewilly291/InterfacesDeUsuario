@@ -294,14 +294,14 @@ body {
 
 h1{
 	vertical-align: middle;
-	margin: auto 5%;
+	margin: auto 14%;
 	/* font-size: 2.3vw; */
 	font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 	text-shadow: 1px 1px 1px #000;
 }
  /*lista con las opciones del header*/
 #listaHeader{
-	display: flex;
+	/*display: flex;*/
 	margin: 0;
 	padding: 0;
 	width: 40%;
@@ -311,7 +311,7 @@ h1{
 
 .seleccionHeader{
 	margin: 0 3%;
-
+  float:right;
 	border-right: 1px solid rgba(255, 255, 255, 0);
 	border-left: 1px solid rgba(255, 255, 255, 0);
 }

@@ -684,17 +684,6 @@ function checkPassword(password){
 }
 
 
-function checkDate(){
-		
-  var date= document.getElementById("year");
-  date= new Date(date.value);
-  var fechaActual= new Date()
-  if(date.getTime()> fechaActual.getTime()){
-    window.alert("La fecha de nacimiento no puede situarse en el futuro.")
-  }else{
-    createCookie();
-  }
-}
 
 function createCookie(){
   debugger;

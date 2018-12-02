@@ -16,36 +16,64 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 	<script>
-/*	$(document).ready(function(){
-			$(".botonEliminar").click(function(){
-					$(this).parent().fadeOut(200);
-			});
-	});*/
+	var primero = "AAAA";	
+	var conjunto = [8];
+	//conjunto = password + ";" + nameSurname + ";" + email + ";" + year + ";" + address + ";" + userName + ";" + imgPerfil;
+	$(document).ready(function(){
+		conjunto = localStorage.getItem(localStorage.getItem(primero)).split(";");
+		var formulario1 = document.getElementsByClassName('datoFormulario1');
+		var formulario2 = document.getElementsByClassName('datoFormulario2');
+		//Actualizamos los datos de la página
+		formulario2[0].innerHTML = conjunto[1];
+		formulario2[1].innerHTML = conjunto[2];
+		formulario1[0].innerHTML = conjunto[4];
+		formulario2[2].innerHTML = conjunto[3];
+		//$("#usuario").text(localStorage.getItem(localStorage.getItem(primero)).split(";")[1]);
+		
+		$("#nombreUser").text(conjunto[1]);
+		if (conjunto[7] != "" && conjunto[7] != null) {
+			$("#usuario")[0].src = conjunto[6] + ";" + conjunto[7];
+
+		} else {
+			$("#usuario")[0].src = conjunto[6];
+		}
+		$("#nombreUser").text(conjunto[1]);
+		formulario1 = document.getElementsByClassName('parrafo');
+		formulario1[0].innerHTML = "Nombre: " + conjunto[1];
+
+
+	});
 	</script>
 
 
 </head>
 
-<body onLoad="changePage()">
+<body>
 
-
-
-	<header class="header">
-
+	<header class="header ">
+	
 		<!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
-		<img id="logo" src="images/logoSinFondo.png" alt="logo"/>
-
+		<img id="logo" src="images/logoSinFondo.png" alt="logo" />
+	
 		<h1 id="tituloCabecera">El rincón de la opinión</h1>
-
+	
 		<ul id="listaHeader">
 			<!--bocadillo de las opciones en el header-->
-
-			<li class="seleccionHeader"> <p class="seleccionTexto"> Favoritos </p></li>
-			<li class="seleccionHeader"> <a class="go" rel="leanModal" name="editar" href="#editar" style="text-decoration: none ;color: black"><p class="seleccionTexto"> Editar Datos </p></a> </li>
-			<li class="seleccionHeader"> <p class="seleccionTexto" onclick="closeSesion()"> Logout </p> </li>
+			<li class="seleccionHeader">
+				<p class="seleccionTexto"> Favoritos </p>
+			</li>
+			
+			<li class="seleccionHeader"> <a class="go" rel="leanModal" name="editar" href="#editar" style="text-decoration: none ;color: black">
+					<p class="seleccionTexto"> Editar Datos </p>
+				</a> </li>
+			<li class="seleccionHeader">
+				<p class="seleccionTexto" onclick="closeSesion()"> Logout </p>
+			</li>
 		</ul>
-
+	
 	</header>
+
+
 
 	<div id="cuerpo">
 
@@ -305,11 +333,26 @@
 			  <img id="blah" src="images/sinFoto.png" style="border-radius:50%"/>
 		</div>
 		<!--Este Jquery llama a la función readURL al hacer un cambio en el formulario en la parte de imagen-->
-		<script type="text/javascript">
+
+
+
+
+	<script type="text/javascript">
+
+
 		$("#imgInp").change(function() {
 	    readURL(this);
 	  });
-		</script>
+	</script>
+
+	
+
+
+
+
+
+
+
 	<div class="divFlex" style="margin-top:2%">
 		<button class="botonReg botonPop" id="borrar">Borrar</button>
 		<button class="botonReg botonPop" id="guardar">Guardar</button>

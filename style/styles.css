@@ -2,10 +2,14 @@
 /*Utilizamos tamaños porcentuales para el ancho de los elementos y vw para las fuentes de manera que adapte al width de la pantalla*/
 body {
   /*Establecemos un fondo al body de la web*/
-  background-image: url(../images/principal.jpg);
-  background-repeat: no-repeat;
+  background-image: url(../images/proto.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
   background-attachment: fixed;
-  background-position: center;
+  
 
   box-sizing: border-box;
   margin: 0;
@@ -186,9 +190,12 @@ body {
 
 /*Este es el header de la página, es blanco con opacidad de 0.8, contiene el logo, el título y diversas opciones*/
 /*Elementos correspondientes al header*/
-header{
-	background-color: rgba(255, 255, 255, 0.8);
-	display: flex;
+header {
+  background-color:  rgba(201, 241, 253, 0.92);
+display: flex;
+ position: fixed;
+ width: 100%;
+ top:0;
 }
 
 #logo{
