@@ -36,17 +36,18 @@
     <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
     <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
     <script>
-    $( function() {
-      $( ".datepicker" ).datepicker({
-          minDate: new Date(),
-          onSelect: function(date){
-              debugger
-               $(".datepicker2").datepicker(
-                  'option', 'minDate', date
-              );
-          }
-      });
-    } );
+   $(function () {
+        $("#fecha1").datepicker({
+            minDate: new Date(),
+            onSelect: function (date) {
+                debugger
+                $("#fecha2").datepicker(
+                    'option', 'minDate', new Date(date.split("/")[2], parseInt(date.split("/")[1]) - 1, parseInt(date.split("/")[0]) + 1)
+                );
+            }
+        });
+        $("#fecha2").datepicker();
+    });
     </script>
 
 </head>
@@ -247,7 +248,7 @@
         </div>
 
         <div class="copyright">
-            <p class="copyrightTexto">Política de privacidad y Términos de uso
+            <a class="copyrightTexto" href="https://www.pccomponentes.com/condiciones-de-compra">Política de privacidad y Términos de uso</a>
             </p>
         </div>
       

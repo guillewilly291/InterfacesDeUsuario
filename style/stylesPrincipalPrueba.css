@@ -321,6 +321,7 @@ h1{
 	/*font-size: 2vw;*/
   padding: 0 20px;
   font-weight: bold;
+  margin-bottom: 21px;
 }
 
 .seleccionHeader:hover{

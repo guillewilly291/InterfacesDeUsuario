@@ -199,19 +199,27 @@ display: flex;
 }
 
 #logo{
-	width: 5vw;
-	height: 5vw;
-
-	margin: auto 3%;
+	width: 3vw;
+    height: 3vw;
+    margin: auto 3%;
+    margin-left: 8%;
 }
 
-h1{
-	vertical-align: middle;
-	margin: auto 5%;
+h1 {
+    vertical-align: middle;
+    margin: auto 14%;
+    /* font-size: 2.3vw; */
+    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    text-shadow: 1px 1px 1px #000;
+}
 
-	font-size: 2.3vw;
-	font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-	text-shadow: 1px 1px 1px #000;
+#listaHeader{
+	/*display: flex;*/
+	margin: 0;
+	padding: 0;
+	width: 40%;
+
+	list-style-type: none;
 }
 
 #listaHeader{
@@ -245,10 +253,14 @@ h1{
 }
 
 /*Fin de los elementos correspondientes al header*/
+#tituloCabecera{
+font-size: 3.3vw !important;
+}
 
 
 #cuerpo {
   margin: 2%  1%;
+  margin-top: 11%;
   display: flex;
 }
 
@@ -442,9 +454,9 @@ h1{
 }
 
 .datoFormulario1 {
-  background-color: rgba(26, 171, 138,0.8);
+  background-color: #c0e9f9;
   border-radius: 12px;
-	border: 5px solid #1AAB8A;
+	border: 5px solid #c0e9f9;
   width: 40%;
   margin: 5%;
   margin-top: 2%;
@@ -463,9 +475,9 @@ h1{
 }
 
 .datoFormulario2 {
-  background-color: rgba(26, 171, 138,0.8);
+  background-color: #c0e9f9;
   border-radius: 12px;
-	border: 5px solid #1AAB8A;
+	border: 5px solid #c0e9f9;
   width: 100%;
   margin: 5%;
   margin-top: 2%;

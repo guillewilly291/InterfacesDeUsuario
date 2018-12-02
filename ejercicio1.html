@@ -19,36 +19,13 @@
 	var primero = "AAAA";	
 	var conjunto = [8];
 	//conjunto = password + ";" + nameSurname + ";" + email + ";" + year + ";" + address + ";" + userName + ";" + imgPerfil;
-	$(document).ready(function(){
-		conjunto = localStorage.getItem(localStorage.getItem(primero)).split(";");
-		var formulario1 = document.getElementsByClassName('datoFormulario1');
-		var formulario2 = document.getElementsByClassName('datoFormulario2');
-		//Actualizamos los datos de la página
-		formulario2[0].innerHTML = conjunto[1];
-		formulario2[1].innerHTML = conjunto[2];
-		formulario1[0].innerHTML = conjunto[4];
-		formulario2[2].innerHTML = conjunto[3];
-		//$("#usuario").text(localStorage.getItem(localStorage.getItem(primero)).split(";")[1]);
-		
-		$("#nombreUser").text(conjunto[1]);
-		if (conjunto[7] != "" && conjunto[7] != null) {
-			$("#usuario")[0].src = conjunto[6] + ";" + conjunto[7];
-
-		} else {
-			$("#usuario")[0].src = conjunto[6];
-		}
-		$("#nombreUser").text(conjunto[1]);
-		formulario1 = document.getElementsByClassName('parrafo');
-		formulario1[0].innerHTML = "Nombre: " + conjunto[1];
-
-
-	});
+	
 	</script>
 
 
 </head>
 
-<body>
+<body onload=changePage()>
 
 	<header class="header ">
 	

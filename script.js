@@ -355,27 +355,28 @@ function checkUser(){//Comprueba si existe una cookie de un usuario al iniciar s
 }
 
 function changePage(){//Función para recuperar los datos del usuario que ha iniciado sesión
-  var data=localStorage.getItem("loggedIn");//Los datos se encuentran en el localStorage (loggedIn)
-  data=data.split(";");
+    debugger
+    conjunto = localStorage.getItem(localStorage.getItem(primero)).split(";");
+    var formulario1 = document.getElementsByClassName('datoFormulario1');
+    var formulario2 = document.getElementsByClassName('datoFormulario2');
+    //Actualizamos los datos de la página
+    formulario2[0].innerHTML = conjunto[1];
+    formulario2[1].innerHTML = conjunto[2];
+    formulario1[0].innerHTML = conjunto[4];
+    formulario2[2].innerHTML = conjunto[3];
+    //$("#usuario").text(localStorage.getItem(localStorage.getItem(primero)).split(";")[1]);
 
-  var formulario1= document.getElementsByClassName('datoFormulario1');
-  var formulario2= document.getElementsByClassName('datoFormulario2');
-  //Actualizamos los datos de la página
-  formulario2[0].innerHTML=data[2];
-  formulario2[1].innerHTML=data[3];
-  formulario1[0].innerHTML=data[5];
-  formulario2[2].innerHTML=data[4];
+    $("#nombreUser").text(conjunto[1]);
+    if (conjunto[7] != "" && conjunto[7] != null) {
+      $("#usuario")[0].src = conjunto[6] + ";" + conjunto[7];
 
+    } else {
+      $("#usuario")[0].src = conjunto[6];
+    }
+    $("#nombreUser").text(conjunto[1]);
+    formulario1 = document.getElementsByClassName('parrafo');
+    formulario1[0].innerHTML = "Nombre: " + conjunto[1];
 
-  formulario1=document.getElementById('nombreUser');
-  formulario1.innerHTML=data[2];
-  formulario1=document.getElementsByClassName('parrafo');
-  formulario1[0].innerHTML="Nombre: "+data[2];
-  if(data[data.length-1]!="images/sinFoto.png"){//Modificación de la imagen de perfil (si el usuario la ha introducido)
-    $('#usuario').attr('src', data[data.length-2]+";"+data[data.length-1]);
-  }else{
-    $('#usuario').attr('src', data[data.length-1]);
-  }
 
 }
 
@@ -621,6 +622,7 @@ function checkCookieMail(name,email){
 
 function checkCookie(){
   //Returnea un array de strings, que tendran de 0-5, las propiedas de las cookies
+  debugger
   var user = document.getElementById("loginUser").value;
   var password = document.getElementById("loginPassword").value;
   var primero = "AAAA";
@@ -639,8 +641,7 @@ function checkCookie(){
         localStorage.removeItem(primero);//Sirve para pasar el argumento del nombre al pasar de pagina web, almacenamos siempre en la posicion 0 de los localStorage( el que se pone siempre el primero de la fila del localStorage de la otra pagina web) para tener el identificador único que nos servira para saber que usuario de todos los guardados en la lista de localStorage se esta logeando.
         localStorage.setItem(primero,user);
         
-        $link = $("#PageChange");
-        location.href = $link.attr('href');
+        document.location.href = "ejercicio1.html";
         
 
 
