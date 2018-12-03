@@ -65,12 +65,12 @@
 				<h3 id="nombreUser"></h3>
 			</div>
 
-			<h2 class="linkOpcion" onclick="displayInf()">Información personal</h2>
+			<h3 class="linkOpcion" onclick="displayInf()">Información personal</h3>
 			<p class="parrafo">Nombre: </p>
 			<p class="parrafo">Pais de origen: España</p>
 			<p class="parrafo">Miembro desde 2018</p>
 
-			<h2 class="linkOpcion" onclick="displayOpi()">Últimas opiniones</h2>
+			<h3 class="linkOpcion" onclick="displayOpi()">Últimas opiniones</h3>
 			<ul class="listaOpiniones"><!--ultimas opiniones escritas-->
 					<!--Se emplea una lista para las opiniones colgadas en la pagina web, estas opiniones estan formadas por un titulo del lugar (link) y un parrafo de la opinion del mismo-->
 					<li>
@@ -94,7 +94,7 @@
 			</ul>
 
 			<div class="divFlex">
-				<h2 class="titulo">Mis preferencias</h2>
+				<h3 class="titulo">Mis preferencias</h3>
 					<!--Botón para añadir nuevas preferencias-->
 				<input class="botonSuma" type="button" value="+" onclick="addPreference()">
 			</div>
@@ -129,7 +129,9 @@
 			<div id="section-inf">
 				<!--este es el section de la pagina web, al ser la opcion A del ejercicio2 en el se incorpora la informacion personal del divUsuario
 				de forma mas detallada, incluyendo progreso en la pagina web-->
-				<h2 class="tituloSection">Información personal</h2>
+				<h2 class="tituloSection" style="float: left;">Información personal</h2>
+				<button class="textLogin" id="changeto3" style="display: inline-block; float:right;" type="button" onclick="editCookie()">
+					Guardar </button>
 
 				<div class="divFormulario">
 
@@ -233,11 +235,11 @@
 						que combinados con un servicio excelente, han hecho que la visita sea muy agradable.
 					</p>
 				</div>
-
+				<!-- 
 				<div class="divLoad">
 					<!--div para la imagen de load more que no tiene ninguna funcionalidad-->
-					<img class="load" src="images/loadMore.png" alt="more"/>
-				</div>
+					<!--<img class="load" src="images/loadMore.png" alt="more"/>
+				</div>-->
 
 			</div>
 
@@ -262,8 +264,11 @@
 		</div>
 	
 		<div class="copyright">
-			<a class="copyrightTexto" href="https://www.pccomponentes.com/condiciones-de-compra">Política de privacidad y
-				Términos de uso</a>
+			<a class="copyrightTexto" href="https://www.pccomponentes.com/condiciones-de-compra">Política de privacidad</a>
+			</p>
+		</div>
+		<div class="copyright">
+			<a class="copyrightTexto" href="FAQ.html">FAQ</a>
 			</p>
 		</div>
 	

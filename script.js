@@ -378,62 +378,7 @@ function changePage(){//Función para recuperar los datos del usuario que ha ini
 
 }
 
-function editarCuenta(data){//Modifica datos de la cuenta de usuario
 
-  var formulario1= document.getElementsByClassName('datoFormulario1');
-  var formulario2= document.getElementsByClassName('datoFormulario2');
-  var anteriorDato=localStorage.getItem(formulario2[1].innerHTML);//obtenemos los datos anteriores del usuario a modificar
-  anteriorDato=anteriorDato.split(";");
-  //Reemplazamos valores
-  formulario2[0].innerHTML=data[0].value;
-  formulario1[0].innerHTML=data[2].value;
-  formulario2[2].innerHTML=data[1].value;
-
-  formulario1=document.getElementById('nombreUser');
-  formulario1.innerHTML=data[0].value;
-  formulario1=document.getElementsByClassName('parrafo');
-  formulario1[0].innerHTML="Nombre: "+data[0].value;
-
-  var imageInput= document.getElementById('blah').getAttribute("src");//Obtenemos la imagen de usuario
-  $('#usuario').attr('src',imageInput);
-
- formulario1= document.getElementsByClassName('datoFormulario1');
-    var str="";
-    if(anteriorDato[anteriorDato.length-1]!="images/sinFoto.png"){//foto de usuario por defecto
-    for(var i=0;i<anteriorDato.length-2;i++){
-
-      if(i==2){ //nombre y apellidos
-        str+=formulario2[0].innerHTML;
-      }else if(i==4){//fecha de nacimiento
-        str+=formulario2[2].innerHTML;
-      }else if(i==5){//dirección
-        str+=formulario1[0].innerHTML;
-      }else{
-        str+=anteriorDato[i];
-      }
-        str+=";";
-    }
-  }else{
-    for(var i=0;i<anteriorDato.length-1;i++){
-
-      if(i==2){ //nombre y apellidos
-        str+=formulario2[0].innerHTML;
-      }else if(i==4){//fecha de nacimiento
-        str+=formulario2[2].innerHTML;
-      }else if(i==5){//dirección
-        str+=formulario1[0].innerHTML;
-      }else{
-        str+=anteriorDato[i];
-      }
-        str+=";";
-    }
-  }
-    str+=imageInput;//añadimos la imagen
-    localStorage.setItem(formulario2[1].innerHTML,str);//guardamos en el localStorage nuestros nuevos datos
-    localStorage.setItem("loggedIn",str);
-    alert("Datos guardados correctamente");
-
-}
 
 function closeSesion(){//Cierra sesión de la cuenta y nos lleva a la página de inicio
   localStorage.removeItem("ZZZZ");
@@ -1023,4 +968,97 @@ function checkRadioButton(e) {
       arPagos[i].setAttribute('style', 'display: none;');
     }
   }
+}
+
+function editCookie(){
+  debugger;
+  var userName= document.getElementById("userName").value;
+  var password = document.getElementById("password").value;
+  var	nameSurname = document.getElementById("nameSurname").value;
+  var	email = document.getElementById("email").value;
+  var	year = document.getElementById("year").value;
+  var	address = document.getElementById("address").value;
+  var imgPerfil = $("#file-preview")[0].src;
+
+  if(!$("#checkbox").prop("checked")){
+    window.alert("Se deben aceptar las condiciones generales");
+
+  }else{	
+    
+    if(checkCookieMail(userName,email)){ //Se encontraria donde tenemos el numero 444444
+      
+      window.alert("El correo especificado se encuentra ya vinculado a una cuenta de la página, elija otro porfavor");
+      //Si existe el correo en una cuenta de la pagina
+
+    }else{
+      var conjunto = password + ";" + nameSurname + ";" + email + ";" + year + ";" + address + ";" + userName +";" + imgPerfil;	
+
+      localStorage.setItem(userName,conjunto);
+      changeStepTo1();
+      vaciarForm();
+      cerrar();
+      
+    }
+
+
+    cerrar();
+    
+  }
+}
+
+function editarCuenta(data){//Modifica datos de la cuenta de usuario
+
+  var formulario1= document.getElementsByClassName('datoFormulario1');
+  var formulario2= document.getElementsByClassName('datoFormulario2');
+  var anteriorDato=localStorage.getItem(formulario2[1].innerHTML);//obtenemos los datos anteriores del usuario a modificar
+  anteriorDato=anteriorDato.split(";");
+  //Reemplazamos valores
+  formulario2[0].innerHTML=data[0].value;
+  formulario1[0].innerHTML=data[2].value;
+  formulario2[2].innerHTML=data[1].value;
+
+  formulario1=document.getElementById('nombreUser');
+  formulario1.innerHTML=data[0].value;
+  formulario1=document.getElementsByClassName('parrafo');
+  formulario1[0].innerHTML="Nombre: "+data[0].value;
+
+  var imageInput= document.getElementById('blah').getAttribute("src");//Obtenemos la imagen de usuario
+  $('#usuario').attr('src',imageInput);
+
+ formulario1= document.getElementsByClassName('datoFormulario1');
+    var str="";
+    if(anteriorDato[anteriorDato.length-1]!="images/sinFoto.png"){//foto de usuario por defecto
+    for(var i=0;i<anteriorDato.length-2;i++){
+
+      if(i==2){ //nombre y apellidos
+        str+=formulario2[0].innerHTML;
+      }else if(i==4){//fecha de nacimiento
+        str+=formulario2[2].innerHTML;
+      }else if(i==5){//dirección
+        str+=formulario1[0].innerHTML;
+      }else{
+        str+=anteriorDato[i];
+      }
+        str+=";";
+    }
+  }else{
+    for(var i=0;i<anteriorDato.length-1;i++){
+
+      if(i==2){ //nombre y apellidos
+        str+=formulario2[0].innerHTML;
+      }else if(i==4){//fecha de nacimiento
+        str+=formulario2[2].innerHTML;
+      }else if(i==5){//dirección
+        str+=formulario1[0].innerHTML;
+      }else{
+        str+=anteriorDato[i];
+      }
+        str+=";";
+    }
+  }
+    str+=imageInput;//añadimos la imagen
+    localStorage.setItem(formulario2[1].innerHTML,str);//guardamos en el localStorage nuestros nuevos datos
+    localStorage.setItem("loggedIn",str);
+    alert("Datos guardados correctamente");
+
 }
