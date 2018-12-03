@@ -14,7 +14,8 @@ function seleccionarHotel(idHotel){
 }
 
 function cargaDatos(){
-
+	
+	userLogged2();
 	var idHotel = localStorage.getItem("seleccionHotel");
 
 	var dataHotel = document.getElementById(idHotel).getElementsByTagName('p');
