@@ -178,7 +178,7 @@
 
 #listaHoteles{
 	overflow-y: scroll;
-	height: 25vw;
+	height: 33vw;
 }
 
 .fotoListaHotel{
@@ -305,7 +305,7 @@ margin-top: 13px;
 	border-radius: 6px;
 	width: 18%;
 	margin-left: 15px;
-	/* height: 50%; */
+	height: 50%; 
 }
 
 

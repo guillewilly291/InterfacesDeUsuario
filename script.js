@@ -355,10 +355,10 @@ function changePage(){//Función para recuperar los datos del usuario que ha ini
     var formulario1 = document.getElementsByClassName('datoFormulario1');
     var formulario2 = document.getElementsByClassName('datoFormulario2');
     //Actualizamos los datos de la página
-    formulario2[0].innerHTML = conjunto[1];
-    formulario2[1].innerHTML = conjunto[2];
-    formulario1[0].innerHTML = conjunto[4];
-    formulario2[2].innerHTML = conjunto[3];
+    formulario2[0].value = conjunto[1];
+    formulario2[1].value = conjunto[2];
+    formulario1[0].value = conjunto[3];
+    formulario2[2].value = conjunto[4];
     
     $("#nombreEnCabecera").text("Hola " + localStorage.getItem(localStorage.getItem(primero)).split(";")[5]);
 
@@ -879,7 +879,7 @@ function insertDates(){
 
  	}
 
- 	//cargaFechasFiltro();
+ 	cargaFechasFiltro();
 
  	var busqueda = document.getElementById('inputBuscar').value.toLowerCase();
 
@@ -891,15 +891,22 @@ function insertDates(){
  	divLista.innerHTML = null;
 
  	var rating = localStorage.getItem('estrellas');
-
+  var rango=document.getElementById('amount').value;
+  rango=rango.split("-");
+  var minimo= rango[0].split("€");
+  var maximo= rango[1].split("€");
+  minimo=parseInt(minimo[0]);
+  maximo=parseInt(maximo[0]);
  	for(i = 0; i<arHoteles.length; i++){
 
  		var idHotel = arHoteles[i].getAttribute('id');
  		var dataHotel = document.getElementById(idHotel).getElementsByTagName('p');
-
- 		if(dataHotel[5].innerHTML != rating && rating != 0){/*Validar estrellas*/
+    var compro =precioReserva(dataHotel[4].innerHTML);
+ 		if((dataHotel[5].innerHTML != rating && rating != 0)){/*Validar estrellas*/
  			continue;
- 		}
+ 		}else if(compro<=minimo||compro>=maximo){
+       continue;
+     }
 
 		var srcImg = dataHotel[6].innerHTML;
 		var srcEstrellas = 'estrellas/' + dataHotel[5].innerHTML + '-5.png';
