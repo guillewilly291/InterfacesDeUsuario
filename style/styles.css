@@ -617,5 +617,31 @@ footer {
 .imagenSocial{
 	height: 100%;
 }
-
-
+.breadcrumbs{
+  position:inherit;
+}
+ul.breadcrumb {
+  padding: 3px 16px;
+  list-style: none;
+  background-color: #ddc274;
+  position: fixed;
+  width: 100%;
+  margin-top: 4.26%;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 14px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}

@@ -132,7 +132,7 @@
 /***********página de lista busqueda****************/
 
 .tituloLista{
-    font-size: 1.8em;
+    /* font-size: 1.8em; */
     font-family: Helvetica, Arial, sans-serif;
     margin: 0;
 }
@@ -146,7 +146,7 @@
 	width: 70%;
 	margin: 1.5% 0;
 	border-radius: 12px;
-	border: 4px solid #46b8da;
+	border: 2px solid #46b8da;
 }
 
 #imgBuscar{
@@ -160,7 +160,7 @@
 #inputBuscar{
   width:100%;
   height: 100%;
-  font-size: 35px;
+  /* font-size: 35px; */
   border: 0;
   border-radius: 12px;
   margin:0 auto;
