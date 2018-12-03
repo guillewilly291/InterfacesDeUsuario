@@ -11,51 +11,25 @@
 	<meta charset="UTF-8">
 	<!--se realiza el link con la hoja de estilos correspondiente-->
 	<link rel="stylesheet" type="text/css" href="style/styles.css" />
-	<link rel="stylesheet" type="text/css" href="dStyles.css" />
 	<link rel="stylesheet" type="text/css" href="style/stylesPrincipalPrueba.css" />
+	<link rel="stylesheet" type="text/css" href="dStyles.css" />
 
 	<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="script.js"></script-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="dScript.js"></script>
-
 	<script src="http://momentjs.com/downloads/moment.min.js"></script>
 
 	
 	<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
 	<script src="jquery-ui-1.12.1/jquery-ui.js"></script>
-	<script>
-	$( document ).ready(function() {
- 
-		// scripts de JQUERY que llaman a las funciones de los plugins, uno para pop-up y otro para carrusel
-		$(".go").leanModal({ top : 500, overlay : 0.7, closeButton: ".modal_close" });
-		$(".go2").leanModal({ top : 500, overlay : 0.7});
-	
-	});
-	</script>
-    <script>
-    $(function () {
-        $("#fecha1").datepicker({
-            minDate: new Date(),
-            onSelect: function (date) {
-                debugger
-                $("#fecha2").datepicker(
-                    'option', 'minDate', new Date(date.split("/")[2], parseInt(date.split("/")[1]) - 1, parseInt(date.split("/")[0]) + 1)
-                );
-            }
-        });
-        $("#fecha2").datepicker();
-    });
-    </script>
-
 
 </head>
 
 
-<body onLoad="realizarBusqueda()">
+<body onLoad="cargaDatos()">
 
-	
 	<header class="header" id="guestHeader">
 	
 		<!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
@@ -73,12 +47,14 @@
 					<p class="seleccionTexto"> Registrarse </p>
 				</a> </li>
 		</ul>
+
 		<div class="breadcrumbs">
 			<ul class="breadcrumb">
 				<li><a href="paginaPrincipalTest.html">Home</a></li>
-				<li>Resultados de búsqueda</li>
+				<li>FAQ</li>
 			  </ul>
 		</div>
+	
 	</header>
 	
 	<header class="header" id="userHeader" style="display: none">
@@ -106,111 +82,92 @@
 		<div class="breadcrumbs">
 			<ul class="breadcrumb">
 				<li><a href="paginaPrincipalTest.html">Home</a></li>
-				<li>Mi perfil</li>
+				<li>FAQ</li>
 			  </ul>
 		</div>
 	
 	</header>
-	
+
+	<div id="cuerpo" >
 
 
-	<div id="cuerpo">
 
-		<aside class="asideHotel">
-			<!--este es el aside de la pagina, en el se encuentran la informacion personal del usuario, las ultimas opiniones escritas y sus preferencias-->
-			<h4 class="tituloFiltros"> Filtros de búsqueda </h4>
-			<h5 class="textoFiltro"> Fecha de llegada </h5>
-			<input class="dFechaBusqueda datepicker" id="fecha1" placeholder="dd/mm/aaaa" type="text" >
-			<h5 class="textoFiltro"> Fecha de salida </h5>
-			<input class="dFechaBusqueda datepicker datepicker2" id="fecha2" placeholder="dd/mm/aaaa" type="text">
-			<h5 class="textoFiltro"> Estrellas </h5>
-
-			<div class="rate">
-			    <input type="radio" id="star5" name="rate" value="5" />
-			    <label for="star5" title="5 estrellas">5 stars</label>
-			    <input type="radio" id="star4" name="rate" value="4" />
-			    <label for="star4" title="4 estrellas">4 stars</label>
-			    <input type="radio" id="star3" name="rate" value="3" />
-			    <label for="star3" title="3 estrellas">3 stars</label>
-			    <input type="radio" id="star2" name="rate" value="2" />
-			    <label for="star2" title="2 estrellas">2 stars</label>
-			    <input type="radio" id="star1" name="rate" value="1" />
-			    <label for="star1" title="1 estrellas">1 star</label>
-  			</div>
-
-  			<button class="buttonFiltros buttonReload" onclick="resetEstrellas()"> ↺ </button>
-
-			<button class="buttonFiltros" id="customButton" onclick="aplicarFiltros()">Aplicar</button>
-
-		</aside>
-
-
-		<section class="sectionHotel">
-			<h3 class="tituloLista"> Introduce tu destino, te recomendaremos lo mejor para tí </h3>
-			<div class="divBusqueda">
-                    <div class="barraBusqueda">
-                        <img id="imgBuscar" src="images/logoSinFondo.png" alt="logo" />
-                        <input id="inputBuscar" placeholder="Buscar una ciudad, hotel..." type="search">
-                    </div>
-                    <div class="buttonGo" onclick="realizarBusqueda()">
-                        <p class="btnText">BUSCAR</p>
-                        <div class="btnTwo">
-                            <p class="btnText2">&#x2714;</p>
-                        </div>
-                    </div>
-            </div>
-
-
-	        <h4 class="tituloLista">  </h4>
-
-	        <div id="listaHoteles">
-
-				<!--div style="display: flex;">
-
-					<img class="fotoListaHotel" src="images/hotelPax.jpg" alt="hotel_pax"/>
-
-					<div class="divInfoListaHotel">
-
-						<h4 class="dNombreListaHotel"> Hotel Pax </h4>
-						<img class="fotoListaEstrellas" src="estrellas/2-5.png" alt="estrellas"/>
-						<p id="descripcionHotel" class="parrafoInfo"> Calle Sama de Langreo, s/n, 28250 Torrelodones, Madrid </p>
-
-					</div>
-
-					<div class="divReservaListaHotel">
-
-						<h5 class="precioListaReserva"> 700€ </h5>
-
-						<a class="btnLista" href="#"> Reserva </a>
-
-					</div>
-
-				</div-->
-
-			</div>
-
-			<!--div id="divReservaHotel" style="display: flex;">
-
-				<h5 id="textoPrecioReserva"> Precio total de la estancia: </h5>
-				<h5 id="precioReserva">  </h5>
-
-				<a class="btn" href="#"> Reserva </a>
-
-			</div-->
+		<section class="sectionHotel" id="hotelElegido">
+			
+				<h3>Preguntas frecuentes(FAQ)</h3>
+				<h4>¿Debo iniciar sesión para disfrutar de los servicios de El Rincón de la opinión?</h4>
+				<p>Desde El Rincón de la Opinión se permite la navegación por casi todas las secciones de la página.
+					Para reservas y consulta de "Mi Perfil" se precisa de tener una cuenta en la plataforma e iniciar
+					sesión.
+				
+				</p>
+				<h4>¿Dónde puedo encontrar la información acerca de mi hotel ideal?</h4>
+				<p>Una vez hemos introducido el nombre de la ciudad o del hotel que desee, haga click en el botón "Ver
+					más" dentro del hotel que desee consultar.
+					sesión.
+				
+				</p>
+				<h4>¿Hasta qué edad los niños se hospedan sin cargo?</h4>
+				<p>La edad máxima para hospedarse sin cargo difiere dependiendo del hotel. Por lo general entre los 3-5 años.
+					Podrá encontrar más información en "Ver más" de cada hotel.
+				
+				</p>
+				<h4>¿Qué sucede si se cancela una reserva?¿Recupero mi dinero?</h4>
+				<p>Desde El Rincón de la Opinión, nos pondremos en contacto con usted via el correo electrónico proporcionado
+					en el login para resolverlo lo más rápido posible. No se preocupe por su dinero. El Rincón de la Opinion
+					se encarga de que el dinero no llegue al hotel hasta que disfrute de su estancia allí por lo que en caso 
+					de cancelación su dinero sería devuelto.
+				
+				</p>
+				<h4>¿Cómo puedo encontrar hoteles disponibles para las fechas que quiero?</h4>
+				<p>A partir de la página principal o bien desde la página de resultados podrá seleccionar tanto la fecha 
+					de salida como la fecha de destino
+				
+				</p>
+			
 
 		</section>
 
 	</div>
-
+	<footer>
+			<!--Footer de la pagina web-->
+			<a class="linkSocial" href="https://www.instagram.com/david.silveira/?hl=es" target="_blank">
+				<img class="imagenSocial" src="images/instagram.png" alt="instagram" />
+			</a>
+	
+			<a class="linkSocial" href="https://www.youtube.com/channel/UC0L-DRAlW-ebjHrlk8oSVRg?view_as=subscriber" target="_blank">
+				<img class="imagenSocial" src="images/youtube.png" alt="youtube" />
+			</a>
+			<div class="copyright">
+				<p class="copyrightTexto">elrincondelaopinion@gmail.com</p>
+			</div>
+			<div class="copyright">
+				<p class="copyrightTexto">902453453</p>
+			</div>
+	
+			<div class="copyright">
+				<a class="copyrightTexto" href="https://www.pccomponentes.com/condiciones-de-compra">Política de privacidad</a>
+				</p>
+			</div>
+			<div class="copyright">
+					<a class="copyrightTexto" href="FAQ.html">FAQ</a>
+					</p>
+				</div>
+		  
+			<!--Copyright y derechos reservados-->
+			<div class="copyright">
+				<p class="copyrightTexto">© 2018. ElRinconDeLaOpinion. Todos los derechos reservados.</p>
+			</div>
+		</footer>
 
 	<div style="display: none">
 
 		<ul id="infoHoteles">
 			<li id="hotelPax" class="madrid">
 				<p class="infNombreHotel">Hotel Pax</p>
-				<p class="infDirHotel">Habitación individual.<br>Calle Sama de Langreo, s/n, 28250 Torrelodones, Madrid</p>
+				<p class="infDirHotel">Calle Sama de Langreo, s/n, 28250 Torrelodones, Madrid</p>
 				<p class="infTelHotel">918 40 66 06</p>
-				<p class="infTextoHotel">El Hotel PAX TORRELODONESes un establecimiento ubicado en la tranquila localidad de Torrelodones, a 29 kilómetros del centro de Madrid. UN ESPACIO DONDE EL CLIENTE SE SIENTA EN GRAN MEDIDA COMO EN SU HOGAR.</p>
+				<p class="infTextoHotel">El Hotel PAX TORRELODONESes un establecimiento ubicado en la tranquila localidad de Torrelodones, a 29 kilómetros del centro de Madrid. UN ESPACIO DONDE EL CLIENTE SE SIENTA EN GRAN MEDIDA COMO EN SU HOGAR.<br>Habitación individual.<br></p>
 				<p class="infPrecioHotel">75</p>
 				<p class="infEstrellasHotel">2</p>
 				<p class="infFotoHotel">images/hotelPax.jpg</p>
@@ -218,9 +175,9 @@
 
 			<li id="burjKhalifa" class="dubai">
 				<p class="infNombreHotel"> Burj Khalifa </p>
-				<p class="infDirHotel"> Habitación doble.<br>Sheikh Mohammed bin Rashid Blvd - Dubai - Emiratos Árabes Unidos </p>
+				<p class="infDirHotel"> Sheikh Mohammed bin Rashid Blvd - Dubai - Emiratos Árabes Unidos </p>
 				<p class="infTelHotel"> No disponible </p>
-				<p class="infTextoHotel"> El Burj Khalifa es un rascacielos ubicado en Dubái. Con 828 metros de altura, es la estructura más alta de la que se tiene registro en la historia.</p>
+				<p class="infTextoHotel"> El Burj Khalifa es un rascacielos ubicado en Dubái. Con 828 metros de altura, es la estructura más alta de la que se tiene registro en la historia.<br>Habitación doble.<br></p>
 				<p class="infPrecioHotel">1250</p>
 				<p class="infEstrellasHotel">5</p>
 				<p class="infFotoHotel">images/burjKhalifa.jpg</p>
@@ -228,9 +185,9 @@
 
 			<li id="bestWestern" class="paris">
 				<p class="infNombreHotel"> Best Western Hotel Paris Louvre Opera </p>
-				<p class="infDirHotel"> Habitación doble.<br>Rue des Moulins, 75001 Paris, Francia </p>
+				<p class="infDirHotel"> Rue des Moulins, 75001 Paris, Francia </p>
 				<p class="infTelHotel"> +33 1 40 20 01 10 </p>
-				<p class="infTextoHotel"> Este hotel exclusivo, ubicado en una casa adosada del s. XVII, se encuentra a 8 minutos a pie de la Ópera Garnier y a 11 minutos del Museo del Louvre.</p>
+				<p class="infTextoHotel"> Este hotel exclusivo, ubicado en una casa adosada del s. XVII, se encuentra a 8 minutos a pie de la Ópera Garnier y a 11 minutos del Museo del Louvre.<br>Habitación doble.<br></p>
 				<p class="infPrecioHotel">208</p>
 				<p class="infEstrellasHotel">4</p>
 				<p class="infFotoHotel">images/bestWestern.jpg</p>
@@ -238,9 +195,9 @@
 
 			<li id="nyx" class="madrid">
 				<p class="infNombreHotel"> NYX Hotel Madrid </p>
-				<p class="infDirHotel"> Habitación individual.<br>Calle del Aviador Zorita, 34, 28020 Madrid </p>
+				<p class="infDirHotel"> Calle del Aviador Zorita, 34, 28020 Madrid </p>
 				<p class="infTelHotel"> +34 915 53 59 00 </p>
-				<p class="infTextoHotel">Este hotel, con una imponente zona de recepción de mármol y madera grabada, se encuentra a 6 minutos a pie de la estación de metro Alvarado.</p>
+				<p class="infTextoHotel">Este hotel, con una imponente zona de recepción de mármol y madera grabada, se encuentra a 6 minutos a pie de la estación de metro Alvarado.<br>Habitación individual.<br></p>
 				<p class="infPrecioHotel">74</p>
 				<p class="infEstrellasHotel">4</p>
 				<p class="infFotoHotel">images/nyx.jpg</p>
@@ -248,9 +205,9 @@
 
 			<li id="westinPalace" class="madrid">
 				<p class="infNombreHotel"> The Westin Palace, Madrid </p>
-				<p class="infDirHotel"> Habitación doble.<br>Plaza de las Cortes, 7, 28014 Madrid </p>
+				<p class="infDirHotel"> Plaza de las Cortes, 7, 28014 Madrid </p>
 				<p class="infTelHotel"> +34 913 60 80 00 </p>
-				<p class="infTextoHotel"> Hotel elegante con habitaciones clásicas, bar con paredes revestidas de madera y restaurante con cúpula de vidriera.</p>
+				<p class="infTextoHotel"> Hotel elegante con habitaciones clásicas, bar con paredes revestidas de madera y restaurante con cúpula de vidriera.<br>Habitación doble.<br></p>
 				<p class="infPrecioHotel">251</p>
 				<p class="infEstrellasHotel">5</p>
 				<p class="infFotoHotel">images/westin.jpg</p>
@@ -259,10 +216,10 @@
 
 			<li id="interContinental" class="paris">
 				<p class="infNombreHotel"> InterContinental Paris - Le Grand </p>
-				<p class="infDirHotel"> Habitación doble.<br>2 Rue Scribe, 75009 Paris, Francia </p>
+				<p class="infDirHotel"> 2 Rue Scribe, 75009 Paris, Francia </p>
 				<p class="infTelHotel"> +33 1 40 07 32 32 </p>
 				<p class="infTextoHotel"> Este hotel opulento de 1862 tiene vistas al teatro de la ópera Palais Garnier y está a 3 minutos a pie de las tiendas
-				del bulevar Haussmann y a 4 minutos a pie de la estación de metro Opéra.</p>
+				del bulevar Haussmann y a 4 minutos a pie de la estación de metro Opéra.<br>Habitación doble.<br></p>
 				<p class="infPrecioHotel">295</p>
 				<p class="infEstrellasHotel">5</p>
 				<p class="infFotoHotel">images/inter.jpg</p>
@@ -270,10 +227,10 @@
 
 			<li id="ibis" class="paris">
 				<p class="infNombreHotel"> Hôtel ibis Paris Porte de Bagnolet </p>
-				<p class="infDirHotel"> Habitación doble.<br>1 Rue Jean Jaurès, 93170 Bagnolet, Francia </p>
+				<p class="infDirHotel"> 1 Rue Jean Jaurès, 93170 Bagnolet, Francia </p>
 				<p class="infTelHotel"> +33 1 43 60 02 76 </p>
 				<p class="infTextoHotel"> El hotel ibis Paris Porte de Bagnolet le proporcionará una inolvidable estancia con habitaciones con cómodas camas, un
-				cordial equipo pendiente de todas y cada una de sus necesidades y bar y lounge en el que relajarse.</p>
+				cordial equipo pendiente de todas y cada una de sus necesidades y bar y lounge en el que relajarse.<br>Habitación doble.<br></p>
 				<p class="infPrecioHotel">57</p>
 				<p class="infEstrellasHotel">3</p>
 				<p class="infFotoHotel">images/ibis.jpg</p>
@@ -281,9 +238,9 @@
 
 			<li id="f1" class="paris">
 				<p class="infNombreHotel"> hotelF1 Paris Porte de Montmartre </p>
-				<p class="infDirHotel"> Habitación individual.<br>29 Rue du Dr Babinski, 75018 Paris, Francia </p>
+				<p class="infDirHotel"> 29 Rue du Dr Babinski, 75018 Paris, Francia </p>
 				<p class="infTelHotel"> +33 891 70 53 50 </p>
-				<p class="infTextoHotel"> Hotel sencillo con habitaciones básicas con baño compartido, televisión de pantalla plana y Wi‑Fi gratis.</p>
+				<p class="infTextoHotel"> Hotel sencillo con habitaciones básicas con baño compartido, televisión de pantalla plana y Wi‑Fi gratis.<br>Habitación individual.<br></p>
 				<p class="infPrecioHotel">38</p>
 				<p class="infEstrellasHotel">2</p>
 				<p class="infFotoHotel">images/f1.jpg</p>
@@ -291,10 +248,10 @@
 
 			<li id="yotel" class="newyork">
 				<p class="infNombreHotel"> YOTEL New York </p>
-				<p class="infDirHotel"> Habitación doble.<br>570 10th Ave, New York, NY 10036, EE. UU. </p>
+				<p class="infDirHotel"> 570 10th Ave, New York, NY 10036, EE. UU. </p>
 				<p class="infTelHotel"> +1 646-449-7700 </p>
 				<p class="infTextoHotel"> Este moderno hotel cápsula, que cuenta con un destacado diseño minimalista, está a 600 m de la autoridad portuaria y a
-				1,1 km de la plaza Times Square.</p>
+				1,1 km de la plaza Times Square.<br>Habitación doble.<br></p>
 				<p class="infPrecioHotel">149</p>
 				<p class="infEstrellasHotel">4</p>
 				<p class="infFotoHotel">images/yotel.jpg</p>
@@ -302,10 +259,10 @@
 
 			<li id="pennsyl" class="newyork">
 				<p class="infNombreHotel"> Hotel Pennsylvania </p>
-				<p class="infDirHotel"> Habitación individual.<br>401 7th Ave, New York, NY 10001, EE. UU.</p>
+				<p class="infDirHotel"> 401 7th Ave, New York, NY 10001, EE. UU. </p>
 				<p class="infTelHotel"> +1 212-736-5000 </p>
 				<p class="infTextoHotel"> Este hotel clásico se ubica en Midtown, en un edificio de alrededor de 1919 que se encuentra frente a la Penn Station y
-				al Madison Square Garden.</p>
+				al Madison Square Garden.<br>Habitación individual.<br></p>
 				<p class="infPrecioHotel">61</p>
 				<p class="infEstrellasHotel">2</p>
 				<p class="infFotoHotel">images/pennsyl.jpg</p>
@@ -313,9 +270,9 @@
 
 			<li id="central" class="newyork">
 				<p class="infNombreHotel"> Park Central Hotel New York </p>
-				<p class="infDirHotel"> Habitación doble.<br>870 7th Ave, New York, NY 10019, EE. UU. </p>
+				<p class="infDirHotel"> 870 7th Ave, New York, NY 10019, EE. UU. </p>
 				<p class="infTelHotel"> +1 212-247-8000 </p>
-				<p class="infTextoHotel"> Habitaciones refinadas y modernas en un hotel de los años 20 con gimnasio, salón chic y cafetería informal.</p>
+				<p class="infTextoHotel"> Habitaciones refinadas y modernas en un hotel de los años 20 con gimnasio, salón chic y cafetería informal.<br>Habitación doble.<br></p>
 				<p class="infPrecioHotel">190</p>
 				<p class="infEstrellasHotel">4</p>
 				<p class="infFotoHotel">images/central.jpg</p>
@@ -456,7 +413,6 @@
 
     <!--Div que permite oscurecer la pantalla cuando aparece un popup-->
 	<div id="lean_overlay" style="display: none; opacity: 0.7;"></div>
-
 
 
 </body>

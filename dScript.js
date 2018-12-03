@@ -415,6 +415,7 @@ function insertDates(){
 	if(date.getTime()> fechaActual.getTime()){
 	  window.alert("La fecha de nacimiento no puede situarse en el futuro.")
 	}else{
+		
 	  createCookie();
 	}
   }
@@ -569,12 +570,12 @@ function insertDates(){
 		changeStepTo1();
 		vaciarForm();
 		cerrar();
-		
+		alertCreatedUser();
 	  }
   
   
 	  cerrar();
-	  
+	 
 	}
   }
   

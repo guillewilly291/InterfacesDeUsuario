@@ -595,6 +595,8 @@ function checkDate(){
   if(date.getTime()> fechaActual.getTime()){
     window.alert("La fecha de nacimiento no puede situarse en el futuro.")
   }else{
+    debugger
+    alertCreatedUser();
     createCookie();
   }
 }
@@ -697,6 +699,9 @@ function checkCookie(){
   return 1;
 }
 
+function alertCreatedUser(){
+  window.alert("El usuario ha sido creado correctamente")
+}
 function cambiarHeader() {
   var primero= "AAAA";
     debugger
