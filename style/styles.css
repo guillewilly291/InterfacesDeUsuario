@@ -183,8 +183,8 @@ body {
 
 #hotelElegido{
     padding: 20px !important;
-    background-color: rgba(255, 255, 255, 0.85) !important;
-    border-radius: 2vw !important;
+    background-color: rgb(255, 255, 255) !important;
+    border-radius: 6px !important;
     width: 75% !important;
     margin-left: 11% !important;
     margin-top: 3% !important;
@@ -226,6 +226,7 @@ h1 {
     /* font-size: 2.3vw; */
     font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     text-shadow: 1px 1px 1px #000;
+    width:65%;  
 }
 
 #listaHeader{
@@ -243,7 +244,7 @@ h1 {
 	float: right;
 	padding: 0;
 	z-index: -1000;
-	width: 22%;
+	width: 40%;
 	list-style-type: none;
 }
 
@@ -616,3 +617,5 @@ footer {
 .imagenSocial{
 	height: 100%;
 }
+
+

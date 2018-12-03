@@ -12,17 +12,28 @@
 	<!--se realiza el link con la hoja de estilos correspondiente-->
 	<link rel="stylesheet" type="text/css" href="style/styles.css" />
 	<link rel="stylesheet" type="text/css" href="dStyles.css" />
-
+	<link rel="stylesheet" type="text/css" href="style/stylesPrincipalPrueba.css" />
 
 	<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="script.js"></script-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="dScript.js"></script>
+
 	<script src="http://momentjs.com/downloads/moment.min.js"></script>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	
 	<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
-    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+	<script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+	<script>
+	$( document ).ready(function() {
+ 
+		// scripts de JQUERY que llaman a las funciones de los plugins, uno para pop-up y otro para carrusel
+		$(".go").leanModal({ top : 500, overlay : 0.7, closeButton: ".modal_close" });
+		$(".go2").leanModal({ top : 500, overlay : 0.7});
+	
+	});
+	</script>
     <script>
     $(function () {
         $("#fecha1").datepicker({
@@ -72,7 +83,7 @@
 	
 		<h1 id="tituloCabecera" style="margin-left: 0">El rincón de la opinión</h1>
 	
-		<h1 id="nombreEnCabecera" style="font-family: Arial,Tahoma,'Bitstream Vera Sans',sans-serif; display: inline-block ; margin: 0%; width: 8%;padding-top: 13px;font-size: 1.5em;margin-left: 365px;">
+		<h1 id="nombreEnCabecera" style="font-family: Arial,Tahoma,'Bitstream Vera Sans',sans-serif; display: inline-block ; margin: 0%; width: 20%;padding-top: 13px;font-size: 1.5em;margin-left: 365px;">
 		</h1>
 	
 		<img id="imagenCabecera" src="images/logoSinFondo.png" alt="logo" />
@@ -118,7 +129,7 @@
 
   			<button class="buttonFiltros buttonReload" onclick="resetEstrellas()"> ↺ </button>
 
-			<button class="buttonFiltros" onclick="aplicarFiltros()">Aplicar</button>
+			<button class="buttonFiltros" id="customButton" onclick="aplicarFiltros()">Aplicar</button>
 
 		</aside>
 
@@ -303,6 +314,138 @@
 
 
 	</div>
+
+	<!--Este es el popup del formulario de edición de datos de la página, aparecen una serie de huecos a rellenar
+     y si no cumplen con los estipulado o son vacíos al guardar, se pondrán en rojo-->
+     
+     
+	 <div id="registro" class="pmodal" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 200px">
+        <form class="modal-contentModified animate" action="/action_page.php" >
+        
+            <div class="imgcontainer">
+                 <button class="btnBorrado" onclick="vaciarForm()" type="button">Borrar</button>
+              <span onclick="cerrar()" class="close" title="Close PopUp">&times;</span>
+              <!--<img src="1.png" alt="Avatar" class="avatar">-->
+              <h2 id="regSesion">  Registro Sesión </h2>
+            </div>
+        
+            <div class="containerSesion" style="padding-left: 3%">
+        
+                  <ul  class="progressbar">
+                        <li class="active" id="firstNumber"> Step 1 </li>
+                        <li id="secondNumber"> Step 2 </li> 
+                        <li id="thirdNumber"> Step 3 </li> 
+        
+                   </ul>
+        
+                   <div class="firstStep">
+                    <label style="padding-top: 55px" class="labelRegister " for="userName" >Nombre de usuario</label>
+                       <input class="inputRegister loginInput" id="userName" type="text">
+                 </div>
+        
+                     <div class="firstStep">
+                        <label style="padding-top: 13px" class="labelRegister " for="password" >Contraseña</label>
+                           <input class="inputRegister loginInput" id="password" type="password">
+                     </div>
+        
+                 <div class="secondStep" >
+                    <label style="padding-top: 55px" class="labelRegister " for="nameSurname" >Nombre y Apellidos</label>
+                       <input class="inputRegister loginInput" id="nameSurname" type="text">
+                 </div>
+        
+                     <div class="secondStep" >
+                        <label style="padding-top: 13px" class="labelRegister " for="email" >Email</label>
+                           <input class="inputRegister loginInput" id="email" type="text">
+                     </div>
+        
+                 <div class="thirdStep" >
+                    <label style="padding-top: 55px" class="labelRegister " for="year" >Fecha de Nacimiento</label>
+                       <input class="inputRegister loginInput" id="year" type="date">
+                 </div>
+        
+                     <div class="thirdStep" >
+                        <label style="padding-top: 13px" class="labelRegister " for="address" >Dirección</label>
+                           <input class="inputRegister loginInput" id="address" type="text">
+                     </div>
+        
+                 <div class="thirdStep" >
+                        <label style="padding-top: 13px" class="labelRegister " for="address" >Imagen  de Perfil</label>
+                        <div><input type="file" id="file-uploader">
+                            <div id="file-preview-zone">
+                                    <img id="file-preview" alt="Error" src="images/logo2.png">
+                              </div>
+                           
+                        
+        
+                     </div>
+        
+                </div>
+        
+                </div>
+        
+                    <div class="login " id="step1">	
+                        <button  class="textLogin"  onclick=" checkNamePassword()" type="button"> Siguiente </button>
+                    </div>	
+        
+                    <div class="login" id="step2" style="display: none;">
+                            <button class="textLogin" id="changeto3" onclick="checkName()" style="display: inline-block; float:right; " type="button"> Siguiente </button>
+        
+                            <button class="textLogin" id="changeto1" onclick="changeStepTo1()" style="display: inline-block; float:left" type="button"> Anterior </button >
+                    </div>	
+                    
+                    <div class="login" id="step3" style="display: none;">
+                            <input id="checkbox" type="checkbox" style="margin:10px 10px;margin-bottom: 25px">Haciendo click acepta las condiciones de Uso que puede encontrar <span id="condicionesAqui">Aquí</span>.
+                            <button  class="textLogin" id="changeto1.1" onclick="changeStepTo2()"  style="display: inline-block; float:left" type="button"> Anterior </button >
+        
+                            <button  class="textLogin" id="changeto3.1"  style="display: inline-block; float:right;" type="button" onclick= "checkDate()"> Guardar </button >
+                    </div>
+                </form>
+
+        <!--Este jquery permite que al hacer click en un input que está rojo, cambie a blanco
+	el otro script si damos a borrar, resetea los styles de los formularios y cierra el popup-->
+        <script>
+            $(".inputDataRegistro").click(function () {
+                $(this).css({ "background-color": "white" }).fadeIn(2000);
+            });
+            $("#borrar").click(function () {
+                $(".inputDataRegistro").css({ "background-color": "white" }).fadeIn(2000);
+                $(".divFlexRegistro").css({ "background-color": "white" }).fadeIn(2000);
+                resetRegistro();
+            });
+        </script>
+
+
+    </div>
+
+    <!--Div en el que aparece un popup de inicio de sesión-->
+    <div id="sesion" class="pmodal" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 500px">
+        <form class="modal-content animate" action="/action_page.php">
+        
+            <div class="imgcontainer">
+              <span onclick="cerrar()" class="close" title="Close PopUp">&times;</span>
+              <!--<img src="1.png" alt="Avatar" class="avatar">-->
+              <h2 style="text-align:center">Iniciar Sesión</h2>
+            </div>
+        
+            <div class="containerSesion">
+              <input id="loginUser" class="loginInput" type="text" placeholder="Enter Username" name="uname">
+              <input id="loginPassword" class="loginInput" type="password" placeholder="Enter Password" name="psw">        
+              <button onclick="checkCookie()" class="botonInitPage" type="button">Login</button>
+              
+              <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
+            </div>
+                    
+            </form>
+         </div>
+    <script>
+        $(".botonEntrar").click(function () {
+            checkUser();
+        });
+    </script>
+
+    <!--Div que permite oscurecer la pantalla cuando aparece un popup-->
+	<div id="lean_overlay" style="display: none; opacity: 0.7;"></div>
+
 
 
 </body>
