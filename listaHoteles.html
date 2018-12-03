@@ -18,9 +18,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="script.js"></script-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="dScript.js"></script>
+	<script type="text/javascript" src="script.js"></script>
 
 	<script src="http://momentjs.com/downloads/moment.min.js"></script>
+	
+
+
 
 	
 	<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
@@ -45,8 +48,25 @@
                 );
             }
         });
-        $("#fecha2").datepicker();
+		$("#fecha2").datepicker();
+	
+		$( function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 2000,
+      values: [ 20, 250 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( ui.values[ 0 ]+ "€"  + " - " + ui.values[ 1 ]+ "€"  );
+      }
     });
+    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+  } );
+	
+	
+	
+	});
     </script>
 
 
@@ -59,7 +79,7 @@
 	<header class="header" id="guestHeader">
 	
 		<!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
-		<img id="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackGuest2()" />
+		<img id="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackGuest()" />
 	
 		<h1 id="tituloCabecera">El rincón de la opinión</h1>
 	
@@ -84,21 +104,21 @@
 	<header class="header" id="userHeader" style="display: none">
 	
 		<!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
-		<img id="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackLogged2()" />
+		<img id="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackLogged()" />
 	
 		<h1 id="tituloCabecera" style="margin-left: 0">El rincón de la opinión</h1>
 	
-		<h1 id="nombreEnCabecera" style="font-family: Arial,Tahoma,'Bitstream Vera Sans',sans-serif; display: inline-block ; margin: 0%; width: 20%;padding-top: 13px;font-size: 1.5em;margin-left: 365px;">
+		<h1 id="nombreEnCabecera" style="font-family: Arial,Tahoma,'Bitstream Vera Sans',sans-serif; display: inline-block ; margin: 0%; width: 37%;padding-top: 13px;font-size: 1.5em;margin-left: 6%;">
 		</h1>
 	
 		<img id="imagenCabecera" src="images/logoSinFondo.png" alt="logo" />
 	
 		<ul id="listaHeader1">
 			<!--bocadillo de las opciones en el header-->
-			<li class="seleccionHeader" onclick="closeSesionTotal2()"> <a href="#registro" style="text-decoration: none ;color: black">
+			<li class="seleccionHeader" onclick="closeSesionTotal()"> <a href="#registro" style="text-decoration: none ;color: black">
 					<p class="seleccionTexto"> Cerrar sesión </p>
 				</a> </li>
-			<li class="seleccionHeader" onclick="goPerfil2()"> <a href="#registro" style="text-decoration: none ;color: black">
+			<li class="seleccionHeader" onclick="goPerfil()"> <a href="#registro" style="text-decoration: none ;color: black">
 					<p class="seleccionTexto"> Mi perfil </p>
 				</a> </li>
 	
@@ -118,29 +138,44 @@
 
 		<aside class="asideHotel">
 			<!--este es el aside de la pagina, en el se encuentran la informacion personal del usuario, las ultimas opiniones escritas y sus preferencias-->
-			<h4 class="tituloFiltros"> Filtros de búsqueda </h4>
-			<h5 class="textoFiltro"> Fecha de llegada </h5>
-			<input class="dFechaBusqueda datepicker" id="fecha1" placeholder="dd/mm/aaaa" type="text" >
-			<h5 class="textoFiltro"> Fecha de salida </h5>
-			<input class="dFechaBusqueda datepicker datepicker2" id="fecha2" placeholder="dd/mm/aaaa" type="text">
-			<h5 class="textoFiltro"> Estrellas </h5>
+			<h3 class="tituloFiltros"> Filtros de búsqueda </h3>
+			<div>
+				<p class="textoFiltro"> Fecha de llegada </p>
+				<input class="dFechaBusqueda datepicker" id="fecha1" placeholder="dd/mm/aaaa" type="text">
+			</div>
+			<div>
+				<p class="textoFiltro"> Fecha de salida </p>
+				<input class="dFechaBusqueda datepicker datepicker2" id="fecha2" placeholder="dd/mm/aaaa" type="text">
+			</div>
+			<div>
+				<p class="textoFiltro"> Estrellas </p>
 
-			<div class="rate">
-			    <input type="radio" id="star5" name="rate" value="5" />
-			    <label for="star5" title="5 estrellas">5 stars</label>
-			    <input type="radio" id="star4" name="rate" value="4" />
-			    <label for="star4" title="4 estrellas">4 stars</label>
-			    <input type="radio" id="star3" name="rate" value="3" />
-			    <label for="star3" title="3 estrellas">3 stars</label>
-			    <input type="radio" id="star2" name="rate" value="2" />
-			    <label for="star2" title="2 estrellas">2 stars</label>
-			    <input type="radio" id="star1" name="rate" value="1" />
-			    <label for="star1" title="1 estrellas">1 star</label>
-  			</div>
+				<div class="rate">
+					<input type="radio" id="star5" name="rate" value="5" />
+					<label for="star5" title="5 estrellas">5 stars</label>
+					<input type="radio" id="star4" name="rate" value="4" />
+					<label for="star4" title="4 estrellas">4 stars</label>
+					<input type="radio" id="star3" name="rate" value="3" />
+					<label for="star3" title="3 estrellas">3 stars</label>
+					<input type="radio" id="star2" name="rate" value="2" />
+					<label for="star2" title="2 estrellas">2 stars</label>
+					<input type="radio" id="star1" name="rate" value="1" />
+					<label for="star1" title="1 estrellas">1 star</label>
+  				</div>
+			</div>	
+			
+				<label class="textoFiltro">Rango de precio:</label>
 
-  			<button class="buttonFiltros buttonReload" onclick="resetEstrellas()"> ↺ </button>
+				<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;    margin-top: 7.5%;margin-left: 6%;">
+				<div id="slider-range"></div>
+					
+				
 
-			<button class="buttonFiltros" id="customButton" onclick="aplicarFiltros()">Aplicar</button>
+			
+			
+  			<button class="buttonFiltros buttonReload" onclick="resetEstrellas()"> Resetear estrellas </button>
+
+			<button class="buttonFiltros" id="customButton" onclick="aplicarFiltros()">Aplicar filtros</button>
 
 		</aside>
 
@@ -152,7 +187,7 @@
                         <img id="imgBuscar" src="images/logoSinFondo.png" alt="logo" />
                         <input id="inputBuscar" placeholder="Buscar una ciudad, hotel..." type="search">
                     </div>
-                    <div class="buttonGo" onclick="realizarBusqueda()">
+                    <div class="buttonGo" onclick="aplicarFiltros()">
                         <p class="btnText">BUSCAR</p>
                         <div class="btnTwo">
                             <p class="btnText2">&#x2714;</p>
@@ -202,11 +237,42 @@
 
 	</div>
 
+	<footer>
+		<!--Footer de la pagina web-->
+		<a class="linkSocial" href="https://www.instagram.com/david.silveira/?hl=es" target="_blank">
+			<img class="imagenSocial" src="images/instagram.png" alt="instagram" />
+		</a>
+	
+		<a class="linkSocial" href="https://www.youtube.com/channel/UC0L-DRAlW-ebjHrlk8oSVRg?view_as=subscriber" target="_blank">
+			<img class="imagenSocial" src="images/youtube.png" alt="youtube" />
+		</a>
+		<div class="copyright">
+			<p class="copyrightTexto">elrincondelaopinion@gmail.com</p>
+		</div>
+		<div class="copyright">
+			<p class="copyrightTexto">902453453</p>
+		</div>
+	
+		<div class="copyright">
+			<a class="copyrightTexto" href="https://www.pccomponentes.com/condiciones-de-compra">Política de privacidad</a>
+			</p>
+		</div>
+		<div class="copyright">
+			<a class="copyrightTexto" href="FAQ.html">FAQ</a>
+			</p>
+		</div>
+	
+		<!--Copyright y derechos reservados-->
+		<div class="copyright">
+			<p class="copyrightTexto">© 2018. ElRinconDeLaOpinion. Todos los derechos reservados.</p>
+		</div>
+	</footer>
+
 
 	<div style="display: none">
 
 		<ul id="infoHoteles">
-			<li id="hotelPax" class="madrid">
+			<li id="hotelPax" class="madrid hotel pax">
 				<p class="infNombreHotel">Hotel Pax</p>
 				<p class="infDirHotel">Habitación individual.<br>Calle Sama de Langreo, s/n, 28250 Torrelodones, Madrid</p>
 				<p class="infTelHotel">918 40 66 06</p>
@@ -216,7 +282,7 @@
 				<p class="infFotoHotel">images/hotelPax.jpg</p>
 			</li>
 
-			<li id="burjKhalifa" class="dubai">
+			<li id="burjKhalifa" class="dubai burj khalifa">
 				<p class="infNombreHotel"> Burj Khalifa </p>
 				<p class="infDirHotel"> Habitación doble.<br>Sheikh Mohammed bin Rashid Blvd - Dubai - Emiratos Árabes Unidos </p>
 				<p class="infTelHotel"> No disponible </p>
@@ -226,7 +292,7 @@
 				<p class="infFotoHotel">images/burjKhalifa.jpg</p>
 			</li>
 
-			<li id="bestWestern" class="paris">
+			<li id="bestWestern" class="paris best western" >
 				<p class="infNombreHotel"> Best Western Hotel Paris Louvre Opera </p>
 				<p class="infDirHotel"> Habitación doble.<br>Rue des Moulins, 75001 Paris, Francia </p>
 				<p class="infTelHotel"> +33 1 40 20 01 10 </p>
@@ -236,7 +302,7 @@
 				<p class="infFotoHotel">images/bestWestern.jpg</p>
 			</li>
 
-			<li id="nyx" class="madrid">
+			<li id="nyx" class="madrid nyx">
 				<p class="infNombreHotel"> NYX Hotel Madrid </p>
 				<p class="infDirHotel"> Habitación individual.<br>Calle del Aviador Zorita, 34, 28020 Madrid </p>
 				<p class="infTelHotel"> +34 915 53 59 00 </p>
@@ -246,7 +312,7 @@
 				<p class="infFotoHotel">images/nyx.jpg</p>
 			</li>
 
-			<li id="westinPalace" class="madrid">
+			<li id="westinPalace" class="madrid westin palace">
 				<p class="infNombreHotel"> The Westin Palace, Madrid </p>
 				<p class="infDirHotel"> Habitación doble.<br>Plaza de las Cortes, 7, 28014 Madrid </p>
 				<p class="infTelHotel"> +34 913 60 80 00 </p>
@@ -257,7 +323,7 @@
 			</li>
 
 
-			<li id="interContinental" class="paris">
+			<li id="interContinental" class="paris inter continental">
 				<p class="infNombreHotel"> InterContinental Paris - Le Grand </p>
 				<p class="infDirHotel"> Habitación doble.<br>2 Rue Scribe, 75009 Paris, Francia </p>
 				<p class="infTelHotel"> +33 1 40 07 32 32 </p>
@@ -268,7 +334,7 @@
 				<p class="infFotoHotel">images/inter.jpg</p>
 			</li>
 
-			<li id="ibis" class="paris">
+			<li id="ibis" class="paris ibis">
 				<p class="infNombreHotel"> Hôtel ibis Paris Porte de Bagnolet </p>
 				<p class="infDirHotel"> Habitación doble.<br>1 Rue Jean Jaurès, 93170 Bagnolet, Francia </p>
 				<p class="infTelHotel"> +33 1 43 60 02 76 </p>
@@ -279,7 +345,7 @@
 				<p class="infFotoHotel">images/ibis.jpg</p>
 			</li>
 
-			<li id="f1" class="paris">
+			<li id="f1" class="paris f1">
 				<p class="infNombreHotel"> hotelF1 Paris Porte de Montmartre </p>
 				<p class="infDirHotel"> Habitación individual.<br>29 Rue du Dr Babinski, 75018 Paris, Francia </p>
 				<p class="infTelHotel"> +33 891 70 53 50 </p>
@@ -289,7 +355,7 @@
 				<p class="infFotoHotel">images/f1.jpg</p>
 			</li>
 
-			<li id="yotel" class="newyork">
+			<li id="yotel" class="new york yotel">
 				<p class="infNombreHotel"> YOTEL New York </p>
 				<p class="infDirHotel"> Habitación doble.<br>570 10th Ave, New York, NY 10036, EE. UU. </p>
 				<p class="infTelHotel"> +1 646-449-7700 </p>
@@ -300,7 +366,7 @@
 				<p class="infFotoHotel">images/yotel.jpg</p>
 			</li>
 
-			<li id="pennsyl" class="newyork">
+			<li id="pennsyl" class="new york pennsyl">
 				<p class="infNombreHotel"> Hotel Pennsylvania </p>
 				<p class="infDirHotel"> Habitación individual.<br>401 7th Ave, New York, NY 10001, EE. UU.</p>
 				<p class="infTelHotel"> +1 212-736-5000 </p>
@@ -311,7 +377,7 @@
 				<p class="infFotoHotel">images/pennsyl.jpg</p>
 			</li>
 
-			<li id="central" class="newyork">
+			<li id="central" class="new york central">
 				<p class="infNombreHotel"> Park Central Hotel New York </p>
 				<p class="infDirHotel"> Habitación doble.<br>870 7th Ave, New York, NY 10019, EE. UU. </p>
 				<p class="infTelHotel"> +1 212-247-8000 </p>

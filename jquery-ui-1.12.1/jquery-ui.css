@@ -900,6 +900,8 @@ body .ui-tooltip {
 .ui-widget.ui-widget-content {
 	border: 0;
 	border-radius: 5px;
+	margin-top: 8%;
+	margin-bottom: 14%;
 }
 .ui-widget-content {
 	border: 1px solid #dddddd;

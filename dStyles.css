@@ -1,3 +1,7 @@
+*{
+  font-family:Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
+}
+
 .dHeader{
 	background-color: rgba(255, 255, 255, 0.8);
 	display: flex;
@@ -50,13 +54,19 @@
 }
 
 .parrafoInfo{
-	font-size: 1vw;
+	/* font-size: 1vw; */
 	font-family: Helvetica, Arial, sans-serif;
 }
 
-#divReservaHotel{
-
-}
+.textoFiltro {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  margin-top: 25px;
+  float: left;
+}​
 
 #textoPrecioReserva{
 	margin: auto 0;
@@ -179,7 +189,7 @@
 }
 
 .dNombreListaHotel{
-	font-size: 1.6vw;
+	/* font-size: 1.6vw; */
 	margin: 0;
 	font-family: Helvetica, Arial, sans-serif;
 }
@@ -202,7 +212,7 @@
 .precioListaReserva{
 	margin: auto 0;
 	color: #74bc4b;
-	font-size: 2.8vw;
+	font-size: 1.8vw;
 	font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -255,9 +265,15 @@
 
 #customButton{
 
-  margin-top: 6%;
-  margin-left: 22%;
+margin-top: 6%;
 
+/* margin-left: 22%; */
+
+font-size: 15px;
+
+padding: 8px 40px;
+
+margin-top: 13px;
 }
 
 .btnLista{
@@ -285,22 +301,16 @@
 
 .asideHotel{
 	padding: 22px;
-
 	background-color: rgb(255, 255, 255);
-  	border-radius: 6px;
-  	width: 18%;
-  	margin-left: 15px;
+	border-radius: 6px;
+	width: 18%;
+	margin-left: 15px;
+	/* height: 50%; */
 }
 
-.textoFiltro{
-	font-size: 1.35vw;
-    font-family: Helvetica, Arial, sans-serif;
-    margin: 0;
-    margin-top: 25px;
-}
 
 .tituloFiltros{
-  font-size: 1.8em;
+  /* font-size: 1.8em; */
   font-family: Helvetica, Arial, sans-serif;
   margin: 0;
 }
@@ -311,6 +321,7 @@
     float: left;
     height: 75px;
     padding: 0 10px;
+    margin-left: 0.5vw;
 }
 .rate:not(:checked) > input {
     position:absolute;
@@ -322,8 +333,10 @@
     overflow:hidden;
     white-space:nowrap;
     cursor:pointer;
-    font-size:50px;
+    font-size: 1.6vw;
     color:#ccc;
+    margin-top: 0.5vw;
+    /* margin-left: 0.2vw; */
 }
 .rate:not(:checked) > label:before {
     content: '★ ';
@@ -359,25 +372,23 @@
 .buttonFiltros {
   display: inline-block;
   position: relative;
-  padding: 20px 38px;
+  /* padding: 20px 38px; */
   top: 0;
-  font-size: 30px;
+  font-size: 15px;
   font-family: "Open Sans", Helvetica;
   border-radius: 4px;
-  border-bottom: 1px solid rgba( 28, 227, 125, 0.5 );
+  /* border-bottom: 1px solid rgba( 28, 227, 125, 0.5 ); */
   background: rgba( 22, 230, 137, 1 );
   color: #fff;
   box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.1 );
-  
   -webkit-transform: translateZ(0);
-     -moz-transform: translateZ(0);
-      -ms-transform: translateZ(0);
-          transform: translateZ(0);
-  
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
   -webkit-transition: all 0.2s ease;
-     -moz-transition: all 0.2s ease;
-      -ms-transition: all 0.2s ease;
-          transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .buttonFiltros:hover {
@@ -397,11 +408,11 @@
 }
 
 .buttonReload{
-  font-size: 30px;
-  padding: 8px 13px;
+  font-size: 15px;
+  padding: 8px 22px;
   margin-top: 13px;
   background: rgba(226, 142, 52, 1);
-  border-bottom: 1px solid rgba(226, 150, 60, 1);
+  /* border-bottom: 1px solid rgba(226, 150, 60, 1); */
 }
 
 .buttonReload:active{
@@ -414,19 +425,35 @@
 .dFechaBusqueda{
   /*margin: 0px 0 0px 3px !important;
   width: 20% !important;*/
-
   margin: 18px 0 0px 30px;
   width: 6vw;
-  font-size: 1.1vw;
-  font-weight: bold;
+  font-size: 1vw;
+  /* font-weight: bold; */
   padding: 5px;
   border-radius: 12px;
-  background-color: rgba(201, 241, 253, 0.92);;
+  background-color: rgba(201, 241, 253, 0.92);
   border:0;
   transition: background .5s linear;
   -webkit-transition: background .5s linear;
   -moz-transition: background .5s linear;
+}
 
+
+
+
+
+#divPagoHotel{
+  display: flex;
+  margin-top: 20px;
+}
+
+.fotoFormaPago{
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+}
+#descripcionHotel{
+  margin-left:2%;
 }
 
 
@@ -464,7 +491,7 @@
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: #eee;
+  background-color: #bbb;
   border-radius: 50%;
 }
 
@@ -497,21 +524,66 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: white;
+  background: #afafaa;
 }
 
 
-#divPagoHotel{
+.divMetodoPago{
+  margin-left: 6vw;
+}
+
+
+#qrBitcoin{
+  height: 8vw;
   display: flex;
-  margin-top: 20px;
+  margin: 0 auto;
 }
 
-.fotoFormaPago{
-  vertical-align: middle;
-  width: 50px;
-  height: 50px;
+#textoQR{
+  font-size: 22px;
+  font-family: "Open Sans", Helvetica;
+  margin: 10px;
 }
 
+.buttonPayPal{
+  margin-top: 2.5vw;
+  width: 12vw;
+  font-size: 25px;
+  padding: 6px 12px;
+  background: rgba(80, 150, 220, 1);
+  border-bottom: 1px solid rgba(80, 150, 220, 1);
+}
+
+.buttonPayPal:active{
+  top: 0px;
+  box-shadow: 0px 0px 0px rgba( 20, 50, 130, 0.0 );
+  background: rgba( 20, 50, 130, 1 );
+}
+
+
+#inputTarjeta{
+  width:100%;
+  height: 90%;
+  font-size: 25px;
+  border: 0;
+  border-radius: 12px;
+  margin:0 auto;
+}
+
+
+.barraTarjeta{
+  display:flex;
+  width: 80%;
+  height: 2vw;
+  border-radius: 12px;
+  border: 4px solid #46b8da;
+  margin-bottom: 2vw;
+}
+
+#imgTarjeta{
+  height: 100%;
+  margin: 0 10px;
+}
 
 
 

@@ -32,7 +32,7 @@
 	<header class="header" id="guestHeader">
 	
 		<!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
-		<img id="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackGuest2()" />
+		<img id="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackGuest()" />
 	
 		<h1 id="tituloCabecera">El rincón de la opinión</h1>
 	
@@ -60,21 +60,21 @@
 	<header class="header" id="userHeader" style="display: none">
 	
 		<!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
-		<img id="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackLogged2()" />
+		<img id="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackLogged()" />
 	
 		<h1 id="tituloCabecera" style="margin-left: 0">El rincón de la opinión</h1>
 	
-		<h1 id="nombreEnCabecera" style="font-family: Arial,Tahoma,'Bitstream Vera Sans',sans-serif; display: inline-block ; margin: 0%; width: 20%;padding-top: 13px;font-size: 1.5em;margin-left: 365px;">
+		<h1 id="nombreEnCabecera" style="font-family: Arial,Tahoma,'Bitstream Vera Sans',sans-serif; display: inline-block ; margin: 0%; width: 37%;padding-top: 13px;font-size: 1.5em;margin-left: 6%;">
 		</h1>
 	
 		<img id="imagenCabecera" src="images/logoSinFondo.png" alt="logo" />
 	
 		<ul id="listaHeader1">
 			<!--bocadillo de las opciones en el header-->
-			<li class="seleccionHeader" onclick="closeSesionTotal2()"> <a href="#registro" style="text-decoration: none ;color: black">
+			<li class="seleccionHeader" onclick="closeSesionTotal()"> <a href="#registro" style="text-decoration: none ;color: black">
 					<p class="seleccionTexto"> Cerrar sesión </p>
 				</a> </li>
-			<li class="seleccionHeader" onclick="goPerfil2()"> <a href="#registro" style="text-decoration: none ;color: black">
+			<li class="seleccionHeader" onclick="goPerfil()"> <a href="#registro" style="text-decoration: none ;color: black">
 					<p class="seleccionTexto"> Mi perfil </p>
 				</a> </li>
 	
@@ -110,9 +110,9 @@
 						<img id="fotoEstrellas" src="./" alt="estrellas"/>
 					</div>
 
-					<p class="parrafoInfo"> Descrición del hotel: </p>
+					<h4 class="parrafoInfo"> Descrición del hotel: </h4>
 					<p id="descripcionHotel" class="parrafoInfo">  </p>
-					<p id="fechasHotel" class="parrafoInfo">  </p>
+					<h4 id="fechasHotel" class="parrafoInfo">  </h4>
 
 				</div>
 
@@ -120,16 +120,47 @@
 
 			<div id="divReservaHotel" style="display: flex;">
 
-				<h5 id="textoPrecioReserva"> Precio total de la estancia: </h5>
-				<h5 id="precioReserva">  </h5>
+				<h2 id="textoPrecioReserva"> Precio total de la estancia: </h2>
+				<h2 id="precioReserva">  </h2>
 
-				<a class="btn" href="#"> Reserva </a>
+				<a class="btn" href="pagoHotel.html"> Reserva </a>
 
 			</div>
 
 		</section>
 
 	</div>
+
+	<footer>
+		<!--Footer de la pagina web-->
+		<a class="linkSocial" href="https://www.instagram.com/david.silveira/?hl=es" target="_blank">
+			<img class="imagenSocial" src="images/instagram.png" alt="instagram" />
+		</a>
+	
+		<a class="linkSocial" href="https://www.youtube.com/channel/UC0L-DRAlW-ebjHrlk8oSVRg?view_as=subscriber" target="_blank">
+			<img class="imagenSocial" src="images/youtube.png" alt="youtube" />
+		</a>
+		<div class="copyright">
+			<p class="copyrightTexto">elrincondelaopinion@gmail.com</p>
+		</div>
+		<div class="copyright">
+			<p class="copyrightTexto">902453453</p>
+		</div>
+	
+		<div class="copyright">
+			<a class="copyrightTexto" href="https://www.pccomponentes.com/condiciones-de-compra">Política de privacidad</a>
+			</p>
+		</div>
+		<div class="copyright">
+			<a class="copyrightTexto" href="FAQ.html">FAQ</a>
+			</p>
+		</div>
+	
+		<!--Copyright y derechos reservados-->
+		<div class="copyright">
+			<p class="copyrightTexto">© 2018. ElRinconDeLaOpinion. Todos los derechos reservados.</p>
+		</div>
+	</footer>
 
 
 	<div style="display: none">

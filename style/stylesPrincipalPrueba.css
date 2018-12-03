@@ -52,8 +52,8 @@ body {
   font-family: Impact;
 }
 
-/*Estos estilos corresponden con los botones de entrar, registrarse y borrar, tienen una animaciÃƒÆ’Ã‚Â³n basada en transiciones css */
-/*Estilo botÃƒÆ’Ã‚Â³n verde*/
+/*Estos estilos corresponden con los botones de entrar, registrarse y borrar, tienen una animaciÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n basada en transiciones css */
+/*Estilo botÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n verde*/
 .botonReg{
   background:#46b8da;
   color:#fff;
@@ -67,7 +67,7 @@ body {
   outline:none;
 
 }
-/*Estilo botÃƒÆ’Ã‚Â³n rojo*/
+/*Estilo botÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n rojo*/
 .botonCerrar{
   background:#ba1212;
   color:#fff;
@@ -152,7 +152,7 @@ body {
 }
 
 
-/*Este es el header de la pÃƒÆ’Ã‚Â¡gina, es blanco con opacidad de 0.8, contiene el logo, el tÃƒÆ’Ã‚Â­tulo y diversas opciones*/
+/*Este es el header de la pÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡gina, es blanco con opacidad de 0.8, contiene el logo, el tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­tulo y diversas opciones*/
 
     header {
        background-color:  rgba(201, 241, 253, 0.92);
@@ -346,7 +346,7 @@ h1{
 
 
 
-/*este div es el central de la pÃƒÆ’Ã‚Â¡gina, alberga un aside y un section*/
+/*este div es el central de la pÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡gina, alberga un aside y un section*/
 
 #divCentral{
 	padding: 40px;
@@ -361,7 +361,7 @@ h1{
 }
 
 
-/*textos para el div de inicio de sesiÃƒÆ’Ã‚Â³n*/
+/*textos para el div de inicio de sesiÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n*/
 .tituloInicioSesion{
 	margin: 0;
 	font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
@@ -375,7 +375,7 @@ h1{
 	font-size: 30px;
 }
 
-/*textos y estilos para el popup de inicio de sesiÃƒÆ’Ã‚Â³n*/
+/*textos y estilos para el popup de inicio de sesiÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n*/
 .tituloInicioSesionPop{
   margin: 20px 0 10px 0;
   margin-top: 3%;
@@ -440,7 +440,7 @@ h1{
 }
 
 #imgBuscar{
-  width: 5%;
+  width: 4%;
   height: 95%;
   margin:auto;
   margin-top: 0;
@@ -461,7 +461,7 @@ h1{
     -moz-transition: background .5s linear;
 }
 
-/*div que alberga la galerÃƒÆ’Ã‚Â­a de imÃƒÆ’Ã‚Â¡genes*/
+/*div que alberga la galerÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­a de imÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡genes*/
 #galeria{
   width: 55vw;
   height: 23vw;
@@ -552,7 +552,7 @@ h1{
   margin:auto 2%;
 }
 
-/*footer de la pÃƒÆ’Ã‚Â¡gina, es de color gris con opacidad 0.95*/
+/*footer de la pÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡gina, es de color gris con opacidad 0.95*/
 footer{
 	background-color: rgba(36, 36, 36, 0.95);
 	position: fixed;
@@ -597,7 +597,7 @@ footer{
 
 
 
-/*botÃƒÆ’Ã‚Â³n de la barra de bÃƒÆ’Ã‚Âºsqueda, como el anterior, utiliza transiciones css*/
+/*botÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³n de la barra de bÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âºsqueda, como el anterior, utiliza transiciones css*/
 
 .buttonGo {
   background: #4088da;
@@ -642,7 +642,7 @@ footer{
 }
 
 
-/*ESTE STYLE CORRESPONDE CON EL CARRUSEL DE IMÃƒÆ’Ã‚ÂGENES, ES PLUGGIN*/
+/*ESTE STYLE CORRESPONDE CON EL CARRUSEL DE IMÃƒÆ’Ã†â€™Ãƒâ€šÃ‚ÂGENES, ES PLUGGIN*/
 
 .slide-wrap {
   width: 55vw;
@@ -1100,7 +1100,7 @@ ul.breadcrumb {
   background-color: #ddc274e8;
   position: fixed;
   width: 100%;
-  margin-top: 4.26%;
+  margin-top: 3%;
 }
 ul.breadcrumb li {
   display: inline;
@@ -1118,4 +1118,7 @@ ul.breadcrumb li a {
 ul.breadcrumb li a:hover {
   color: #01447e;
   text-decoration: underline;
+}
+.breadcrumbs{
+  position:inherit;
 }
