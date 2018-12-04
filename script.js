@@ -451,7 +451,6 @@ $('#carrusel').on('ma5.activeSlide', function (event, slide) {
 function cerrar(){
   document.getElementById('sesion').style.display='none';
   document.getElementById('registro').style.display='none';
-  document.getElementById('opinion').style.display='none';
   document.getElementById('lean_overlay').style.display='none';
   $("#lean_overlay").fadeOut(200);
   vaciarForm();
