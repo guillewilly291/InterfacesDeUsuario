@@ -98,6 +98,8 @@ function displayOpi(){//función para esconder la secion de información persona
 	document.getElementById('section-opi').style.display = 'block';
 }
 
+
+
 function addPreference(){//Añade una preferencia
 	var lista = document.getElementById('listaPreferencias');
 	var elementos = document.getElementsByClassName('filaPreferencia');//array de elementos (preferencias)
@@ -449,9 +451,17 @@ $('#carrusel').on('ma5.activeSlide', function (event, slide) {
 function cerrar(){
   document.getElementById('sesion').style.display='none';
   document.getElementById('registro').style.display='none';
+  document.getElementById('opinion').style.display='none';
   document.getElementById('lean_overlay').style.display='none';
-  $("#lean_overlay").fadeOut(2000);
+  $("#lean_overlay").fadeOut(200);
   vaciarForm();
+
+}
+
+function cerrarOpi(){
+  borrarContent();
+  document.getElementById('opinion').style.display='none';
+  $("#lean_overlay").fadeOut(200);
 
 }
 function vaciarForm(){
@@ -995,6 +1005,29 @@ function editCookie(){
       localStorage.setItem(userName,conjunto);  
 
       changePage();
+  }
+
+  function addOpinion(){
+    
+    var opiniones = document.getElementById("customLista");
+    var nombreHotel = document.getElementById("nombreHotel");
+    var nuevaOpinion= document.getElementById("textArea");
+
+    opiniones.innerHTML= "<li>"+
+                         "<a class='link' href='http://torrelodones.paxhoteles.com/' target='_blank'>"+nombreHotel.value+"</a>" +
+                         "<p class='parrafo'>"+nuevaOpinion.value+"</p>"+
+                          "</li>" +opiniones.innerHTML;
+
+    cerrarOpi();
+
+  }
+
+  function borrarContent() {
+    
+  
+    document.getElementById("nombreHotel").value = "";
+    document.getElementById("textArea").value = "";
+   
   }
 
 

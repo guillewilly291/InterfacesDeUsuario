@@ -47,7 +47,7 @@ body {
 /*Estilo botÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n verde*/
 
 .botonReg{
-  background:#1AAB8A;
+  background:#c0e9f9;
   color:#fff;
   border:none;
   position:relative;
@@ -92,7 +92,7 @@ body {
 /*Los siguientes :hover permiten que se realicen las transiciones*/
 .botonReg:hover{
   background:#fff;
-  color:#1AAB8A;
+  color:#ffe3ae;
 }
 .botonReg:before,.botonReg:after{
   content:'';
@@ -101,7 +101,7 @@ body {
   right:0;
   height:2px;
   width:0;
-  background: #1AAB8A;
+  background: #ffe3ae;
   transition:400ms ease all;
 }
 .botonReg:after{
@@ -154,12 +154,12 @@ body {
 }
 
 .inputDataRegistro{
-  margin: 0px 0 0px 30px;
+  
   width: 20vw;
 	font-size: 15px;
 	padding: 5px;
   border-radius: 12px;
-	border: 2px solid #1AAB8A;
+	border: 2px solid #c0e9f9;
   transition: background .5s linear;
     -webkit-transition: background .5s linear;
     -moz-transition: background .5s linear;
@@ -338,10 +338,12 @@ h1 {
   margin: auto;
   margin-top: 4%;
   margin-bottom: 4%;
-  width: 80%;
+  width: 89%;
   margin-left: 26px;
   padding: 0;
   list-style-type: none;
+  overflow-y: scroll; 
+  overflow-x: auto;
 }
 
 .linkOpcion{
@@ -354,11 +356,6 @@ h1 {
   /* font-size: 1.5em; */
 }
 
-.linkOpcion:hover{
-  color: #41bef4;
-  text-decoration: underline;
-  cursor: pointer;
-}
 
 .link {
   color: #f98745;

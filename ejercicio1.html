@@ -70,11 +70,11 @@
 			<p class="parrafo">Pais de origen: España</p>
 			<p class="parrafo">Miembro desde 2018</p>
 			<div class="divFlex">
-				<h3 class="linkOpcion" onclick="displayOpi()">Últimas opiniones</h3>
+				<h3 class="linkOpcion">Últimas opiniones</h3>
 					<!--Botón para añadir nuevas preferencias-->
 				<a class="go3" rel="leanModal" name="opinion" href="#opinion"><button class="botonSuma" style=" margin-top: 0.8vw;margin-right: 1.29vw;">+ </button></a>
 			</div>
-			<ul class="listaOpiniones"><!--ultimas opiniones escritas-->
+			<ul class="listaOpiniones" id="customLista"><!--ultimas opiniones escritas-->
 					<!--Se emplea una lista para las opiniones colgadas en la pagina web, estas opiniones estan formadas por un titulo del lugar (link) y un parrafo de la opinion del mismo-->
 					<li>
 						<a class="link" href="http://torrelodones.paxhoteles.com/" target="_blank">Hotel Pax</a>
@@ -205,46 +205,7 @@
 
 
 
-			<div id="section-opi">
-
-				<h2 class="tituloSection">Últimas opiniones</h2>
-				<!--este es el section de la pagina web, al ser la opcion B, se mostrara las ultimas opiniones del usuario de manera detallada,
-				cada opinion contiene una foto del lugar y diversos datos-->
-				<div class="divSeccionOpinion">
-					<div class="divFlex">
-						<img class="fotoSeccionOpinion" src="images/hotelPax.jpg" alt="hotel_pax"/>
-						<div class="divTextos">
-							<a class="go" rel="leanModal" name="hotelPax" href="#hotelPax"><h2 class="titulo">Hotel Pax </h2></a>
-							<h2 class="titulo">Torrelodones, Madrid</h2>
-							<h2 class="titulo">19, septiempre, 2018</h2>
-						</div>
-					</div>
-					<p class="parrafo">
-						Hotel muy acogedor y con buenas vistas. El servicio de habitaciones es rapido. Está bien ubicado, cerca del centro de Torrelodones.
-					</p>
-				</div>
-
-				<div class="divSeccionOpinion">
-					<div class="divFlex">
-						<img class="fotoSeccionOpinion" src="images/sala.jpg" alt="sala"/>
-						<div class="divTextos">
-							<a class="go" rel="leanModal" name="restauranteSala" href="#restauranteSala"><h2 class="titulo">Restaurante Sala </h2></a>
-							<h2 class="titulo">Guadarrama, Madrid</h2>
-							<h2 class="titulo">22, septiempre, 2018</h2>
-						</div>
-					</div>
-					<p class="parrafo">
-						La marisqueria Sala otorga una alta calidad en sus platos,
-						que combinados con un servicio excelente, han hecho que la visita sea muy agradable.
-					</p>
-				</div>
-				<!-- 
-				<div class="divLoad">
-					<!--div para la imagen de load more que no tiene ninguna funcionalidad-->
-					<!--<img class="load" src="images/loadMore.png" alt="more"/>
-				</div>-->
-
-			</div>
+			
 
 		</section>
 
@@ -321,34 +282,25 @@
 	<div id="opinion" class="pop" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 200px">
 			<div class="divFlex">
 					<h3 class="tituloInicioSesionPop"> Escriba aquí su opinión.</h3>
-					<button class="botonCerrar">X</button>
+					<button class="botonCerrar" onclick=cerrarOpi()>X</button>
 			</div>
 			
-			<h4 class="textoRegistro">Nombre del hotel </h4>
-			<input class="inputDataRegistro obligatorio2" placeholder="Nombre y apellidos" type="name">
+			<h4 class="textoRegistro"> Nombre del hotel </h4>
+			<input class="inputDataRegistro obligatorio2" placeholder="Nombre del hotel" type="name" id="nombreHotel">
 			<h4 class="textoRegistro">Opinión </h4>
-			<textarea name="message" style="width:90%;height:50%" ></textarea>
+			<textarea name="message" style="width:99%;height: 12vw;" id="textArea"></textarea>
 			
 		
 
 
 	<div class="divFlex" style="margin-top:2%">
-		<button class="botonReg botonPop" id="borrar">Borrar</button>
-		<button class="botonReg botonPop" id="guardar">Guardar</button>
+		<button class="botonReg botonPop" id="borrar" onclick=borrarContent()>Borrar</button>
+		<button class="botonReg botonPop" id="guardar" onclick=addOpinion()>Guardar</button>
 
 	</div>
 	<!--Este jquery permite que al hacer click en un input que está rojo, cambie a blanco
 	el otro script si damos a borrar, resetea los styles de los formularios y cierra el popup-->
-	<script type="text/javascript">
-	$(".inputDataRegistro").click(function(){
-		$(this).css({"background-color": "white"}).fadeIn(2000);
-	});
-	$("#borrar").click(function(){
-		$(".inputDataRegistro").css({"background-color": "white"}).fadeIn(2000);
-		$(".divFlexRegistro").css({"background-color": "white"}).fadeIn(2000);
-		resetRegistro();
-	});
-	</script>
+
 
 
 	</div>
