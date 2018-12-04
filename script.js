@@ -338,7 +338,7 @@ function checkUser(){//Comprueba si existe una cookie de un usuario al iniciar s
   var data=storage2.split(";");
   }
   if((storage != null && data[1] == input[1].value) || (storage2 != null && data[1] == input[3].value)){//El usuario coincide
-
+    window.clearInterval(timer);
     document.location.href="ejercicio1.html";
     if(storage != null){
     localStorage.setItem("loggedIn",storage);
@@ -399,6 +399,7 @@ function closeSesionTotal() {//Cierra sesión de la cuenta y nos lleva a la pág
 }
 
 function goPerfil(){
+  window.clearInterval(timer);
   document.location.href="ejercicio1.html";
 }
 
@@ -745,7 +746,7 @@ function seleccionarHotel(idHotel){
 
 	//localStorage.setItem('fechaIni', fechaIni); /*fecha en formato dd/mm/yyyy*/
 	//localStorage.setItem('fechaFin', fechaFin); /*fecha en formato dd/mm/yyyy*/
-
+  window.clearInterval(timer);
 	document.location.href = "seleccionHotel.html";
 }
 
@@ -945,7 +946,7 @@ function insertDates(){
  	localStorage.setItem('ciudad', busqueda);
 
  	if(!insertDates()) return;
-
+   window.clearInterval(timer);
  	document.location.href = "listaHoteles.html";
  }
 
