@@ -206,54 +206,7 @@
                 
             </div>
             
-            <!--<div id="galeria">
-                <h4 class="tituloInicioSesion"> Galería de imágenes </h4>
-                <div id="demo" class="demo">
-                    <ul class="slide-wrap" id="example">
-                        <li class="pos1">
-                            <div class="inner">
-                                <a href="#">
-                                    <img src="images/exeVictoria.jpg" alt="galeria" />
-                                    <span class="pic-tit">Holel Exe en S.L del Escorial, que ofrece una buena acogida.</span>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="pos2">
-                            <div class="inner">
-                                <a href="#">
-                                    <img src="images/sala.jpg" alt="galeria" />
-                                    <span class="pic-tit">Restaurante de Guadarrama de calidad muy alta.</span>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="pos3">
-                            <div class="inner">
-                                <a href="#">
-                                    <img src="images/hotelPax.jpg" alt="galeria" />
-                                    <span class="pic-tit">Hotel Pax. Hotel barato en Torrelodones.</span>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="pos4">
-                            <div class="inner">
-                                <a href="#">
-                                    <img src="images/trasgu.jpg" alt="galeria" />
-                                    <span class="pic-tit">Restaurante Trasgu, Torrelodones. Gran calidad, peor precio.</span>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="pos5">
-                            <div class="inner">
-                                <a href="#">
-                                    <img src="images/himalaiaPas.jpg" alt="galeria" />
-                                    <span class="pic-tit">Himalaia Pas. Perfecto para ir a esquiar.</span>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                    <i class="arrow prev" id="jprev">&lt;</i>
-                    <i class="arrow next" id="jnext">&gt;</i>
-                </div>-->
+            
 
             </div>
 
@@ -465,8 +418,21 @@
                     alert(dt.getMonth());
                 }
             });
+
+
+             var input = document.getElementById("inputBuscar");
+        input.addEventListener("keyup", function (event) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+                //llamamos a la funcion del botón de Login
+                busquedaHotel();
+            }
+
         });
-   
+        });
+        
     
     
     

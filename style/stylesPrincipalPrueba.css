@@ -285,7 +285,7 @@ body {
 
 
 
-#logo{
+.logo{
 	width: 3vw;
 	height: 3vw;
 	margin: auto 3%;
@@ -1121,4 +1121,7 @@ ul.breadcrumb li a:hover {
 }
 .breadcrumbs{
   position:inherit;
+}
+.ui-datepicker{
+  margin-top: 0px !important;
 }

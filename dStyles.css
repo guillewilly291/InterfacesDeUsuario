@@ -38,9 +38,10 @@
 }
 
 #dNombreHotel{
-	font-size: 3vw;
+	font-size: 2vw;
 	margin: 0;
 	font-family: Helvetica, Arial, sans-serif;
+	width: 35vw;
 }
 
 #fotoEstrellas{
@@ -178,7 +179,7 @@
 
 #listaHoteles{
 	overflow-y: scroll;
-	height: 33vw;
+	height: 31vw;
 }
 
 .fotoListaHotel{
@@ -465,9 +466,9 @@ margin-top: 13px;
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
+  margin-bottom: 9px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 18px;
   font-family: "Open Sans", Helvetica;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -491,6 +492,7 @@ margin-top: 13px;
   left: 0;
   height: 25px;
   width: 25px;
+  margin-top: 10px;
   background-color: #bbb;
   border-radius: 50%;
 }

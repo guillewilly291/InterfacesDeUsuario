@@ -43,24 +43,22 @@ body {
 
 }
 
-/*Estos estilos corresponden con los botones de entrar, registrarse y borrar, tienen una animaciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n basada en transiciones css */
-/*Estilo botÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n verde*/
+/*Estos estilos corresponden con los botones de entrar, registrarse y borrar, tienen una animacion verde*/
 
 .botonReg{
-  background:#c0e9f9;
+  background: #5f6edc;
   color:#fff;
   border:none;
   position:relative;
-  height:60px;
-  font-size:1.6em;
+  height: 43px;
+  font-size: 1em;
   padding:0 2em;
   cursor:pointer;
   transition:800ms ease all;
   outline:none;
-
 }
 
-/*Estilo botÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n rojo*/
+/*Estilo boton rojo*/
 .botonCerrar{
   background:#ba1212;
   color:#fff;
@@ -143,8 +141,8 @@ body {
 /*styles para el formulario de registro*/
 .textoRegistro{
   margin: 10px 0 10px 0;
-	font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
-	font-size: 25px;
+  font-family: Arial,Tahoma,"Bitstream Vera Sans",sans-serif;
+  /* font-size: 25px; */
 }
 
 .textoInput{
@@ -168,8 +166,7 @@ body {
 .tituloInicioSesionPop{
   margin: 20px 0 10px 0;
   margin-top: 3%;
- 
-	font-size: 1.7vw;
+  /* font-size: 1.7vw; */
 }
 
 /*referencias para emplear la url de una imagen en el registro*/
@@ -208,13 +205,7 @@ header {
   top:0;
 }
 
-#logo{
-	width: 3vw;
-    height: 3vw;
-    margin: auto 3%;
-    margin-left: 8%;
-    cursor: pointer;
-}
+
 #imagenCabecera{
 	width: 3vw;
 	height: 3vw;

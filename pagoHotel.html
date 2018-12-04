@@ -109,7 +109,7 @@
 					<p id="descripcionHotel" class="parrafoInfo" style="display: none;">  </p>
 					<p id="fechasHotel" class="parrafoInfo">  </p>
 					<div style="display: flex;">
-						<h5 id="textoPrecioReserva"> Total a pagar: </h5>
+						<h3 id="textoPrecioReserva"> Total a pagar: </h3>
 						<h5 id="precioReserva">  </h5>
 					</div>
 
@@ -160,7 +160,7 @@
                         <img id="imgTarjeta" src="images/tarjeta.png" alt="logo" />
                         <input id="inputTarjeta" placeholder="xxxx-xxxx-xxxx-xxxx" type="text">
                     </div>
-                    <a class="btnLista" href="#"> Pagar </a>
+                    <a class="btnLista" onclick="payAndLoad()"> Pagar </a>
 				</div>
 
 				<div class="divMetodoPago" style="display: none" onclick="window.open('https://www.paypal.com/es/signin')">
@@ -339,7 +339,7 @@
      y si no cumplen con los estipulado o son vacíos al guardar, se pondrán en rojo-->
      
      
-	 <div id="registro" class="pmodal" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 200px">
+	 <div id="registro" class="pmodal" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: 0px; top: 200px">
         <form class="modal-contentModified animate" action="/action_page.php" >
         
             <div class="imgcontainer">
@@ -438,7 +438,7 @@
     </div>
 
     <!--Div en el que aparece un popup de inicio de sesión-->
-    <div id="sesion" class="pmodal" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 500px">
+    <div id="sesion" class="pmodal" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: 0px; top: 500px">
         <form class="modal-content animate" action="/action_page.php">
         
             <div class="imgcontainer">

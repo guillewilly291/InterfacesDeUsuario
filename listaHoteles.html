@@ -34,7 +34,7 @@
 		// scripts de JQUERY que llaman a las funciones de los plugins, uno para pop-up y otro para carrusel
 		$(".go").leanModal({ top : 500, overlay : 0.7, closeButton: ".modal_close" });
 		$(".go2").leanModal({ top : 500, overlay : 0.7});
-	
+		window.clearInterval(timer);
 	});
 	</script>
     <script>
@@ -44,7 +44,7 @@
             onSelect: function (date) {
                 debugger
                 $("#fecha2").datepicker(
-                    'option', 'minDate', new Date(date.split("/")[2], parseInt(date.split("/")[1]) - 1, parseInt(date.split("/")[0]) + 1)
+                    'option', 'minDate', date
                 );
             }
         });
@@ -54,8 +54,8 @@
     $( "#slider-range" ).slider({
       range: true,
       min: 0,
-      max: 2000,
-      values: [ 200, 1800 ],
+      max: 5000,
+      values: [ 60, 4000 ],
       slide: function( event, ui ) {
         $( "#amount" ).val( ui.values[ 0 ]+ "€"  + " - " + ui.values[ 1 ]+ "€"  );
       }
@@ -64,7 +64,17 @@
       " - " + $( "#slider-range" ).slider( "values", 1 )+"€" );
   } );
 	
-	
+	var input = document.getElementById("inputBuscar");
+		input.addEventListener("keyup", function (event) {
+			// Cancel the default action, if needed
+			event.preventDefault();
+			// Number 13 is the "Enter" key on the keyboard
+			if (event.keyCode === 13) {
+				//llamamos a la funcion del botón de Login
+				busquedaHotel();
+			}
+
+		});
 	
 	});
     </script>
