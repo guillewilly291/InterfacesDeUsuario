@@ -11,10 +11,10 @@
     <!--Se selecciona el tipo de caracter que se va a utilizar-->
     <meta charset="UTF-8">
     <!--se realiza el link con la hoja de estilos correspondiente-->
-    <link rel="stylesheet" type="text/css" href="style/stylesPrincipalPrueba.css" />
+    <link rel="stylesheet" type="text/css" href="style/styleMain.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="style/jquery.rollingslider.js"></script>
-    <script src="script.js"></script>
+
+    <script src="script/script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- jQuery UI mouse draggable widget -->
@@ -39,7 +39,7 @@
             $("#fecha1").datepicker({
                 minDate: new Date(),
                 onSelect: function (date) {
-                    debugger
+                  
                     $("#fecha2").datepicker(
                         'option', 'minDate', new Date(date.split("/")[2], parseInt(date.split("/")[1]) - 1, parseInt(date.split("/")[0]) + 1)
                     );
@@ -75,7 +75,7 @@
 
         <div class="breadcrumbs">
             <ul class="breadcrumb">
-                <li><a href="paginaPrincipalTest.html">Home</a></li>
+                <li><a href="mainPage.html">Home</a></li>
 
             </ul>
         </div>
@@ -105,7 +105,7 @@
         </ul>
         <div class="breadcrumbs">
             <ul class="breadcrumb">
-                <li><a href="paginaPrincipalTest.html">Home</a></li>
+                <li><a href="mainPage.html">Home</a></li>
 
             </ul>
         </div>
