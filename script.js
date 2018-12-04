@@ -3,6 +3,7 @@ $(function($){
   // scripts de JQUERY que llaman a las funciones de los plugins, uno para pop-up y otro para carrusel
   $(".go").leanModal({ top : 500, overlay : 0.7, closeButton: ".modal_close" });
   $(".go2").leanModal({ top : 500, overlay : 0.7});
+  $(".go3").leanModal({ top : 200, overlay : 0.7});
  
  
 
@@ -81,7 +82,7 @@ $(function($){
 				e.preventDefault()
 			})
 		})
-		;function close_modal(modal_id){$("#lean_overlay").fadeOut(2000) //funcion para cerrar el popup
+		;function close_modal(modal_id){$("#lean_overlay").fadeOut(200) //funcion para cerrar el popup
 		;$(modal_id).css({"display":"none"})
 	}}
 })})
@@ -972,93 +973,28 @@ function checkRadioButton(e) {
 
 function editCookie(){
   debugger;
-  var userName= document.getElementById("userName").value;
-  var password = document.getElementById("password").value;
-  var	nameSurname = document.getElementById("nameSurname").value;
-  var	email = document.getElementById("email").value;
-  var	year = document.getElementById("year").value;
-  var	address = document.getElementById("address").value;
-  var imgPerfil = $("#file-preview")[0].src;
+  
+  var formulario1=document.getElementsByClassName("datoFormulario1");
+  var formulario2=document.getElementsByClassName("datoFormulario2");
+  var usuarioNombre=localStorage.getItem("AAAA");
+  var datos=localStorage.getItem(usuarioNombre);
+  datos=datos.split(";");
+  var userName= usuarioNombre;
+  var password=datos[0];
+  var	nameSurname = formulario2[0].value;
+  var	email = datos[2];
+  var	year = formulario1[0].value;
+  var	address = formulario2[2].value;
+  var imgPerfil = datos[6];
 
-  if(!$("#checkbox").prop("checked")){
-    window.alert("Se deben aceptar las condiciones generales");
-
-  }else{	
+  	
     
-    if(checkCookieMail(userName,email)){ //Se encontraria donde tenemos el numero 444444
-      
-      window.alert("El correo especificado se encuentra ya vinculado a una cuenta de la página, elija otro porfavor");
-      //Si existe el correo en una cuenta de la pagina
-
-    }else{
+    
       var conjunto = password + ";" + nameSurname + ";" + email + ";" + year + ";" + address + ";" + userName +";" + imgPerfil;	
 
-      localStorage.setItem(userName,conjunto);
-      changeStepTo1();
-      vaciarForm();
-      cerrar();
-      
-    }
+      localStorage.setItem(userName,conjunto);  
 
-
-    cerrar();
-    
+      changePage();
   }
-}
 
-function editarCuenta(data){//Modifica datos de la cuenta de usuario
 
-  var formulario1= document.getElementsByClassName('datoFormulario1');
-  var formulario2= document.getElementsByClassName('datoFormulario2');
-  var anteriorDato=localStorage.getItem(formulario2[1].innerHTML);//obtenemos los datos anteriores del usuario a modificar
-  anteriorDato=anteriorDato.split(";");
-  //Reemplazamos valores
-  formulario2[0].innerHTML=data[0].value;
-  formulario1[0].innerHTML=data[2].value;
-  formulario2[2].innerHTML=data[1].value;
-
-  formulario1=document.getElementById('nombreUser');
-  formulario1.innerHTML=data[0].value;
-  formulario1=document.getElementsByClassName('parrafo');
-  formulario1[0].innerHTML="Nombre: "+data[0].value;
-
-  var imageInput= document.getElementById('blah').getAttribute("src");//Obtenemos la imagen de usuario
-  $('#usuario').attr('src',imageInput);
-
- formulario1= document.getElementsByClassName('datoFormulario1');
-    var str="";
-    if(anteriorDato[anteriorDato.length-1]!="images/sinFoto.png"){//foto de usuario por defecto
-    for(var i=0;i<anteriorDato.length-2;i++){
-
-      if(i==2){ //nombre y apellidos
-        str+=formulario2[0].innerHTML;
-      }else if(i==4){//fecha de nacimiento
-        str+=formulario2[2].innerHTML;
-      }else if(i==5){//dirección
-        str+=formulario1[0].innerHTML;
-      }else{
-        str+=anteriorDato[i];
-      }
-        str+=";";
-    }
-  }else{
-    for(var i=0;i<anteriorDato.length-1;i++){
-
-      if(i==2){ //nombre y apellidos
-        str+=formulario2[0].innerHTML;
-      }else if(i==4){//fecha de nacimiento
-        str+=formulario2[2].innerHTML;
-      }else if(i==5){//dirección
-        str+=formulario1[0].innerHTML;
-      }else{
-        str+=anteriorDato[i];
-      }
-        str+=";";
-    }
-  }
-    str+=imageInput;//añadimos la imagen
-    localStorage.setItem(formulario2[1].innerHTML,str);//guardamos en el localStorage nuestros nuevos datos
-    localStorage.setItem("loggedIn",str);
-    alert("Datos guardados correctamente");
-
-}

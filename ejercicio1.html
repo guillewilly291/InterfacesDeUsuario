@@ -69,8 +69,11 @@
 			<p class="parrafo">Nombre: </p>
 			<p class="parrafo">Pais de origen: España</p>
 			<p class="parrafo">Miembro desde 2018</p>
-
-			<h3 class="linkOpcion" onclick="displayOpi()">Últimas opiniones</h3>
+			<div class="divFlex">
+				<h3 class="linkOpcion" onclick="displayOpi()">Últimas opiniones</h3>
+					<!--Botón para añadir nuevas preferencias-->
+				<a class="go3" rel="leanModal" name="opinion" href="#opinion"><button class="botonSuma" style=" margin-top: 0.8vw;margin-right: 1.29vw;">+ </button></a>
+			</div>
 			<ul class="listaOpiniones"><!--ultimas opiniones escritas-->
 					<!--Se emplea una lista para las opiniones colgadas en la pagina web, estas opiniones estan formadas por un titulo del lugar (link) y un parrafo de la opinion del mismo-->
 					<li>
@@ -148,7 +151,7 @@
 				<div class="divFormulario">
 
 					<input type="text" class="datoFormulario1"></input>
-					<input type="text" class="datoFormulario1"> 
+					<p class="datoFormulario1">Miembro: 2018 </p>
 
 				</div>
 
@@ -314,42 +317,19 @@
 	</div>
 	<!--Este es el popup del formulario de edición de datos de la página, aparecen una serie de huecos a rellenar
 	 y si no cumplen con los estipulado o son vacíos al guardar, se pondrán en rojo-->
-	<div id="editar" class="pop" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 200px">
-		<div class="divFlex">
-				<h3 class="tituloInicioSesionPop"> Edite sus datos.</h3>
-				<button class="botonCerrar">X</button>
-		</div>
-		<h4 class="textoRegistro">Información personal </h4>
-		<h4 class="textoInput">Nombre y apellidos </h4>
-		<input class="inputDataRegistro obligatorio2" placeholder="Nombre y apellidos" type="name">
-		<h4 class="textoInput">Fecha de nacimiento </h4>
-		<input class="inputDataRegistro obligatorio2" placeholder="" type="date">
-		<h4 class="textoInput">Dirección </h4>
-		<input class="inputDataRegistro obligatorio2" placeholder="Dirección de domicilio" type="name">
-		<h4 class="textoInput">Imagen de perfil (Opcional) </h4>
-		<div class="divFlex"style="height:80px">
-			  <input type='file' id="imgInp"/>
-			  <img id="blah" src="images/sinFoto.png" style="border-radius:50%"/>
-		</div>
-		<!--Este Jquery llama a la función readURL al hacer un cambio en el formulario en la parte de imagen-->
-
-
-
-
-	<script type="text/javascript">
-
-
-		$("#imgInp").change(function() {
-	    readURL(this);
-	  });
-	</script>
-
 	
-
-
-
-
-
+	<div id="opinion" class="pop" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 200px">
+			<div class="divFlex">
+					<h3 class="tituloInicioSesionPop"> Escriba aquí su opinión.</h3>
+					<button class="botonCerrar">X</button>
+			</div>
+			
+			<h4 class="textoRegistro">Nombre del hotel </h4>
+			<input class="inputDataRegistro obligatorio2" placeholder="Nombre y apellidos" type="name">
+			<h4 class="textoRegistro">Opinión </h4>
+			<textarea name="message" style="width:90%;height:50%" ></textarea>
+			
+		
 
 
 	<div class="divFlex" style="margin-top:2%">
