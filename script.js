@@ -64,18 +64,10 @@ $(function($){
 				$(".botonCerrar").click(function(){ //si le damos al botón de cerrar, el pop-up se cierra
 					$(".inputDataRegistro").css({"background-color": "white"}).fadeIn(2000);
 			    $(".divFlexRegistro").css({"background-color": "white"}).fadeIn(2000);
-			    resetRegistro();
+			    
 					close_modal(modal_id)
 				});
-					$("#guardar").click(function(){ //ahora hay que comprobar si el usuario ha introducido los datos bien, si es así,
-            //se llamará a close_modal que cerrará el pop-up, si no, se remarcará en rojo lo que falta
-						if(comprobar()){
-							$(".inputDataRegistro").css({"background-color": "white"}).fadeIn(2000);
-					    $(".divFlexRegistro").css({"background-color": "white"}).fadeIn(2000);
-					    resetRegistro();
-							close_modal(modal_id);
-						}
-					});
+					
 				var modal_height=$(modal_id).outerHeight();
 				var modal_width=$(modal_id).outerWidth();
 				$("#lean_overlay").css({"display":"block",opacity:0});
@@ -173,7 +165,7 @@ function readURL(input) {
 
 function changePage(){//Función para recuperar los datos del usuario que ha iniciado sesión
     var primero= "AAAA";
-    
+    window.clearInterval(timer);
     conjunto = localStorage.getItem(localStorage.getItem(primero)).split(";");
     var formulario1 = document.getElementsByClassName('datoFormulario1');
     var formulario2 = document.getElementsByClassName('datoFormulario2');

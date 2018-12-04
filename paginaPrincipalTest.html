@@ -19,10 +19,10 @@
 
     <!-- jQuery UI mouse draggable widget -->
     <script src="http://ma5slider.ma5.pl/js/jquery-ui.min.js"></script>
-     
+
     <!-- Touch Event Support for jQuery UI -->
     <script src="http://ma5slider.ma5.pl/js/jquery.ui.touch-punch.min.js"></script>
-     
+
     <!-- MA5 Slider -->
     <link href="style/ma5slider.min.css" rel="stylesheet" type="text/css">
     <script src="http://ma5slider.ma5.pl/js/ma5slider.min.js"></script>
@@ -35,18 +35,18 @@
     <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
     <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
     <script>
-   $(function () {
-        $("#fecha1").datepicker({
-            minDate: new Date(),
-            onSelect: function (date) {
-                debugger
-                $("#fecha2").datepicker(
-                    'option', 'minDate', new Date(date.split("/")[2], parseInt(date.split("/")[1]) - 1, parseInt(date.split("/")[0]) + 1)
-                );
-            }
+        $(function () {
+            $("#fecha1").datepicker({
+                minDate: new Date(),
+                onSelect: function (date) {
+                    debugger
+                    $("#fecha2").datepicker(
+                        'option', 'minDate', new Date(date.split("/")[2], parseInt(date.split("/")[1]) - 1, parseInt(date.split("/")[0]) + 1)
+                    );
+                }
+            });
+            $("#fecha2").datepicker();
         });
-        $("#fecha2").datepicker();
-    });
     </script>
 
 </head>
@@ -58,13 +58,13 @@
     <header class="header" id="guestHeader">
 
         <!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
-        <img id="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackGuest()" />
+        <img class="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackGuest()" />
 
-        <h1 id="tituloCabecera">El rincón de la opinión</h1>
+        <h1 class="tituloCabecera">El rincón de la opinión</h1>
 
         <ul id="listaHeader">
             <!--bocadillo de las opciones en el header-->
-            
+
             <li class="seleccionHeader"> <a class="go" href="#sesion" style="text-decoration: none ;color: black">
                     <p class="seleccionTexto"> Iniciar sesión </p>
                 </a> </li>
@@ -76,46 +76,46 @@
         <div class="breadcrumbs">
             <ul class="breadcrumb">
                 <li><a href="paginaPrincipalTest.html">Home</a></li>
-            
-              </ul>
+
+            </ul>
         </div>
     </header>
 
     <header class="header" id="userHeader" style="display: none">
-    
+
         <!--esta es la cabecera de la pagina web, donde estan el logo, el titulo y el bocadillo de opciones-->
-        <img id="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackLogged()" />
-    
-        <h1 id="tituloCabecera" style="margin-left: 0">El rincón de la opinión</h1>
-    
+        <img class="logo" src="images/logoSinFondo.png" alt="logo" onclick="goBackLogged()" />
+
+        <h1 class="tituloCabecera" style="margin-left: 0">El rincón de la opinión</h1>
+
         <h1 id="nombreEnCabecera" style="font-family: Arial,Tahoma,'Bitstream Vera Sans',sans-serif; display: inline-block ; margin: 0%; width: 37%;padding-top: 13px;font-size: 1.5em;margin-left: 6%;">
         </h1>
-    
+
         <img id="imagenCabecera" src="images/logoSinFondo.png" alt="logo" />
-    
+
         <ul id="listaHeader1">
             <!--bocadillo de las opciones en el header-->
             <li class="seleccionHeader" onclick="closeSesion()"> <a href="#registro" style="text-decoration: none ;color: black">
                     <p class="seleccionTexto"> Cerrar sesión </p>
                 </a> </li>
             <li class="seleccionHeader" onclick="goPerfil()"> <a href="#registro" style="text-decoration: none ;color: black">
-                 <p class="seleccionTexto"> Mi perfil </p>
-             </a> </li>
-            
+                    <p class="seleccionTexto"> Mi perfil </p>
+                </a> </li>
+
         </ul>
         <div class="breadcrumbs">
             <ul class="breadcrumb">
                 <li><a href="paginaPrincipalTest.html">Home</a></li>
-            
-              </ul>
+
+            </ul>
         </div>
     </header>
     <!--BREADCRUMBS PARA LAS HEURISTICAS-->
-    
+
 
     <div class="col-m-12 divFlex " id="divCentral">
 
-    
+
         <!--<aside>
             Este div representa la opción que aparece a la izquierda de la página, que permite rellenar datos debug
 			inicio de sesión o darle a un botón para que aparezca el formulario de registro
@@ -143,9 +143,10 @@
 
 
         <section>
-            
-            <div  class="col-m-12" id="divBusqueda">
-                <h3 class="tituloInicioSesion text-Mobile"> Introduce tu destino, te recomendaremos lo mejor para tí </h3>
+
+            <div class="col-m-12 divBusqueda2">
+                <h3 class="tituloInicioSesion text-Mobile"> Introduce tu destino, te recomendaremos lo mejor para tí
+                </h3>
                 <div class="divFlex">
                     <div class="buscar">
                         <img id="imgBuscar" src="images/logoSinFondo.png" alt="logo" />
@@ -159,18 +160,18 @@
                 </div>
                 <h4 class="tituloInicioSesion text-Mobile"> ¿Cuánto tiempo quieres que dure tu estancia? </h4>
                 <div class="divFlex divCustom pc" style="margin-top:1vw">
-                        <p class="tituloInicioSesion" id="fecha" style="margin-left:5vw"> Fecha de salida: </p>
-                        <input class="fechaBusqueda datepicker" id="fecha1" placeholder="dd/mm/aaaa" type="text" >
-                        <p class="tituloInicioSesion" id="fecha" style="margin-left:5vw"> Fecha de retorno: </p>
-                        <input class="fechaBusqueda datepicker datepicker2" id="fecha2" placeholder="dd/mm/aaaa" type="text">
+                    <p class="tituloInicioSesion fecha" style="margin-left:5vw"> Fecha de salida: </p>
+                    <input class="fechaBusqueda datepicker" id="fecha1" placeholder="dd/mm/aaaa" type="text">
+                    <p class="tituloInicioSesion fecha" style="margin-left:5vw"> Fecha de retorno: </p>
+                    <input class="fechaBusqueda datepicker datepicker2" id="fecha2" placeholder="dd/mm/aaaa" type="text">
                 </div>
-               
-                   
+
+
 
                 <div class="divFlex divCustom mobile" style="margin-top:1vw">
                     <h4 class="tituloInicioSesion" style="margin-left:5vw"> Fecha de salida: </h4>
                     <input class="fechaBusqueda datepicker" placeholder="dd/mm/aaaa" type="text">
-                
+
                 </div>
                 <div class="divFlex divCustom mobile" style="margin-top:1vw">
                     <h4 class="tituloInicioSesion" style="margin-left:5vw"> Fecha de retorno: </h4>
@@ -178,165 +179,171 @@
                 </div>
             </div>
 
-            <div id="divBusqueda" style= "margin-top:2%">
+            <div class="divBusqueda2" style="margin-top:2%">
                 <h4 class="tituloInicioSesion"> Nuestros mejores destinos </h4>
-                <div id="carrusel" class="divFlex" style= "z-index:-10;margin-top:2%">
-                       
-                                <div class="ma5slider inside-navs inside-dots hover-dots  anim-horizontal loop-mode  data-tempo = 3500 ">
-                                   <div class="slides">
-                       <!-- children = slides -->
-                                       <a id="slide1" href="#slide-1"><img src="images/img20.jpg" alt=""></a>
-                                       <a id="slide2" href="#slide-2"><img src="images/img11.jpg" alt=""></a>
-                                       <a id="slide3" href="#slide-3"><img src="images/img12.jpg" alt=""></a>
-                                       <a id="slide4" href="#slide-4"><img src="images/img13.jpg" alt=""></a>
-                                       <a id="slide5" href="#slide-4"><img src="images/img14.jpg" alt=""></a>
-                                   </div>
-                                </div>
-                                <div class="informacion">
-                                        <h3 class="tituloInicioSesion" id="titulo"> Francia, una experiencia única </h3>
-                                        <p class="tituloInicioSesion alojamiento" id="info"> Restaurante de Lujo donde degustar una agradable comida mientras disfrutas con la familia </p>
-                                        <div class="divFlex"> <span id="precio" style="display: inline-block">Mejor precio desde:</span>
-                                                <h4 class="precioNoche" id="precioChange">149€</h4>
-                                                <h4 class="noche">/noche</h4>
-                                        </div>
-                                        
-                                </div>
-                    
+                <div id="carrusel" class="divFlex" style="z-index:-10;margin-top:2%">
+
+                    <div class="ma5slider inside-navs inside-dots hover-dots  anim-horizontal loop-mode  data-tempo = 3500 ">
+                        <div class="slides">
+                            <!-- children = slides -->
+                            <a id="slide1" href="#slide-1"><img src="images/img20.jpg" alt=""></a>
+                            <a id="slide2" href="#slide-2"><img src="images/img11.jpg" alt=""></a>
+                            <a id="slide3" href="#slide-3"><img src="images/img12.jpg" alt=""></a>
+                            <a id="slide4" href="#slide-4"><img src="images/img13.jpg" alt=""></a>
+                            <a id="slide5" href="#slide-4"><img src="images/img14.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="informacion">
+                        <h3 class="tituloInicioSesion" id="titulo"> Francia, una experiencia única </h3>
+                        <p class="tituloInicioSesion alojamiento" id="info"> Restaurante de Lujo donde degustar una
+                            agradable comida mientras disfrutas con la familia </p>
+                        <div class="divFlex"> <span id="precio" style="display: inline-block">Mejor precio desde:</span>
+                            <h4 class="precioNoche" id="precioChange">149€</h4>
+                            <h4 class="noche">/noche</h4>
+                        </div>
+
+                    </div>
+
                 </div>
-                
-            </div>
-            
-            
 
             </div>
-
-
-
-
-
 
         </section>
-
 
     </div>
 
 
+
+
+
+
+    
+
+
+    
+
+
     <footer>
-			<!--Footer de la pagina web-->
-			<a class="linkSocial" href="https://www.instagram.com/david.silveira/?hl=es" target="_blank">
-				<img class="imagenSocial" src="images/instagram.png" alt="instagram" />
-			</a>
-	
-			<a class="linkSocial" href="https://www.youtube.com/channel/UC0L-DRAlW-ebjHrlk8oSVRg?view_as=subscriber" target="_blank">
-				<img class="imagenSocial" src="images/youtube.png" alt="youtube" />
-			</a>
-			<div class="copyright">
-				<p class="copyrightTexto">elrincondelaopinion@gmail.com</p>
-			</div>
-			<div class="copyright">
-				<p class="copyrightTexto">902453453</p>
-			</div>
-	
-			<div class="copyright">
-				<a class="copyrightTexto" href="https://www.pccomponentes.com/condiciones-de-compra">Política de privacidad</a>
-				</p>
-			</div>
-			<div class="copyright">
-					<a class="copyrightTexto" href="FAQ.html">FAQ</a>
-					</p>
-				</div>
-		  
-			<!--Copyright y derechos reservados-->
-			<div class="copyright">
-				<p class="copyrightTexto">© 2018. ElRinconDeLaOpinion. Todos los derechos reservados.</p>
-			</div>
-		</footer>
+        <!--Footer de la pagina web-->
+        <a class="linkSocial" href="https://www.instagram.com/david.silveira/?hl=es" target="_blank">
+            <img class="imagenSocial" src="images/instagram.png" alt="instagram" />
+        </a>
+
+        <a class="linkSocial" href="https://www.youtube.com/channel/UC0L-DRAlW-ebjHrlk8oSVRg?view_as=subscriber" target="_blank">
+            <img class="imagenSocial" src="images/youtube.png" alt="youtube" />
+        </a>
+        <div class="copyright">
+            <p class="copyrightTexto">elrincondelaopinion@gmail.com</p>
+        </div>
+        <div class="copyright">
+            <p class="copyrightTexto">902453453</p>
+        </div>
+
+        <div class="copyright">
+            <a class="copyrightTexto" href="https://www.pccomponentes.com/condiciones-de-compra">Política de privacidad</a>
+            
+        </div>
+        <div class="copyright">
+            <a class="copyrightTexto" href="FAQ.html">FAQ</a>
+            
+        </div>
+
+        <!--Copyright y derechos reservados-->
+        <div class="copyright">
+            <p class="copyrightTexto">© 2018. ElRinconDeLaOpinion. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <!--Este es el popup del formulario de edición de datos de la página, aparecen una serie de huecos a rellenar
      y si no cumplen con los estipulado o son vacíos al guardar, se pondrán en rojo-->
-     
-     
+
+
     <div id="registro" class="pmodal" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 200px">
-        <form class="modal-contentModified animate" action="/action_page.php" >
-        
+        <form class="modal-contentModified animate" action="/action_page.php">
+
             <div class="imgcontainer">
-                 <button class="btnBorrado" onclick="vaciarForm()" type="button">Borrar</button>
-              <span onclick="cerrar()" class="close" title="Close PopUp">&times;</span>
-              <!--<img src="1.png" alt="Avatar" class="avatar">-->
-              <h2 id="regSesion">  Registro Sesión </h2>
+                <button class="btnBorrado" onclick="vaciarForm()" type="button">Borrar</button>
+                <span onclick="cerrar()" class="close" title="Close PopUp">&times;</span>
+                <!--<img src="1.png" alt="Avatar" class="avatar">-->
+                <h2 id="regSesion"> Registro Sesión </h2>
             </div>
-        
+
             <div class="container" style="padding-left: 3%">
-        
-                  <ul  class="progressbar">
-                        <li class="active" id="firstNumber"> Step 1 </li>
-                        <li id="secondNumber"> Step 2 </li> 
-                        <li id="thirdNumber"> Step 3 </li> 
-        
-                   </ul>
-        
-                   <div class="firstStep">
-                    <label style="padding-top: 55px" class="labelRegister " for="userName" >Nombre de usuario</label>
-                       <input class="inputRegister loginInput" id="userName" type="text">
-                 </div>
-        
-                     <div class="firstStep">
-                        <label style="padding-top: 13px" class="labelRegister " for="password" >Contraseña</label>
-                           <input class="inputRegister loginInput" id="password" type="password">
-                     </div>
-        
-                 <div class="secondStep" >
-                    <label style="padding-top: 55px" class="labelRegister " for="nameSurname" >Nombre y Apellidos</label>
-                       <input class="inputRegister loginInput" id="nameSurname" type="text">
-                 </div>
-        
-                     <div class="secondStep" >
-                        <label style="padding-top: 13px" class="labelRegister " for="email" >Email</label>
-                           <input class="inputRegister loginInput" id="email" type="text">
-                     </div>
-        
-                 <div class="thirdStep" >
-                    <label style="padding-top: 55px" class="labelRegister " for="year" >Fecha de Nacimiento</label>
-                       <input class="inputRegister loginInput" id="year" type="date">
-                 </div>
-        
-                     <div class="thirdStep" >
-                        <label style="padding-top: 13px" class="labelRegister " for="address" >Dirección</label>
-                           <input class="inputRegister loginInput" id="address" type="text">
-                     </div>
-        
-                 <div class="thirdStep" >
-                        <label style="padding-top: 13px" class="labelRegister " for="address" >Imagen  de Perfil</label>
-                        <div><input type="file" id="file-uploader">
-                            <div id="file-preview-zone">
-                                    <img id="file-preview" alt="Error" src="images/logo2.png">
-                              </div>
-                           
-                        
-        
-                     </div>
-        
+
+                <ul class="progressbar">
+                    <li class="active" id="firstNumber"> Step 1 </li>
+                    <li id="secondNumber"> Step 2 </li>
+                    <li id="thirdNumber"> Step 3 </li>
+
+                </ul>
+
+                <div class="firstStep">
+                    <label style="padding-top: 55px" class="labelRegister " for="userName">Nombre de usuario</label>
+                    <input class="inputRegister loginInput" id="userName" type="text">
                 </div>
-        
+
+                <div class="firstStep">
+                    <label style="padding-top: 13px" class="labelRegister " for="password">Contraseña</label>
+                    <input class="inputRegister loginInput" id="password" type="password">
                 </div>
-        
-                    <div class="login " id="step1">	
-                        <button  class="textLogin"  onclick=" checkNamePassword()" type="button"> Siguiente </button>
-                    </div>	
-        
-                    <div class="login" id="step2" style="display: none;">
-                            <button class="textLogin" id="changeto3" onclick="checkName()" style="display: inline-block; float:right; " type="button"> Siguiente </button>
-        
-                            <button class="textLogin" id="changeto1" onclick="changeStepTo1()" style="display: inline-block; float:left" type="button"> Anterior </button >
-                    </div>	
-                    
-                    <div class="login" id="step3" style="display: none;">
-                            <input id="checkbox" type="checkbox" style="margin:10px 10px;margin-bottom: 25px">Haciendo click acepta las condiciones de Uso que puede encontrar <span id="condicionesAqui">Aquí</span>.
-                            <button  class="textLogin" id="changeto1.1" onclick="changeStepTo2()"  style="display: inline-block; float:left" type="button"> Anterior </button >
-        
-                            <button  class="textLogin" id="changeto3.1"  style="display: inline-block; float:right;" type="button" onclick= "checkDate()"> Guardar </button >
+
+                <div class="secondStep">
+                    <label style="padding-top: 55px" class="labelRegister " for="nameSurname">Nombre y Apellidos</label>
+                    <input class="inputRegister loginInput" id="nameSurname" type="text">
+                </div>
+
+                <div class="secondStep">
+                    <label style="padding-top: 13px" class="labelRegister " for="email">Email</label>
+                    <input class="inputRegister loginInput" id="email" type="text">
+                </div>
+
+                <div class="thirdStep">
+                    <label style="padding-top: 55px" class="labelRegister " for="year">Fecha de Nacimiento</label>
+                    <input class="inputRegister loginInput" id="year" type="date">
+                </div>
+
+                <div class="thirdStep">
+                    <label style="padding-top: 13px" class="labelRegister " for="address">Dirección</label>
+                    <input class="inputRegister loginInput" id="address" type="text">
+                </div>
+
+                <div class="thirdStep">
+                    <label style="padding-top: 13px" class="labelRegister " for="address">Imagen de Perfil</label>
+                    <div><input type="file" id="file-uploader">
+                        <div id="file-preview-zone">
+                            <img id="file-preview" alt="Error" src="images/logo2.png">
+                        </div>
+
+
+
                     </div>
-                </form>
+
+                </div>
+
+            </div>
+
+            <div class="login " id="step1">
+                <button class="textLogin" onclick=" checkNamePassword()" type="button"> Siguiente </button>
+            </div>
+
+            <div class="login" id="step2" style="display: none;">
+                <button class="textLogin" id="changeto3" onclick="checkName()" style="display: inline-block; float:right; "
+                    type="button"> Siguiente </button>
+
+                <button class="textLogin" id="changeto1" onclick="changeStepTo1()" style="display: inline-block; float:left"
+                    type="button"> Anterior </button>
+            </div>
+
+            <div class="login" id="step3" style="display: none;">
+                <input id="checkbox" type="checkbox" style="margin:10px 10px;margin-bottom: 25px">Haciendo click acepta
+                las condiciones de Uso que puede encontrar <span id="condicionesAqui">Aquí</span>.
+                <button class="textLogin" id="changeto1.1" onclick="changeStepTo2()" style="display: inline-block; float:left"
+                    type="button"> Anterior </button>
+
+                <button class="textLogin" id="changeto3.1" style="display: inline-block; float:right;" type="button"
+                    onclick="checkDate()"> Guardar </button>
+            </div>
+        </form>
 
         <!--Este jquery permite que al hacer click en un input que está rojo, cambie a blanco
 	el otro script si damos a borrar, resetea los styles de los formularios y cierra el popup-->
@@ -357,23 +364,24 @@
     <!--Div en el que aparece un popup de inicio de sesión-->
     <div id="sesion" class="pmodal" style="display: none; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -330px; top: 500px">
         <form class="modal-content animate" action="/action_page.php">
-        
+
             <div class="imgcontainer">
-              <span onclick="cerrar()" class="close" title="Close PopUp">&times;</span>
-              <!--<img src="1.png" alt="Avatar" class="avatar">-->
-              <h2 style="text-align:center">Iniciar Sesión</h2>
+                <span onclick="cerrar()" class="close" title="Close PopUp">&times;</span>
+                <!--<img src="1.png" alt="Avatar" class="avatar">-->
+                <h2 style="text-align:center">Iniciar Sesión</h2>
             </div>
-        
+
             <div class="container">
-              <input id="loginUser" class="loginInput" type="text" placeholder="Enter Username" name="uname">
-              <input id="loginPassword" class="loginInput" type="password" placeholder="Enter Password" name="psw">        
-              <button onclick="checkCookie()" class="botonInitPage" type="button">Login</button>
-              
-              <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
+                <input id="loginUser" class="loginInput" type="text" placeholder="Enter Username" name="uname">
+                <input id="loginPassword" class="loginInput" type="password" placeholder="Enter Password" name="psw">
+                <button onclick="checkCookie()" class="botonInitPage" type="button">Login</button>
+
+                <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot
+                    Password ?</a>
             </div>
-                    
-            </form>
-         </div>
+
+        </form>
+    </div>
     <script>
         $(".botonEntrar").click(function () {
             checkUser();
@@ -384,22 +392,22 @@
     <div id="lean_overlay" style="display: none; opacity: 0.7;"></div>
 
     <script>
-        
 
 
 
-    var titulos = ["Francia,una experiencia única", "Roma, pizza y coliseo, la mejor combinación renacentista", "Ibiza, un verdadero lujo español", "Mallorca, por si no tienes presupuesto para Ibiza", "Berlin, un muro, una nación histórica."];
-    var alojamiento =["Restaurante de Lujo donde degustar una agradable comida mientras disfrutas con la familia","Cocina al mas puro estilo italiano, juntando la pizza y la pasta caracteristicas."," Alojamiento agradable con desayunos 5 estrellas, con vistas al mar y posibilidades de encontrar aventuras","Desayuno continental en Mallorca, con agradable gente, experiencias y tipicas ensaimadas","Buffet libre en el casino real de Berlin, donde apostar a la vez que degustas calidad."];
-    var precios= ["149€","279€","426€","120€","219€"];
-    $('#carrusel').on('ma5.activeSlide', function (event, slide) {
 
-        $("#titulo").text(titulos[slide - 1]);
-        $("#info").text(alojamiento[slide - 1]);
-        $("#precioChange").text(precios[slide - 1]);
-        
-    });
+        var titulos = ["Francia,una experiencia única", "Roma, pizza y coliseo, la mejor combinación renacentista", "Ibiza, un verdadero lujo español", "Mallorca, por si no tienes presupuesto para Ibiza", "Berlin, un muro, una nación histórica."];
+        var alojamiento = ["Restaurante de Lujo donde degustar una agradable comida mientras disfrutas con la familia", "Cocina al mas puro estilo italiano, juntando la pizza y la pasta caracteristicas.", " Alojamiento agradable con desayunos 5 estrellas, con vistas al mar y posibilidades de encontrar aventuras", "Desayuno continental en Mallorca, con agradable gente, experiencias y tipicas ensaimadas", "Buffet libre en el casino real de Berlin, donde apostar a la vez que degustas calidad."];
+        var precios = ["149€", "279€", "426€", "120€", "219€"];
+        $('#carrusel').on('ma5.activeSlide', function (event, slide) {
 
-    $(function () {
+            $("#titulo").text(titulos[slide - 1]);
+            $("#info").text(alojamiento[slide - 1]);
+            $("#precioChange").text(precios[slide - 1]);
+
+        });
+
+        $(function () {
             $('#ui-datepicker-div').datepicker({
                 beforeShow: function (input, inst) {
                     inst.dpDiv.css({ marginTop: -input.offsetHeight + 'px', marginLeft: input.offsetWidth + 'px' });
@@ -420,52 +428,51 @@
             });
 
 
-             var input = document.getElementById("inputBuscar");
-        input.addEventListener("keyup", function (event) {
-            // Cancel the default action, if needed
-            event.preventDefault();
-            // Number 13 is the "Enter" key on the keyboard
-            if (event.keyCode === 13) {
-                //llamamos a la funcion del botón de Login
-                busquedaHotel();
-            }
+            var input = document.getElementById("inputBuscar");
+            input.addEventListener("keyup", function (event) {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Number 13 is the "Enter" key on the keyboard
+                if (event.keyCode === 13) {
+                    //llamamos a la funcion del botón de Login
+                    busquedaHotel();
+                }
 
+            });
         });
-        });
-        
-    
-    
-    
-    function readFile(input) {
+
+
+
+
+        function readFile(input) {
             if (input.files && input.files[0]) {
-              
-              if(document.getElementById("file-preview")!=null){
-                $("#file-preview").remove();
-              }
+
+                if (document.getElementById("file-preview") != null) {
+                    $("#file-preview").remove();
+                }
                 var reader = new FileReader();
-          
+
                 reader.onload = function (e) {
                     var filePreview = document.createElement('img');
                     filePreview.id = 'file-preview';
                     //e.target.result contents the base64 data from the image uploaded
                     filePreview.src = e.target.result;
                     console.log(e.target.result);
-          
+
                     var previewZone = document.getElementById('file-preview-zone');
                     previewZone.appendChild(filePreview);
                 }
-          
+
                 reader.readAsDataURL(input.files[0]);
             }
-          }
-          
-          var fileUpload = document.getElementById('file-uploader');
-          fileUpload.onchange= function (e) {
+        }
+
+        var fileUpload = document.getElementById('file-uploader');
+        fileUpload.onchange = function (e) {
             readFile(e.srcElement);
-          }</script>
+        }</script>
 
 </body>
 
 
-</html> 
-
+</html>

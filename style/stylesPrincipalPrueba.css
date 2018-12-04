@@ -164,7 +164,7 @@ body {
 @media only screen and (min-width: 600px)  {
 
 
-    #divBusqueda{
+    .divBusqueda2{
 	    margin-left:35%;
 	    background-color: white;
 	    border-radius: 6px;
@@ -230,7 +230,7 @@ body {
     }
    
 
-    #divBusqueda{
+    .divBusqueda2{
 	    background: linear-gradient(to bottom, #c0e9f9 0%, #0099ff59 46%);
       padding-top: 10px !important;
       padding-bottom: 14px !important;
@@ -276,7 +276,7 @@ body {
     .btnText {
     margin-top: 7% !important;
     }
-    #tituloCabecera{
+    .tituloCabecera{
 
       font-size: 3.3vw !important;
      
@@ -386,7 +386,7 @@ h1{
 .botonEntrarPop{
   margin-bottom: 3%;
 }
-#fecha{
+.fecha{
   font-size: 14px;
   margin-top: 0.2vw;
 }
